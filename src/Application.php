@@ -42,6 +42,15 @@ class Application
         return $function && $admin;
     }
 
+    public static function log(string $message): void
+    {
+        if (self::isCoreActive()) {
+            cardanoPress()->logger('admin')->error($message);
+        } else {
+            error_log($message);
+        }
+    }
+
     public function notice(): void
     {
         if (self::isCoreActive()) {

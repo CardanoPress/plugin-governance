@@ -21,13 +21,9 @@ class Admin
     {
         $this->data = new Data();
 
-        $this->setup();
-    }
-
-    protected function setup(): void
-    {
         $this->proposalCPT();
         $this->proposalSettings();
+        $this->proposalStatus();
 
         add_action('wp_insert_post', [$this, 'prepareProposalData'], 10, 2);
     }
@@ -48,9 +44,7 @@ class Admin
                 ],
             ]);
         } catch (Exception $exception) {
-            if (Application::isCoreActive()) {
-                cardanoPress()->logger('admin')->error($exception->getMessage());
-            }
+            Application::log($exception->getMessage());
         }
     }
 
@@ -95,10 +89,66 @@ class Admin
 
             $this->data->store($post->get_config());
         } catch (Exception $exception) {
-            if (Application::isCoreActive()) {
-                cardanoPress()->logger('admin')->error($exception->getMessage());
-            }
+            Application::log($exception->getMessage());
         }
+    }
+
+    public function proposalStatus(): void
+    {
+        try {
+            $post = new Post([
+                'id' => '_proposal',
+                'title' => __('Proposal Status', 'cardanopress-governance'),
+                'screen' => ['proposal'],
+                'context' => 'side',
+                'priority' => 'high',
+                'fields' => [
+                    'data' => [
+                        'type' => 'html',
+                        'default' => $this->getProposalData(),
+                    ],
+                ],
+            ]);
+
+            $this->data->store($post->get_config());
+        } catch (Exception $exception) {
+            Application::log($exception->getMessage());
+        }
+    }
+
+    protected function getProposalData()
+    {
+        if (! $this->inCorrectPage()) {
+            return '';
+        }
+
+        $proposal = new Proposal($_REQUEST['post']);
+
+        ob_start();
+
+        ?>
+        <table>
+            <?php foreach ($proposal->getData() as $key => $value) : ?>
+                <tr>
+                    <th><?php echo $key; ?></th>
+                    <td><?php echo $value; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php
+
+        return ob_get_clean();
+    }
+
+    protected function inCorrectPage(): bool
+    {
+        if (empty($_REQUEST['post']) || wp_doing_ajax() || ! is_admin()) {
+            return false;
+        }
+
+        global $pagenow;
+
+        return 'post.php' === $pagenow && 'proposal' === get_post_type($_REQUEST['post']);
     }
 
     public function prepareProposalData(int $postId, WP_Post $post): void
