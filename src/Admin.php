@@ -22,10 +22,9 @@ class Admin
     {
         $this->data = new Data();
 
-        $this->proposalCPT();
-        $this->proposalSettings();
-        $this->proposalStatus();
-
+        add_action('init', [$this, 'proposalCPT']);
+        add_action('init', [$this, 'proposalSettings']);
+        add_action('init', [$this, 'proposalStatus']);
         add_action('wp_insert_post', [$this, 'prepareProposalData'], 10, 2);
         add_filter('pre_get_posts', [$this, 'customizeProposalStatus']);
     }
