@@ -12,6 +12,7 @@ use ThemePlate\Core\Data;
 use ThemePlate\CPT\PostType;
 use ThemePlate\Meta\Post;
 use WP_Post;
+use WP_Query;
 
 class Admin
 {
@@ -26,6 +27,7 @@ class Admin
         $this->proposalStatus();
 
         add_action('wp_insert_post', [$this, 'prepareProposalData'], 10, 2);
+        add_filter('pre_get_posts', [$this, 'customizeProposalStatus']);
     }
 
     public function proposalCPT(): void
@@ -183,5 +185,23 @@ class Admin
         if ($updated) {
             update_post_meta($postId, '_proposal_data', $data);
         }
+    }
+
+    public function customizeProposalStatus(WP_Query $query): void
+    {
+        if (
+            $query->get_queried_object() &&
+            ! $query->is_post_type_archive('proposal') &&
+            ! $query->is_singular('proposal')
+        ) {
+            return;
+        }
+
+        global $wp_post_statuses;
+
+        $future = &$wp_post_statuses['future'];
+
+        $future->public = true;
+        $future->protected = false;
     }
 }
