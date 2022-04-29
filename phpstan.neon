@@ -1,0 +1,8 @@
+parameters:
+  level: 5
+  excludePaths:
+    - vendor
+  scanFiles:
+    - cardanopress-governance.php
+  dynamicConstantNames:
+    - CP_GOVERNANCE_FILE
