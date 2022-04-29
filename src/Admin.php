@@ -38,9 +38,8 @@ class Admin
                 'args' => [
                     'menu_position' => 5,
                     'menu_icon' => 'dashicons-feedback',
-                    'supports' => ['title'],
-                    'public' => false,
-                    'show_ui' => true,
+                    'supports' => ['title', 'editor'],
+                    'has_archive' => true,
                 ],
             ]);
         } catch (Exception $exception) {

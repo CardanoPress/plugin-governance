@@ -11,6 +11,7 @@ class Application
 {
     private static Application $instance;
     public const VERSION = '0.1.0';
+    private Templates $templates;
 
     public static function instance(): Application
     {
@@ -30,7 +31,10 @@ class Application
 
     public function init(): void
     {
-        new Manifest(plugin_dir_path(CP_GOVERNANCE_FILE) . 'assets', self::VERSION);
+        $load_path = plugin_dir_path(CP_GOVERNANCE_FILE);
+        $this->templates = new Templates($load_path . 'templates');
+
+        new Manifest($load_path . 'assets', self::VERSION);
     }
 
     public static function isCoreActive(): bool
@@ -73,5 +77,20 @@ class Application
     public function setup(): void
     {
         new Admin();
+    }
+
+    public function template(string $name, array $variables = []): void
+    {
+        $name .= '.php';
+        $file = locate_template($this->templates->getPath() . $name);
+
+        if (! $file) {
+            $file = $this->templates->getPath(true) . $name;
+        }
+
+        if (file_exists($file)) {
+            extract($variables, EXTR_OVERWRITE);
+            include $file;
+        }
     }
 }
