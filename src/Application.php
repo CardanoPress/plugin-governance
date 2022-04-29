@@ -43,7 +43,8 @@ class Application
         $load_path = plugin_dir_path(CP_GOVERNANCE_FILE);
         $this->templates = new Templates($load_path . 'templates');
 
-        new Manifest($load_path . 'assets', self::VERSION);
+        new Manifest($load_path . 'assets/dist', self::VERSION);
+        new Actions();
     }
 
     public static function isCoreActive(): bool

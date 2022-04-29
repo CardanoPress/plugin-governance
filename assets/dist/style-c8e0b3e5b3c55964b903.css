@@ -1,5 +1,32 @@
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/.pnpm/css-loader@6.7.1_webpack@5.65.0/node_modules/css-loader/dist/cjs.js!./node_modules/.pnpm/postcss-loader@6.2.1_postcss@8.4.4+webpack@5.65.0/node_modules/postcss-loader/dist/cjs.js!./src/main.css ***!
   \**********************************************************************************************************************************************************************************************************************************/
-
+.container {
+    width: 100%
+}
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px
+    }
+}
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px
+    }
+}
 
