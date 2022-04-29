@@ -11,6 +11,7 @@ class Application
 {
     private static Application $instance;
     public const VERSION = '0.1.0';
+    private Admin $admin;
     private Templates $templates;
 
     public static function instance(): Application
@@ -24,9 +25,17 @@ class Application
 
     private function __construct()
     {
+        register_activation_hook(CP_GOVERNANCE_FILE, [$this, 'activate']);
         add_action('cardanopress_loaded', [$this, 'init']);
         add_action('admin_notices', [$this, 'notice']);
-        add_action('init', [$this, 'setup']);
+
+        $this->setup();
+    }
+
+    public function activate(): void
+    {
+        $this->admin->proposalCPT();
+        flush_rewrite_rules();
     }
 
     public function init(): void
@@ -76,7 +85,7 @@ class Application
 
     public function setup(): void
     {
-        new Admin();
+        $this->admin = new Admin();
     }
 
     public function template(string $name, array $variables = []): void

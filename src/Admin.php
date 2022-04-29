@@ -40,6 +40,7 @@ class Admin
                     'menu_icon' => 'dashicons-feedback',
                     'supports' => ['title', 'editor'],
                     'has_archive' => true,
+                    'rewrite' => ['slug' => 'proposals'],
                 ],
             ]);
         } catch (Exception $exception) {
