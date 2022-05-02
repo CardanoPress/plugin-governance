@@ -9,23 +9,19 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Profile;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
 if (! isset($proposal) || ! $proposal instanceof Proposal) {
     return;
 }
 
-if (! isset($userProfile) || ! $userProfile instanceof Profile) {
-    $userProfile = new Profile(wp_get_current_user());
-}
-
 $options = $proposal->getOptions();
-$voted = $userProfile->hasVoted($proposal->postId);
+$voted = $votedOption ?? '';
+$currentStatus ??= 'publish';
 
 ?>
 
-<form>
+<fieldset<?php echo 'publish' === $currentStatus ? '' : ' disabled="true"'; ?>>
     <?php foreach ($options as $option) : ?>
         <div x-id="['vote-option']" class="form-check">
             <input
@@ -40,17 +36,19 @@ $voted = $userProfile->hasVoted($proposal->postId);
         </div>
     <?php endforeach; ?>
 
-    <div class="pt-3">
-        <?php if ($voted) : ?>
-            <p><b>You voted: <?php echo $proposal->getOptionLabel($voted); ?></b></p>
-        <?php else : ?>
-            <template x-if='!isConnected'>
-                <?php cardanoPress()->template('part/modal-trigger', ['text' => 'Connect Wallet']); ?>
-            </template>
+    <?php if ('archive' !== $currentStatus || $voted) : ?>
+        <div class="pt-3">
+            <?php if ($voted) : ?>
+                <p><b>You voted: <?php echo $proposal->getOptionLabel($voted); ?></b></p>
+            <?php else : ?>
+                <template x-if='!isConnected'>
+                    <?php cardanoPress()->template('part/modal-trigger', ['text' => 'Connect Wallet']); ?>
+                </template>
 
-            <template x-if='isConnected'>
-                <button class="btn btn-primary" @click="handleVote" :disabled="isDisabled(true)">Submit</button>
-            </template>
-        <?php endif; ?>
-    </div>
-</form>
+                <template x-if='isConnected'>
+                    <button class="btn btn-primary" @click="handleVote" :disabled="isDisabled(true)">Submit</button>
+                </template>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+</fieldset>
