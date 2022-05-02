@@ -22,6 +22,7 @@ class Proposal
             'policy' => $this->getPolicy(),
             'options' => $this->getOptions(),
             'data' => $this->getData(),
+            'dates' => $this->getDates(),
         ];
     }
 
@@ -59,6 +60,20 @@ class Proposal
         return $status ?: [];
     }
 
+    public function getDates(): array
+    {
+        $format = get_option('date_format') . ' ' . get_option('time_format');
+        $start = get_post_time($format, true, $this->postId);
+        $expiration = get_post_meta($this->postId, 'at-expiration', true);
+        $end = '&mdash;';
+
+        if ($expiration) {
+            $end = wp_date($format, strtotime($expiration));
+        }
+
+        return compact('start', 'end');
+    }
+
     public function updateData(string $option, int $value, bool $increase = true): bool
     {
         $data = $this->getData();
@@ -75,7 +90,7 @@ class Proposal
             $data[$option] = $current - $value;
         }
 
-        return (bool) update_post_meta($this->postId, '_proposal_data', $data);
+        return (bool)update_post_meta($this->postId, '_proposal_data', $data);
     }
 
     public function getVotingPower(Profile $profile): int
