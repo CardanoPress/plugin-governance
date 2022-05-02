@@ -7,6 +7,16 @@
  * @since   0.1.0
  */
 
+$type ??= 'current';
+
+$linkText = 'Vote';
+
+if ('upcoming' === $type) {
+    $linkText = 'View Proposal';
+} elseif ('past' === $type) {
+    $linkText = 'View Results';
+}
+
 ?>
 
 <div class="row align-items-center">
@@ -16,7 +26,7 @@
     </div>
 
     <div class="col-auto pt-2 pb-2">
-        <a href="<?php the_permalink(); ?>" class="btn btn-primary me-2">Vote</a>
+        <a href="<?php the_permalink(); ?>" class="btn btn-primary me-2"><?php echo $linkText; ?></a>
     </div>
 </div>
 

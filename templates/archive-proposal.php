@@ -79,7 +79,7 @@ get_header();
                             <?php while (${$type}->have_posts()) : ?>
                                 <?php ${$type}->the_post(); ?>
 
-                                <?php Application::instance()->template('proposal/tab-content'); ?>
+                                <?php Application::instance()->template('proposal/tab-content', compact('type')); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>
