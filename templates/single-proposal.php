@@ -16,6 +16,20 @@ use PBWebDev\CardanoPress\Governance\Profile;
 $proposalId = get_the_ID();
 $userProfile = new Profile(wp_get_current_user());
 $proposal = new Proposal($proposalId);
+$proposalDates = $proposal->getDates();
+
+$currentStatus = get_post_status();
+$statusText = 'Open for Voting';
+$dateLabel = 'Closing Date';
+$dateText = $proposalDates['end'];
+
+if ('future' === $currentStatus) {
+    $statusText = 'Upcoming';
+    $dateLabel = 'Starting Date';
+    $dateText = $proposalDates['start'];
+} elseif ('archive' === $currentStatus) {
+    $statusText = 'Complete';
+}
 
 get_header();
 
@@ -35,8 +49,8 @@ get_header();
                 </nav>
 
                 <h1 class="pb-3"><?php the_title(); ?></h1>
-                <p><b>Status: Open for Voting</b>
-                <p><b>Closing Date: 31st August 2022, 19:45pm UTC</b></p>
+                <p><b>Status: <?php echo $statusText; ?></b>
+                <p><b><?php echo $dateLabel; ?>: <?php echo $dateText; ?> UTC</b></p>
 
                 <?php the_content(); ?>
 
