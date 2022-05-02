@@ -16,19 +16,19 @@ $types = ['current', 'upcoming', 'past'];
 $current = new WP_Query([
     'post_type' => 'proposal',
     'post_status' => 'publish',
-    'post_per_page' => -1,
+    'posts_per_page' => -1,
 ]);
 
 $upcoming = new WP_Query([
     'post_type' => 'proposal',
     'post_status' => 'future',
-    'post_per_page' => -1,
+    'posts_per_page' => -1,
 ]);
 
 $past = new WP_Query([
     'post_type' => 'proposal',
     'post_status' => 'archive',
-    'post_per_page' => -1,
+    'posts_per_page' => -1,
 ]);
 
 get_header();
