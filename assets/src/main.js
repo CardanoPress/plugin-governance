@@ -3,7 +3,7 @@ window.addEventListener('alpine:init', () => {
     const cardanoPress = window.cardanoPress || {}
 
     const percentage = (partial, total) => {
-        return (100 * partial) / total
+        return ((100 * partial) / total) || 0
     }
 
     const sumArray = array => {
