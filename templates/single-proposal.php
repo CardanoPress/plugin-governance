@@ -11,10 +11,8 @@
 
 use PBWebDev\CardanoPress\Governance\Application;
 use PBWebDev\CardanoPress\Governance\Proposal;
-use PBWebDev\CardanoPress\Governance\Profile;
 
 $proposalId = get_the_ID();
-$userProfile = new Profile(wp_get_current_user());
 $proposal = new Proposal($proposalId);
 $proposalDates = $proposal->getDates();
 
@@ -58,57 +56,16 @@ get_header();
             </div>
         </div>
 
-        <div class="row justify-content-md-center">
-            <div class="col col-md-10 pt-5">
-                <div
-                    class="row"
-                    x-data="cardanoPressGovernance"
-                    id="proposal-<?php echo $proposalId; ?>"
-                    data-options="<?php echo esc_attr(json_encode($proposal->getData())); ?>"
-                    data-voted="<?php echo $userProfile->hasVoted($proposalId); ?>"
-                >
-                    <div class="col col-md-7">
-                        <h2>Vote</h2>
-                        <hr/>
-
-                        <?php Application::instance()->template(
-                            'proposal/voting-form',
-                            compact('proposal')
-                        ); ?>
-                    </div>
-
-                    <div class="col col-md-5">
-                        <?php if ($userProfile->hasVoted($proposal->postId)) : ?>
-                            <h2>Vote Stats</h2>
-                            <hr/>
-
-                            <?php Application::instance()->template(
-                                'proposal/voting-status',
-                                compact('proposal')
-                            ); ?>
-                        <?php else : ?>
-                            <h2>Your voting power</h2>
-                            <hr/>
-
-                            <template x-if='!isConnected'>
-                                <h2>Connect to see voting power</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi
-                                    corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non
-                                    nulla
-                                    pariatur rem sapiente similique voluptatem.</p>
-                            </template>
-
-                            <template x-if='isConnected'>
-                                <h2><?php echo $proposal->getVotingPower($userProfile); ?>&curren;</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt
-                                    voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad
-                                    distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>
-                            </template>
-                        <?php endif; ?>
-                    </div>
+        <?php if ('future' !== $currentStatus) : ?>
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10 pt-5">
+                    <?php Application::instance()->template(
+                        'proposal/voting-area',
+                        compact('proposal', 'currentStatus')
+                    ); ?>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 
 <?php
