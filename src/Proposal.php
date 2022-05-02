@@ -9,7 +9,7 @@ namespace PBWebDev\CardanoPress\Governance;
 
 class Proposal
 {
-    private int $postId;
+    public int $postId;
 
     public function __construct(int $postId)
     {
@@ -63,5 +63,24 @@ class Proposal
         }
 
         return (bool) update_post_meta($this->postId, '_proposal_data', $data);
+    }
+
+    public function getVotingPower(Profile $profile): int
+    {
+        $storedAssets = $profile->storedAssets();
+
+        if (empty($storedAssets)) {
+            return 0;
+        }
+
+        $policyIds = array_column($storedAssets, 'policy_id');
+
+        if (! in_array($this->getPolicy(), $policyIds, true)) {
+            return 0;
+        }
+
+        $assetsCount = array_count_values($policyIds);
+
+        return $assetsCount[$this->getPolicy()];
     }
 }

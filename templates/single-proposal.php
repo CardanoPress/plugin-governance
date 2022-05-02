@@ -64,13 +64,33 @@ get_header();
                     </div>
 
                     <div class="col col-md-5">
-                        <h2>Vote Stats</h2>
-                        <hr/>
+                        <?php if ($userProfile->hasVoted($proposal->postId)) : ?>
+                            <h2>Vote Stats</h2>
+                            <hr/>
 
-                        <?php Application::instance()->template(
-                            'proposal/voting-status',
-                            compact('proposal')
-                        ); ?>
+                            <?php Application::instance()->template(
+                                'proposal/voting-status',
+                                compact('proposal')
+                            ); ?>
+                        <?php else : ?>
+                            <h2>Your voting power</h2>
+                            <hr/>
+
+                            <template x-if='!isConnected'>
+                                <h2>Connect to see voting power</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi
+                                    corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non
+                                    nulla
+                                    pariatur rem sapiente similique voluptatem.</p>
+                            </template>
+
+                            <template x-if='isConnected'>
+                                <h2><?php echo $proposal->getVotingPower($userProfile); ?>&curren;</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt
+                                    voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad
+                                    distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>
+                            </template>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
