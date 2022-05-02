@@ -39,6 +39,19 @@ class Proposal
         return $status ?: [];
     }
 
+    public function getOptionLabel(string $value): string
+    {
+        $options = $this->getOptions();
+
+        $index = array_search($value, array_column($this->getOptions(), 'value'), true);
+
+        if (false === $index) {
+            return '';
+        }
+
+        return $options[$index]['label'];
+    }
+
     public function getData(): array
     {
         $status = get_post_meta($this->postId, '_proposal_data', true);
