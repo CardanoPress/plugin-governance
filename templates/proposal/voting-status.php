@@ -3,7 +3,7 @@
 /**
  * The template for displaying a proposal status.
  *
- * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal-status.php.
+ * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal/voting-status.php.
  *
  * @package ThemePlate
  * @since   0.1.0

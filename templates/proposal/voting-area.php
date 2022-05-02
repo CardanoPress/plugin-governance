@@ -3,7 +3,7 @@
 /**
  * The template for displaying the single proposal.
  *
- * This can be overridden by copying it to yourtheme/single-proposal.php.
+ * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal/voting-area.php.
  *
  * @package ThemePlate
  * @since   0.1.0

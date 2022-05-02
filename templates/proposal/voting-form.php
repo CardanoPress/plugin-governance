@@ -3,7 +3,7 @@
 /**
  * The template for displaying a proposal form.
  *
- * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal-form.php.
+ * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal/voting-form.php.
  *
  * @package ThemePlate
  * @since   0.1.0
