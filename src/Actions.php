@@ -25,21 +25,17 @@ class Actions
             wp_send_json_error(__('Sorry, you already voted', 'cardanopress-governance'));
         }
 
-        $storedAssets = $userProfile->storedAssets();
+        $proposal = new Proposal($proposalId);
+        $votingPower = $proposal->getVotingPower($userProfile);
 
-        if (empty($storedAssets)) {
+        if (-1 === $votingPower) {
             wp_send_json_error(__('Sorry, you do not have any assets', 'cardanopress-governance'));
         }
 
-        $policyIds = array_column($storedAssets, 'policy_id');
-        $proposal = new Proposal($proposalId);
-
-        if (! in_array($proposal->getPolicy(), $policyIds, true)) {
+        if (0 === $votingPower) {
             wp_send_json_error(__('Sorry, you do not have a voting power', 'cardanopress-governance'));
         }
 
-        $assetsCount = array_count_values($policyIds);
-        $votingPower = $assetsCount[$proposal->getPolicy()];
         $success = $proposal->updateData($_POST['option'], $votingPower);
 
         if (! $success) {

@@ -98,7 +98,7 @@ class Proposal
         $storedAssets = $profile->storedAssets();
 
         if (empty($storedAssets)) {
-            return 0;
+            return -1;
         }
 
         $policyIds = array_column($storedAssets, 'policy_id');
