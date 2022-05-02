@@ -27,6 +27,7 @@ class Admin
         add_action('init', [$this, 'proposalStatus']);
         add_action('wp_insert_post', [$this, 'prepareProposalData'], 10, 2);
         add_filter('pre_get_posts', [$this, 'customizeProposalStatus']);
+        add_filter('use_block_editor_for_post_type', [$this, 'noBlocksProposal'], 10, 2);
     }
 
     public function proposalCPT(): void
@@ -39,9 +40,10 @@ class Admin
                 'args' => [
                     'menu_position' => 5,
                     'menu_icon' => 'dashicons-feedback',
-                    'supports' => ['title', 'editor'],
+                    'supports' => ['title', 'editor', 'excerpt'],
                     'has_archive' => true,
                     'rewrite' => ['slug' => 'proposals'],
+                    'rest_base' => 'proposals',
                 ],
             ]);
         } catch (Exception $exception) {
@@ -69,6 +71,7 @@ class Admin
                         'title' => __('Policy ID', 'cardanopress-governance'),
                         'type' => 'select',
                         'options' => $policyIds,
+                        'required' => true,
                     ],
                     'options' => [
                         'title' => __('Options', 'cardanopress-governance'),
@@ -202,5 +205,14 @@ class Admin
 
         $future->public = true;
         $future->protected = false;
+    }
+
+    public function noBlocksProposal(bool $status, string $postType): bool
+    {
+        if ('proposal' === $postType) {
+            $status = false;
+        }
+
+        return $status;
     }
 }
