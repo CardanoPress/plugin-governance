@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'af4b52693518d6f741d0dab964786a35' => $vendorDir . '/themeplate/core/functions.php',
+    'e2fb8214a7589690aae8ec82f7aa8973' => $vendorDir . '/kermage/external-update-manager/class-external-update-manager.php',
 );

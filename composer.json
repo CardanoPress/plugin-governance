@@ -29,7 +29,8 @@
     "php": "^7.4|^8.0",
     "ext-json": "*",
     "themeplate/cpt": "^1.1",
-    "themeplate/meta": "^1.4"
+    "themeplate/meta": "^1.4",
+    "kermage/external-update-manager": "^2.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

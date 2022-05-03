@@ -8,6 +8,7 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
 {
     public static $files = array (
         'af4b52693518d6f741d0dab964786a35' => __DIR__ . '/..' . '/themeplate/core/functions.php',
+        'e2fb8214a7589690aae8ec82f7aa8973' => __DIR__ . '/..' . '/kermage/external-update-manager/class-external-update-manager.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -55,6 +56,7 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'PBWebDev\\CardanoPress\\Governance\\Manifest' => __DIR__ . '/../..' . '/src/Manifest.php',
         'PBWebDev\\CardanoPress\\Governance\\Profile' => __DIR__ . '/../..' . '/src/Profile.php',
         'PBWebDev\\CardanoPress\\Governance\\Proposal' => __DIR__ . '/../..' . '/src/Proposal.php',
+        'PBWebDev\\CardanoPress\\Governance\\Templates' => __DIR__ . '/../..' . '/src/Templates.php',
         'ThemePlate\\CPT\\Base' => __DIR__ . '/..' . '/themeplate/cpt/Base.php',
         'ThemePlate\\CPT\\PostType' => __DIR__ . '/..' . '/themeplate/cpt/PostType.php',
         'ThemePlate\\CPT\\Taxonomy' => __DIR__ . '/..' . '/themeplate/cpt/Taxonomy.php',

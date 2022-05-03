@@ -13,6 +13,7 @@ return array(
     'PBWebDev\\CardanoPress\\Governance\\Manifest' => $baseDir . '/src/Manifest.php',
     'PBWebDev\\CardanoPress\\Governance\\Profile' => $baseDir . '/src/Profile.php',
     'PBWebDev\\CardanoPress\\Governance\\Proposal' => $baseDir . '/src/Proposal.php',
+    'PBWebDev\\CardanoPress\\Governance\\Templates' => $baseDir . '/src/Templates.php',
     'ThemePlate\\CPT\\Base' => $vendorDir . '/themeplate/cpt/Base.php',
     'ThemePlate\\CPT\\PostType' => $vendorDir . '/themeplate/cpt/PostType.php',
     'ThemePlate\\CPT\\Taxonomy' => $vendorDir . '/themeplate/cpt/Taxonomy.php',

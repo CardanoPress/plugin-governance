@@ -1,22 +1,31 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '07a982ae11aeb822b3324cb74be234fdeb3c67d2',
         'name' => 'pbwebdev/cardanopress-governance',
         'dev' => false,
     ),
     'versions' => array(
+        'kermage/external-update-manager' => array(
+            'pretty_version' => 'v2.2.0',
+            'version' => '2.2.0.0',
+            'type' => 'wordpress-dropin',
+            'install_path' => __DIR__ . '/../kermage/external-update-manager',
+            'aliases' => array(),
+            'reference' => '00506d4e76047026d0c19f39223a8f2051593686',
+            'dev_requirement' => false,
+        ),
         'pbwebdev/cardanopress-governance' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '07a982ae11aeb822b3324cb74be234fdeb3c67d2',
             'dev_requirement' => false,
         ),
         'themeplate/column' => array(
