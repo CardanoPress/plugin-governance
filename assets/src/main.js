@@ -22,7 +22,7 @@ window.addEventListener('alpine:init', () => {
             this.selected = this.voted
             this.options = JSON.parse(this.$root.dataset.options)
 
-            if (this.$root.dataset.complete) {
+            if (this.$root.dataset.complete && 0 !== Object.values(this.options).filter(v => v > 0).length) {
                 this.winner = Object.keys(this.options).reduce((a, b) => (this.options[a] > this.options[b]) ? a : b)
                 this.selected = this.winner
             }

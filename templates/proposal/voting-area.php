@@ -19,6 +19,7 @@ if (! isset($proposal) || ! $proposal instanceof Proposal) {
 
 $userProfile = new Profile(wp_get_current_user());
 $votedOption = $userProfile->hasVoted($proposal->postId);
+$proposalData = $proposal->getData();
 $currentStatus ??= 'publish';
 $voteText = 'Vote';
 
@@ -32,9 +33,9 @@ if ('archive' === $currentStatus) {
     class="row"
     x-data="cardanoPressGovernance"
     id="proposal-<?php echo $proposal->postId; ?>"
-    data-options="<?php echo esc_attr(json_encode($proposal->getData())); ?>"
+    data-options="<?php echo esc_attr(json_encode($proposalData)); ?>"
     data-voted="<?php echo $votedOption; ?>"
-    data-complete="<?php echo 'archive' === $currentStatus; ?>"
+    data-complete="<?php echo ('archive' === $currentStatus) && array_filter(array_values($proposalData)); ?>"
 >
     <div class="col col-md-7">
         <h2><?php echo $voteText; ?></h2>
