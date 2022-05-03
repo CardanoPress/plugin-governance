@@ -23,7 +23,11 @@ $currentStatus ??= 'publish';
 
 <fieldset<?php echo 'publish' === $currentStatus ? '' : ' disabled="true"'; ?>>
     <?php foreach ($options as $option) : ?>
-        <div x-id="['vote-option']" class="form-check">
+        <div
+            x-id="['vote-option']"
+            class="form-check py-1"
+            :class="isWinner('<?php echo $option['value']; ?>') ? 'bg-success text-white' : ''"
+        >
             <input
                 class="form-check-input"
                 type="radio"

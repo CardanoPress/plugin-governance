@@ -15,11 +15,17 @@ window.addEventListener('alpine:init', () => {
         options: [],
         selected: '',
         voted: '',
+        winner: '',
 
         async init() {
             this.voted = this.$root.dataset.voted
             this.selected = this.voted
             this.options = JSON.parse(this.$root.dataset.options)
+
+            if (this.$root.dataset.complete) {
+                this.winner = Object.keys(this.options).reduce((a, b) => (this.options[a] > this.options[b]) ? a : b)
+                this.selected = this.winner
+            }
 
             console.log('CardanoPress Governance ready!')
         },
@@ -32,6 +38,10 @@ window.addEventListener('alpine:init', () => {
 
         isDisabled(isSubmit = false) {
             return !this.isConnected || this.isProcessing || (isSubmit ? !!!this.selected : false) || !!this.voted
+        },
+
+        isWinner(option) {
+            return option === this.winner
         },
 
         hasVoted(option) {

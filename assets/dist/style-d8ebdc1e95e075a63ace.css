@@ -32,6 +32,10 @@
 .col-auto {
     grid-column: auto
 }
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem
+}
 .pt-5 {
     padding-top: 1.25rem
 }
@@ -49,5 +53,9 @@
 }
 .pb-2 {
     padding-bottom: 0.5rem
+}
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 

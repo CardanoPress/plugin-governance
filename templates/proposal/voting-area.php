@@ -34,6 +34,7 @@ if ('archive' === $currentStatus) {
     id="proposal-<?php echo $proposal->postId; ?>"
     data-options="<?php echo esc_attr(json_encode($proposal->getData())); ?>"
     data-voted="<?php echo $votedOption; ?>"
+    data-complete="<?php echo 'archive' === $currentStatus; ?>"
 >
     <div class="col col-md-7">
         <h2><?php echo $voteText; ?></h2>
