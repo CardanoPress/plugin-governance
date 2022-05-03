@@ -32,5 +32,8 @@ if (! defined('CP_GOVERNANCE_FILE')) {
 // Load the main plugin class
 require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/autoload.php';
 
+// Instantiate the updater
+EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/pbwebdev/cardanopress-governance/main/update-data.json');
+
 // Instantiate
 Application::instance();
