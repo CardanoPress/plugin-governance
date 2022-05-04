@@ -26,6 +26,24 @@ class Proposal
         ];
     }
 
+    public function getID(): int
+    {
+        $status = get_post_meta($this->postId, 'proposal_id', true);
+
+        return $status ?: 0;
+    }
+
+    public function getDiscussionLink(): array
+    {
+        $status = get_post_meta($this->postId, 'proposal_discussion', true);
+
+        return $status ?: [
+            'url' => '',
+            'text' => '',
+            'target' => '',
+        ];
+    }
+
     public function getPolicy(): string
     {
         $status = get_post_meta($this->postId, 'proposal_policy', true);

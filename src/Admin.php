@@ -116,6 +116,16 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'title' => __('Proposal Settings', 'cardanopress-governance'),
                 'screen' => ['proposal'],
                 'fields' => [
+                    'id' => [
+                        'title' => __('Identifier', 'cardanopress-governance'),
+                        'type' => 'number',
+                        'options' => ['min' => 1],
+                        'required' => true,
+                    ],
+                    'discussion' => [
+                        'title' => __('Discussion Link', 'cardanopress-governance'),
+                        'type' => 'link',
+                    ],
                     'policy' => [
                         'title' => __('Policy ID', 'cardanopress-governance'),
                         'type' => 'select',

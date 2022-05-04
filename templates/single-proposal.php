@@ -15,6 +15,7 @@ use PBWebDev\CardanoPress\Governance\Proposal;
 $proposalId = get_the_ID();
 $proposal = new Proposal($proposalId);
 $proposalDates = $proposal->getDates();
+$discussionLink = $proposal->getDiscussionLink();
 
 $currentStatus = get_post_status();
 $statusText = 'Open for Voting';
@@ -33,6 +34,7 @@ get_header();
 
 ?>
 
+<div id="proposal-<?php echo $proposalId; ?>" data-proposal-id="<?php echo $proposal->getID(); ?>">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-md-10 pt-5">
@@ -52,7 +54,17 @@ get_header();
 
                 <?php the_content(); ?>
 
-                <p class="pt-3"><a href="#" class="btn btn-primary">Discuss Proposal</a></p>
+                <?php if ($discussionLink['url']) : ?>
+                    <div class="mt-4">
+                        <a
+                            class="btn btn-primary"
+                            href="<?php echo $discussionLink['url']; ?>"
+                            target="<?php echo $discussionLink['target']; ?>"
+                        >
+                            <?php echo $discussionLink['text']; ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -67,6 +79,7 @@ get_header();
             </div>
         <?php endif; ?>
     </div>
+</div>
 
 <?php
 
