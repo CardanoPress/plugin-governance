@@ -59,8 +59,14 @@ class Manifest extends AbstractManifest
         wp_script_add_data($this->getAssetPrefix() . 'recaptcha', 'defer', true);
 
         if (is_singular('proposal') || is_post_type_archive('proposal')) {
-            wp_enqueue_style($this->getAssetPrefix() . 'bootstrap');
-            wp_enqueue_script($this->getAssetPrefix() . 'bootstrap');
+            if (apply_filters($this->getAssetPrefix() . 'enqueue-bootstrap-style', true)) {
+                wp_enqueue_style($this->getAssetPrefix() . 'bootstrap');
+            }
+
+            if (apply_filters($this->getAssetPrefix() . 'enqueue-bootstrap-script', true)) {
+                wp_enqueue_script($this->getAssetPrefix() . 'bootstrap');
+            }
+
             wp_enqueue_script($this->getAssetPrefix() . 'script');
         }
     }
