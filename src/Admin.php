@@ -11,12 +11,16 @@ use Exception;
 use ThemePlate\Core\Data;
 use ThemePlate\CPT\PostType;
 use ThemePlate\Meta\Post;
+use ThemePlate\Page;
+use ThemePlate\Settings;
 use WP_Post;
 use WP_Query;
 
 class Admin
 {
     protected Data $data;
+
+    public const OPTION_KEY = 'cp-governance';
 
     public function __construct()
     {
@@ -57,9 +61,10 @@ class Admin
     {
         try {
             new Page([
-                'id' => 'cp-governance-proposal',
+                'id' => self::OPTION_KEY,
                 'parent' => 'edit.php?post_type=proposal',
-                'title' => 'Archive Settings',
+                'menu' => 'Archive Settings',
+                'title' => 'CardanoPress - Governance',
             ]);
         } catch (Exception $exception) {
             Application::log($exception->getMessage());
@@ -71,19 +76,25 @@ class Admin
         try {
             $settings = new Settings([
                 'id' => 'proposal',
-                'title' => __('Proposals', 'cardanopress'),
-                'page' => 'cp-governance-proposal',
+                'title' => __('Proposal Archives', 'cardanopress'),
+                'page' => self::OPTION_KEY,
                 'fields' => [
                     'title' => [
                         'title' => __('Title', 'cardanopress-governance'),
                         'type' => 'text',
+                        'default' => 'Project Governance'
                     ],
                     'content' => [
                         'title' => __('Content', 'cardanopress-governance'),
                         'type' => 'editor',
+                        'default' => 'Vote on upcoming decision of the projects DAO.
+
+Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                     ],
                 ],
             ]);
+
+            $this->data->store($settings->get_config());
         } catch (Exception $exception) {
             Application::log($exception->getMessage());
         }
@@ -133,6 +144,18 @@ class Admin
         } catch (Exception $exception) {
             Application::log($exception->getMessage());
         }
+    }
+
+    public function getOption(string $key)
+    {
+        $options = get_option(static::OPTION_KEY, []);
+        $value = $options[$key] ?? '';
+
+        if ($value) {
+            return $value;
+        }
+
+        return $this->data->get_default(static::OPTION_KEY, $key);
     }
 
     public function proposalStatus(): void

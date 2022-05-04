@@ -45,9 +45,9 @@ get_header();
                 </ol>
             </nav>
 
-            <h1 class="pb-3">Project Governance</h1>
-            <p>Vote on upcoming decision of the projects DAO.</p>
-            <p class="pb-5">Submit a proposal for discussion or vote in current proposals in our ecosystem.</p>
+            <h1 class="pb-3"><?php echo Application::instance()->option('proposal_title'); ?></h1>
+
+            <?php echo apply_filters('the_content', Application::instance()->option('proposal_content')); ?>
 
             <ul class="nav nav-tabs pt-5" id="tab-proposal" role="tablist">
                 <?php foreach ($types as $index => $type) : ?>

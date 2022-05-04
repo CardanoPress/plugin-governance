@@ -103,4 +103,9 @@ class Application
             include $file;
         }
     }
+
+    public function option(string $key)
+    {
+        return $this->admin->getOption($key);
+    }
 }
