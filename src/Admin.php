@@ -23,6 +23,8 @@ class Admin
         $this->data = new Data();
 
         add_action('init', [$this, 'proposalCPT']);
+        add_action('init', [$this, 'proposalArchivePage']);
+        add_action('init', [$this, 'proposalArchiveFields']);
         add_action('init', [$this, 'proposalSettings']);
         add_action('init', [$this, 'proposalStatus']);
         add_action('wp_insert_post', [$this, 'prepareProposalData'], 10, 2);
@@ -44,6 +46,42 @@ class Admin
                     'has_archive' => true,
                     'rewrite' => ['slug' => 'proposals'],
                     'rest_base' => 'proposals',
+                ],
+            ]);
+        } catch (Exception $exception) {
+            Application::log($exception->getMessage());
+        }
+    }
+
+    public function proposalArchivePage(): void
+    {
+        try {
+            new Page([
+                'id' => 'cp-governance-proposal',
+                'parent' => 'edit.php?post_type=proposal',
+                'title' => 'Archive Settings',
+            ]);
+        } catch (Exception $exception) {
+            Application::log($exception->getMessage());
+        }
+    }
+
+    public function proposalArchiveFields(): void
+    {
+        try {
+            $settings = new Settings([
+                'id' => 'proposal',
+                'title' => __('Proposals', 'cardanopress'),
+                'page' => 'cp-governance-proposal',
+                'fields' => [
+                    'title' => [
+                        'title' => __('Title', 'cardanopress-governance'),
+                        'type' => 'text',
+                    ],
+                    'content' => [
+                        'title' => __('Content', 'cardanopress-governance'),
+                        'type' => 'editor',
+                    ],
                 ],
             ]);
         } catch (Exception $exception) {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e320f1ab4c5f3aa82dd99195d8342b59",
+    "content-hash": "e94247e92837dff12d97722f1cafce4f",
     "packages": [
         {
             "name": "kermage/external-update-manager",
@@ -221,6 +221,88 @@
             "support": {
                 "issues": "https://github.com/ThemePlate/Meta/issues",
                 "source": "https://github.com/ThemePlate/Meta/tree/v1.4.0"
+            },
+            "time": "2021-11-06T09:46:19+00:00"
+        },
+        {
+            "name": "themeplate/page",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThemePlate/Page.git",
+                "reference": "e0a7770a1cbb3fadfc8dbc815ff911786d3f2a1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThemePlate/Page/zipball/e0a7770a1cbb3fadfc8dbc815ff911786d3f2a1a",
+                "reference": "e0a7770a1cbb3fadfc8dbc815ff911786d3f2a1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "themeplate/core": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ThemePlate\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gene Alyson Fortunado Torcende",
+                    "email": "genealyson.torcende@gmail.com"
+                }
+            ],
+            "description": "ThemePlate custom options pages",
+            "support": {
+                "issues": "https://github.com/ThemePlate/Page/issues",
+                "source": "https://github.com/ThemePlate/Page/tree/master"
+            },
+            "time": "2020-02-23T12:48:30+00:00"
+        },
+        {
+            "name": "themeplate/settings",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThemePlate/Settings.git",
+                "reference": "d79eb18cd864993aa7bfcbec2f639e7ca46bac53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThemePlate/Settings/zipball/d79eb18cd864993aa7bfcbec2f639e7ca46bac53",
+                "reference": "d79eb18cd864993aa7bfcbec2f639e7ca46bac53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "themeplate/core": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ThemePlate\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gene Alyson Fortunado Torcende",
+                    "email": "genealyson.torcende@gmail.com"
+                }
+            ],
+            "description": "ThemePlate custom settings forms",
+            "support": {
+                "issues": "https://github.com/ThemePlate/Settings/issues",
+                "source": "https://github.com/ThemePlate/Settings/tree/v1.2.0"
             },
             "time": "2021-11-06T09:46:19+00:00"
         }
@@ -3427,5 +3509,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -41,6 +41,8 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'ThemePlate\\' => 
         array (
             0 => __DIR__ . '/..' . '/themeplate/column',
+            1 => __DIR__ . '/..' . '/themeplate/page',
+            2 => __DIR__ . '/..' . '/themeplate/settings',
         ),
         'PBWebDev\\CardanoPress\\Governance\\' => 
         array (
@@ -86,6 +88,8 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'ThemePlate\\Meta\\Post' => __DIR__ . '/..' . '/themeplate/meta/Post.php',
         'ThemePlate\\Meta\\Term' => __DIR__ . '/..' . '/themeplate/meta/Term.php',
         'ThemePlate\\Meta\\User' => __DIR__ . '/..' . '/themeplate/meta/User.php',
+        'ThemePlate\\Page' => __DIR__ . '/..' . '/themeplate/page/Page.php',
+        'ThemePlate\\Settings' => __DIR__ . '/..' . '/themeplate/settings/Settings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

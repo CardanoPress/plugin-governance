@@ -43,4 +43,6 @@ return array(
     'ThemePlate\\Meta\\Post' => $vendorDir . '/themeplate/meta/Post.php',
     'ThemePlate\\Meta\\Term' => $vendorDir . '/themeplate/meta/Term.php',
     'ThemePlate\\Meta\\User' => $vendorDir . '/themeplate/meta/User.php',
+    'ThemePlate\\Page' => $vendorDir . '/themeplate/page/Page.php',
+    'ThemePlate\\Settings' => $vendorDir . '/themeplate/settings/Settings.php',
 );

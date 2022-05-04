@@ -9,6 +9,6 @@ return array(
     'ThemePlate\\Meta\\' => array($vendorDir . '/themeplate/meta'),
     'ThemePlate\\Core\\' => array($vendorDir . '/themeplate/core'),
     'ThemePlate\\CPT\\' => array($vendorDir . '/themeplate/cpt'),
-    'ThemePlate\\' => array($vendorDir . '/themeplate/column'),
+    'ThemePlate\\' => array($vendorDir . '/themeplate/column', $vendorDir . '/themeplate/page', $vendorDir . '/themeplate/settings'),
     'PBWebDev\\CardanoPress\\Governance\\' => array($baseDir . '/src'),
 );
