@@ -35,9 +35,9 @@ get_header();
 
 ?>
 
-<div class="container">
+<div class="container py-5">
     <div class="row justify-content-md-center">
-        <div class="col col-md-10 pt-5">
+        <div class="col col-md-10">
             <nav class="breadcrumb" style="--bs-breadcrumb-divider: ' ';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
@@ -49,7 +49,7 @@ get_header();
 
             <?php echo apply_filters('the_content', Application::instance()->option('proposal_content')); ?>
 
-            <ul class="nav nav-tabs pt-5" id="tab-proposal" role="tablist">
+            <ul class="nav nav-tabs mt-5" id="tab-proposal" role="tablist">
                 <?php foreach ($types as $index => $type) : ?>
                     <li class="nav-item" role="presentation">
                         <button
@@ -67,7 +67,7 @@ get_header();
                 <?php endforeach; ?>
             </ul>
 
-            <div class="tab-content pt-5" id="content-proposal">
+            <div class="tab-content" id="content-proposal">
                 <?php foreach ($types as $index => $type) : ?>
                     <div
                         class="tab-pane fade<?php echo 0 === $index ? ' show active' : ''; ?>"
@@ -75,7 +75,7 @@ get_header();
                         role="tabpanel"
                         aria-labelledby="<?php echo $type; ?>-tab-toggle"
                     >
-                        <div class="container gx-1">
+                        <div class="container gx-0">
                             <?php while (${$type}->have_posts()) : ?>
                                 <?php ${$type}->the_post(); ?>
 

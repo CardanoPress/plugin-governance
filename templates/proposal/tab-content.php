@@ -30,16 +30,14 @@ if ('upcoming' === $type) {
 
 ?>
 
-<div class="row align-items-center">
-    <div class="col pt-2 pb-2">
+<div class="row align-items-center mt-3 border-bottom">
+    <div class="col py-2">
         <h2><?php the_title(); ?></h2>
         <p><?php the_excerpt(); ?></p>
         <p><b><?php echo $voteText; ?>: <?php echo $voteDate; ?> UTC</b></p>
     </div>
 
-    <div class="col-auto pt-2 pb-2">
-        <a href="<?php the_permalink(); ?>" class="btn btn-primary me-2"><?php echo $linkText; ?></a>
+    <div class="col-auto py-2">
+        <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php echo $linkText; ?></a>
     </div>
 </div>
-
-<hr>

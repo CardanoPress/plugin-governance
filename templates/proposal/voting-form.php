@@ -41,7 +41,7 @@ $currentStatus ??= 'publish';
     <?php endforeach; ?>
 
     <?php if ('archive' !== $currentStatus || $voted) : ?>
-        <div class="pt-3">
+        <div class="mt-3">
             <?php if ($voted) : ?>
                 <p><b>You voted: <?php echo $proposal->getOptionLabel($voted); ?></b></p>
             <?php else : ?>

@@ -34,10 +34,10 @@ get_header();
 
 ?>
 
-<div id="proposal-<?php echo $proposalId; ?>" data-proposal-id="<?php echo $proposal->getID(); ?>">
+<div id="proposal-<?php echo $proposalId; ?>" data-proposal-id="<?php echo $proposal->getID(); ?>" class="py-5">
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col col-md-10 pt-5">
+            <div class="col col-md-10">
                 <nav class="breadcrumb" style="--bs-breadcrumb-divider: ' ';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
@@ -65,19 +65,17 @@ get_header();
                         </a>
                     </div>
                 <?php endif; ?>
+
+                <?php if ('future' !== $currentStatus) : ?>
+                    <div class="mt-5">
+                        <?php Application::instance()->template(
+                            'proposal/voting-area',
+                            compact('proposal', 'currentStatus')
+                        ); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
-
-        <?php if ('future' !== $currentStatus) : ?>
-            <div class="row justify-content-md-center">
-                <div class="col col-md-10 pt-5">
-                    <?php Application::instance()->template(
-                        'proposal/voting-area',
-                        compact('proposal', 'currentStatus')
-                    ); ?>
-                </div>
-            </div>
-        <?php endif; ?>
     </div>
 </div>
 
