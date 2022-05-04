@@ -10,7 +10,7 @@ namespace PBWebDev\CardanoPress\Governance;
 class Application
 {
     private static Application $instance;
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.2.0';
     private Admin $admin;
     private Templates $templates;
 
