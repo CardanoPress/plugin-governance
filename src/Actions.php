@@ -28,10 +28,6 @@ class Actions
         $proposal = new Proposal($proposalId);
         $votingPower = $proposal->getVotingPower($userProfile);
 
-        if (-1 === $votingPower) {
-            wp_send_json_error(__('Sorry, you do not have any assets', 'cardanopress-governance'));
-        }
-
         if (0 === $votingPower) {
             wp_send_json_error(__('Sorry, you do not have a voting power', 'cardanopress-governance'));
         }

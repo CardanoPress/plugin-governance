@@ -140,7 +140,7 @@ class Proposal
         $storedAssets = $profile->storedAssets();
 
         if (empty($storedAssets)) {
-            return -1;
+            return 0;
         }
 
         $policyIds = array_column($storedAssets, 'policy_id');
@@ -160,7 +160,7 @@ class Proposal
         $response = $blockfrost->getAddressDetails($profile->connectedWallet());
 
         if (empty($response) || empty($response['amount'])) {
-            return -1;
+            return 0;
         }
 
         $index = array_search('lovelace', array_column($response['amount'], 'unit'), true);
