@@ -28,6 +28,19 @@ class Proposal
         ];
     }
 
+    public static function getPostId(int $id): int
+    {
+        $result = get_posts([
+            'post_type' => 'proposal',
+            'numberposts' => 1,
+            'fields' => 'ids',
+            'meta_key' => 'proposal_id',
+            'meta_value' => $id,
+        ]);
+
+        return $result[0] ?? 0;
+    }
+
     public function getID(): int
     {
         $status = get_post_meta($this->postId, 'proposal_id', true);

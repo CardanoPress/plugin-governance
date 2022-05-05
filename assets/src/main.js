@@ -58,7 +58,7 @@ window.addEventListener('alpine:init', () => {
             })
 
             this.isProcessing = true
-            const proposalId = this.$root.dataset.id || '0'
+            const proposalId = this.$root.dataset.proposal || '0'
             const response = await handleVote(proposalId, this.selected)
 
             cardanoPress.api.removeNotice('proposalVote')

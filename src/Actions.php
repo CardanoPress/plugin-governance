@@ -25,7 +25,8 @@ class Actions
             wp_send_json_error(__('Sorry, you already voted', 'cardanopress-governance'));
         }
 
-        $proposal = new Proposal($proposalId);
+        $postId = Proposal::getPostId($proposalId);
+        $proposal = new Proposal($postId);
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {
