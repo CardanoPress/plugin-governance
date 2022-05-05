@@ -1,3 +1,5 @@
+import { handleVote } from './actions'
+
 window.addEventListener('alpine:init', () => {
     const Alpine = window.Alpine || {}
     const cardanoPress = window.cardanoPress || {}
@@ -56,7 +58,8 @@ window.addEventListener('alpine:init', () => {
             })
 
             this.isProcessing = true
-            const response = await this.pushToDB(this.selected)
+            const proposalId = this.$root.id.replace('proposal-', '') || 0
+            const response = await handleVote(proposalId, this.selected)
 
             cardanoPress.api.removeNotice('proposalVote')
 
@@ -70,20 +73,6 @@ window.addEventListener('alpine:init', () => {
             }
 
             this.isProcessing = false
-        },
-
-        async pushToDB(option) {
-            const proposalId = this.$root.id.replace('proposal-', '') || 0
-
-            return await fetch(cardanoPress.ajaxUrl, {
-                method: 'POST',
-                body: new URLSearchParams({
-                    _wpnonce: cardanoPress._nonce,
-                    action: 'cp-governance_proposal_vote',
-                    proposalId,
-                    option,
-                }),
-            }).then((response) => response.json())
         },
     }))
 })
