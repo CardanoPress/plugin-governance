@@ -126,7 +126,10 @@ class Proposal
 
         foreach ($this->getCalculation() as $type) {
             $method = 'get' . ucfirst($type) . 'Power';
-            $total += $this->$method($profile);
+
+            if (method_exists($this, $method)) {
+                $total += $this->$method($profile);
+            }
         }
 
         return $total;
