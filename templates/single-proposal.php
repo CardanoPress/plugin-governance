@@ -34,7 +34,7 @@ get_header();
 
 ?>
 
-<div id="proposal-<?php echo $proposalId; ?>" data-proposal-id="<?php echo $proposal->getID(); ?>" class="py-5">
+<div id="proposal-<?php echo $proposalId; ?>" class="py-5">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-md-10">

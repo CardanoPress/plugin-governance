@@ -1,4 +1,11 @@
 export const handleVote = async (proposalId, optionValue) => {
+    if ('0' === proposalId) {
+        return {
+            success: false,
+            data: 'Invalid proposal ID',
+        }
+    }
+
     const result = await pushTransaction(proposalId, optionValue)
 
     if (result.success) {
