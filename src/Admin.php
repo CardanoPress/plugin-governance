@@ -132,6 +132,15 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'options' => $policyIds,
                         'required' => true,
                     ],
+                    'calculation' => [
+                        'title' => __('Power Calculation', 'cardanopress-governance'),
+                        'type' => 'checkbox',
+                        'options' => [
+                            'ada' => __('Amount of ADA', 'cardanopress-governance'),
+                            'token' => __('# of token by Policy ID', 'cardanopress-governance'),
+                        ],
+                        'default' => ['token'],
+                    ],
                     'options' => [
                         'title' => __('Options', 'cardanopress-governance'),
                         'type' => 'group',
