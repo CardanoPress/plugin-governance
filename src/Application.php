@@ -25,17 +25,10 @@ class Application
 
     private function __construct()
     {
-        register_activation_hook(CP_GOVERNANCE_FILE, [$this, 'activate']);
         add_action('cardanopress_loaded', [$this, 'init']);
         add_action('admin_notices', [$this, 'notice']);
 
         $this->setup();
-    }
-
-    public function activate(): void
-    {
-        $this->admin->init();
-        flush_rewrite_rules();
     }
 
     public function init(): void
@@ -56,12 +49,12 @@ class Application
         return $function && $admin;
     }
 
-    public static function log(string $message): void
+    public static function log(string $message, string $channel = 'admin'): void
     {
         if (self::isCoreActive()) {
-            cardanoPress()->logger('admin')->error($message);
+            cardanoPress()->logger($channel)->error($message);
         } else {
-            error_log($message);
+            error_log(strtoupper($channel) . '>>> ' . $message);
         }
     }
 

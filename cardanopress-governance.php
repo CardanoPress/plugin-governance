@@ -20,6 +20,7 @@ if (! defined('ABSPATH')) {
 }
 
 use PBWebDev\CardanoPress\Governance\Application;
+use PBWebDev\CardanoPress\Governance\Installer;
 
 /* ==================================================
 Global constants
@@ -37,3 +38,4 @@ EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/pbwebdev
 
 // Instantiate
 Application::instance();
+register_activation_hook(CP_GOVERNANCE_FILE, [Installer::instance(), 'activate']);
