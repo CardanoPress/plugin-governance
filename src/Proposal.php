@@ -21,7 +21,11 @@ class Proposal
     public function toArray(): array
     {
         return [
+            'post_id' => $this->postId,
+            'identifier' => $this->getID(),
+            'discussion_link' => $this->getDiscussionLink(),
             'policy' => $this->getPolicy(),
+            'calculation' => $this->getCalculation(),
             'options' => $this->getOptions(),
             'data' => $this->getData(),
             'dates' => $this->getDates(),
@@ -48,9 +52,20 @@ class Proposal
         return $status ?: 0;
     }
 
+    protected function getConfig(): bool
+    {
+        $status = get_post_meta($this->postId, 'proposal_config', true);
+
+        return (bool) $status;
+    }
+
     public function getDiscussionLink(): array
     {
-        $status = get_post_meta($this->postId, 'proposal_discussion', true);
+        if ($this->getConfig()) {
+            $status = Application::instance()->option('global_discussion');
+        } else {
+            $status = get_post_meta($this->postId, 'proposal_discussion', true);
+        }
 
         return $status ?: [
             'url' => '',
@@ -61,14 +76,22 @@ class Proposal
 
     public function getPolicy(): string
     {
-        $status = get_post_meta($this->postId, 'proposal_policy', true);
+        if ($this->getConfig()) {
+            $status = Application::instance()->option('global_policy');
+        } else {
+            $status = get_post_meta($this->postId, 'proposal_policy', true);
+        }
 
         return $status ?: '';
     }
 
     public function getCalculation(): array
     {
-        $status = get_post_meta($this->postId, 'proposal_calculation', true);
+        if ($this->getConfig()) {
+            $status = Application::instance()->option('global_calculation');
+        } else {
+            $status = get_post_meta($this->postId, 'proposal_calculation', true);
+        }
 
         return $status ?: [];
     }
