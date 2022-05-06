@@ -74,6 +74,23 @@ class ProposalFields
         return 'post-new.php' === $pagenow && 'proposal' === $_REQUEST['post_type'];
     }
 
+    protected function showOnData(): array
+    {
+        return [
+            'key' => '#proposal_config',
+            'value' => false,
+        ];
+    }
+
+    public function getConfig(): array
+    {
+        return [
+            'title' => __('Use Global Config', 'cardanopress-governance'),
+            'type' => 'checkbox',
+            'default' => $this->inAddNewPage(),
+        ];
+    }
+
     public function getDiscussion(): array
     {
         $data = [
@@ -83,6 +100,10 @@ class ProposalFields
 
         if ($this->inAddNewPage()) {
             $data['default'] = Application::instance()->option('global_discussion');
+        }
+
+        if ($this->inAddNewPage() || $this->inEditPage()) {
+            $data['show_on'] = $this->showOnData();
         }
 
         return $data;
@@ -99,6 +120,10 @@ class ProposalFields
 
         if ($this->inAddNewPage()) {
             $data['default'] = Application::instance()->option('global_policy');
+        }
+
+        if ($this->inAddNewPage() || $this->inEditPage()) {
+            $data['show_on'] = $this->showOnData();
         }
 
         return $data;
@@ -118,6 +143,10 @@ class ProposalFields
 
         if ($this->inAddNewPage()) {
             $data['default'] = array_values(Application::instance()->option('global_calculation'));
+        }
+
+        if ($this->inAddNewPage() || $this->inEditPage()) {
+            $data['show_on'] = $this->showOnData();
         }
 
         return $data;

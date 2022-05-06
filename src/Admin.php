@@ -116,6 +116,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'options' => ['min' => 1],
                         'required' => true,
                     ],
+                    'config' => $this->proposalFields->getConfig(),
                     'discussion' => $this->proposalFields->getDiscussion(),
                     'policy' => $this->proposalFields->getPolicy(),
                     'calculation' => $this->proposalFields->getCalculation(),
