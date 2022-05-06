@@ -18,6 +18,10 @@ class Actions
     {
         check_ajax_referer('cardanopress-actions');
 
+        if (empty($_POST['proposalId']) || empty($_POST['option']) || empty($_POST['transaction'])) {
+            wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
+        }
+
         $proposalId = (int) $_POST['proposalId'];
         $userProfile = new Profile(wp_get_current_user());
 

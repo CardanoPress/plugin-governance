@@ -38,7 +38,7 @@ class Profile extends CoreProfile
     {
         $saved = get_user_meta($this->user->ID, $this->prefix . $proposalId, true);
 
-        return $saved ?? [
+        return $saved ?: [
             'option' => '',
             'transaction' => '',
         ];
