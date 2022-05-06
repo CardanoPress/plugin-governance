@@ -47,7 +47,38 @@ class Installer
 
         set_transient('cp_governance_activating', 'yes', MINUTE_IN_SECONDS * 2);
 
+        if (empty(get_option('cp_governance_version'))) {
+            $this->upgrade();
+        }
+
         update_option('cp_governance_version', $this->application::VERSION);
         delete_transient('cp_governance_activating');
+    }
+
+    public function upgrade(): void
+    {
+        $this->log('Governance: Upgrading database values');
+
+        foreach (get_users() as $user) {
+            $userProfile = new Profile($user);
+
+            if (! $userProfile->isConnected()) {
+                continue;
+            }
+
+            $meta = $userProfile->getAllOwnedMeta();
+
+            if (empty($meta)) {
+                continue;
+            }
+
+            foreach ($meta as $key => $value) {
+                $proposalId = str_replace($userProfile->getMetaPrefix(), '', $key);
+
+                $userProfile->saveVote($proposalId, $value, '');
+            }
+
+            $this->log(print_r($meta, true));
+        }
     }
 }
