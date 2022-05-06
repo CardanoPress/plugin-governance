@@ -13,6 +13,8 @@ class Proposal
 {
     public int $postId;
 
+    protected ?bool $useGlobalConfig = null;
+
     public function __construct(int $postId)
     {
         $this->postId = $postId;
@@ -61,7 +63,11 @@ class Proposal
 
     protected function getConfigValue(string $key)
     {
-        if ($this->getConfig()) {
+        if (null === $this->useGlobalConfig) {
+            $this->useGlobalConfig = $this->getConfig();
+        }
+
+        if ($this->useGlobalConfig) {
             $status = Application::instance()->option('global_' . $key);
         } else {
             $status = get_post_meta($this->postId, 'proposal_' . $key, true);
@@ -191,6 +197,10 @@ class Proposal
 
     protected function getAdaPower(Profile $profile): int
     {
+        if (! $profile->isConnected()) {
+            return 0;
+        }
+
         $blockfrost = new Blockfrost($profile->connectedNetwork());
         $response = $blockfrost->getAddressDetails($profile->connectedWallet());
 
