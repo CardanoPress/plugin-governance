@@ -19,15 +19,18 @@ use WP_Query;
 class Admin
 {
     protected Data $data;
+    protected Fields $fields;
 
     public const OPTION_KEY = 'cp-governance';
 
     public function __construct()
     {
         $this->data = new Data();
+        $this->fields = new Fields();
 
         add_action('init', [$this, 'proposalCPT']);
-        add_action('init', [$this, 'proposalArchivePage']);
+        add_action('init', [$this, 'proposalSettingsPage']);
+        add_action('init', [$this, 'proposalConfigFields']);
         add_action('init', [$this, 'proposalArchiveFields']);
         add_action('init', [$this, 'proposalSettings']);
         add_action('init', [$this, 'proposalStatus']);
@@ -57,13 +60,13 @@ class Admin
         }
     }
 
-    public function proposalArchivePage(): void
+    public function proposalSettingsPage(): void
     {
         try {
             new Page([
                 'id' => self::OPTION_KEY,
                 'parent' => 'edit.php?post_type=proposal',
-                'menu' => 'Archive Settings',
+                'menu' => 'Settings',
                 'title' => 'CardanoPress - Governance',
             ]);
         } catch (Exception $exception) {
@@ -100,16 +103,28 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
         }
     }
 
+    public function proposalConfigFields(): void
+    {
+        try {
+            $settings = new Settings([
+                'id' => 'global',
+                'title' => __('Global Config', 'cardanopress'),
+                'page' => self::OPTION_KEY,
+                'fields' => [
+                    'discussion' => $this->fields->getDiscussion(),
+                    'policy' => $this->fields->getPolicy(),
+                    'calculation' => $this->fields->getCalculation(),
+                ],
+            ]);
+
+            $this->data->store($settings->get_config());
+        } catch (Exception $exception) {
+            Application::log($exception->getMessage());
+        }
+    }
+
     public function proposalSettings(): void
     {
-        $policyIds = [];
-
-        if (Application::isCoreActive()) {
-            foreach (cardanoPress()->option('policy_ids') as $policy) {
-                $policyIds[$policy['value']] = $policy['label'];
-            }
-        }
-
         try {
             $post = new Post([
                 'id' => 'proposal',
@@ -122,25 +137,9 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'options' => ['min' => 1],
                         'required' => true,
                     ],
-                    'discussion' => [
-                        'title' => __('Discussion Link', 'cardanopress-governance'),
-                        'type' => 'link',
-                    ],
-                    'policy' => [
-                        'title' => __('Policy ID', 'cardanopress-governance'),
-                        'type' => 'select',
-                        'options' => $policyIds,
-                        'required' => true,
-                    ],
-                    'calculation' => [
-                        'title' => __('Power Calculation', 'cardanopress-governance'),
-                        'type' => 'checkbox',
-                        'options' => [
-                            'ada' => __('Amount of ADA', 'cardanopress-governance'),
-                            'token' => __('# of token by Policy ID', 'cardanopress-governance'),
-                        ],
-                        'default' => ['token'],
-                    ],
+                    'discussion' => $this->fields->getDiscussion(),
+                    'policy' => $this->fields->getPolicy(),
+                    'calculation' => $this->fields->getCalculation(),
                     'options' => [
                         'title' => __('Options', 'cardanopress-governance'),
                         'type' => 'group',
@@ -187,10 +186,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'context' => 'side',
                 'priority' => 'high',
                 'fields' => [
-                    'data' => [
-                        'type' => 'html',
-                        'default' => $this->getProposalData(),
-                    ],
+                    'data' => $this->fields->getStatus(),
                 ],
             ]);
 
@@ -198,41 +194,6 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
         } catch (Exception $exception) {
             Application::log($exception->getMessage());
         }
-    }
-
-    protected function getProposalData()
-    {
-        if (! $this->inCorrectPage()) {
-            return '';
-        }
-
-        $proposal = new Proposal($_REQUEST['post']);
-
-        ob_start();
-
-        ?>
-        <table>
-            <?php foreach ($proposal->getData() as $key => $value) : ?>
-                <tr>
-                    <th><?php echo $key; ?></th>
-                    <td><?php echo $value; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php
-
-        return ob_get_clean();
-    }
-
-    protected function inCorrectPage(): bool
-    {
-        if (empty($_REQUEST['post']) || wp_doing_ajax() || ! is_admin()) {
-            return false;
-        }
-
-        global $pagenow;
-
-        return 'post.php' === $pagenow && 'proposal' === get_post_type($_REQUEST['post']);
     }
 
     public function prepareProposalData(int $postId, WP_Post $post): void
