@@ -59,13 +59,20 @@ class Proposal
         return (bool) $status;
     }
 
-    public function getDiscussionLink(): array
+    protected function getConfigValue(string $key)
     {
         if ($this->getConfig()) {
-            $status = Application::instance()->option('global_discussion');
+            $status = Application::instance()->option('global_' . $key);
         } else {
-            $status = get_post_meta($this->postId, 'proposal_discussion', true);
+            $status = get_post_meta($this->postId, 'proposal_' . $key, true);
         }
+
+        return $status;
+    }
+
+    public function getDiscussionLink(): array
+    {
+        $status = $this->getConfigValue('discussion');
 
         return $status ?: [
             'url' => '',
@@ -76,22 +83,14 @@ class Proposal
 
     public function getPolicy(): string
     {
-        if ($this->getConfig()) {
-            $status = Application::instance()->option('global_policy');
-        } else {
-            $status = get_post_meta($this->postId, 'proposal_policy', true);
-        }
+        $status = $this->getConfigValue('policy');
 
         return $status ?: '';
     }
 
     public function getCalculation(): array
     {
-        if ($this->getConfig()) {
-            $status = Application::instance()->option('global_calculation');
-        } else {
-            $status = get_post_meta($this->postId, 'proposal_calculation', true);
-        }
+        $status = $this->getConfigValue('calculation');
 
         return $status ?: [];
     }
