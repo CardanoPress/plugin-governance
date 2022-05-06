@@ -34,7 +34,7 @@ class Application
 
     public function activate(): void
     {
-        $this->admin->proposalCPT();
+        $this->admin->init();
         flush_rewrite_rules();
     }
 
@@ -87,6 +87,8 @@ class Application
     public function setup(): void
     {
         $this->admin = new Admin();
+
+        add_action('init', [$this->admin, 'init']);
     }
 
     public function template(string $name, array $variables = []): void

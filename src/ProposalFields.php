@@ -7,16 +7,11 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-class Fields
+class ProposalFields
 {
     protected array $policyIds = [];
 
-    public function __construct()
-    {
-        add_action('init', [$this, 'populatePolicyIds']);
-    }
-
-    public function populatePolicyIds(): void
+    public function populate(): void
     {
         if (Application::isCoreActive()) {
             foreach (cardanoPress()->option('policy_ids') as $policy) {
