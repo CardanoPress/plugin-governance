@@ -9,7 +9,7 @@ export const handleVote = async (proposalId, optionValue) => {
     const result = await pushTransaction(proposalId, optionValue)
 
     if (result.success) {
-        return await pushToDB(proposalId, optionValue)
+        return await pushToDB(proposalId, optionValue, result.transaction)
     }
 
     return result
@@ -35,7 +35,7 @@ const pushTransaction = async (proposalId, optionValue) => {
     }
 }
 
-const pushToDB = async (proposalId, option) => {
+const pushToDB = async (proposalId, option, transaction) => {
     return await fetch(cardanoPress.ajaxUrl, {
         method: 'POST',
         body: new URLSearchParams({
@@ -43,6 +43,7 @@ const pushToDB = async (proposalId, option) => {
             action: 'cp-governance_proposal_vote',
             proposalId,
             option,
+            transaction,
         }),
     }).then((response) => response.json())
 }

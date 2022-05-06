@@ -13,15 +13,25 @@ class Profile extends CoreProfile
 {
     private string $prefix = 'cp_governance_';
 
-    public function saveVote(int $proposalId, string $option): bool
+    public function saveVote(int $proposalId, string $option, string $transaction): bool
     {
-        return (bool) update_user_meta($this->user->ID, $this->prefix . $proposalId, $option);
+        return (bool) update_user_meta($this->user->ID, $this->prefix . $proposalId, compact('option', 'transaction'));
+    }
+
+    public function getVote(int $proposalId): array
+    {
+        $saved = get_user_meta($this->user->ID, $this->prefix . $proposalId, true);
+
+        return $saved ?? [
+            'option' => '',
+            'transaction' => '',
+        ];
     }
 
     public function hasVoted(int $proposalId): string
     {
-        $saved = get_user_meta($this->user->ID, $this->prefix . $proposalId, true);
+        $saved = $this->getVote($proposalId);
 
-        return $saved ?? '';
+        return $saved['option'] ?? '';
     }
 }
