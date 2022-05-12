@@ -13,7 +13,7 @@ class Snapshot
     private string $lockKey = '';
 
     public const LOCK = 'cpg_snapshot_lock_';
-    public const HOOK = 'cp_governance_snapshot';
+    public const HOOK = 'cp_governance_snapshot_';
     public const GROUP = 'cardanopress-governance';
 
     public static function instance(): Snapshot
@@ -27,20 +27,20 @@ class Snapshot
 
     private function __construct()
     {
-        add_action(self::HOOK . '_wallets', [$this, 'scanWallets']);
-        add_action(self::HOOK . '_wallet', [$this, 'scanWallet'], 10, 2);
+        add_action(self::HOOK . 'wallets', [$this, 'scanWallets']);
+        add_action(self::HOOK . 'wallet', [$this, 'scanWallet'], 10, 2);
     }
 
-    public function isScheduled(int $proposalPostId): bool
+    public static function isScheduled(int $proposalPostId): bool
     {
-        return as_has_scheduled_action(self::HOOK . '_wallets', compact('proposalPostId'), self::GROUP);
+        return as_has_scheduled_action(self::HOOK . 'wallets', compact('proposalPostId'), self::GROUP);
     }
 
-    public function schedule(int $timestamp, int $proposalPostId): int
+    public static function schedule(int $timestamp, int $proposalPostId): int
     {
         return as_schedule_single_action(
             $timestamp,
-            self::HOOK . '_wallets',
+            self::HOOK . 'wallets',
             compact('proposalPostId'),
             self::GROUP
         );
@@ -66,7 +66,7 @@ class Snapshot
             $userId = $userProfile->getData('ID');
 
             as_enqueue_async_action(
-                self::HOOK . '_wallet',
+                self::HOOK . 'wallet',
                 compact('proposalPostId', 'userId'),
                 self::GROUP
             );

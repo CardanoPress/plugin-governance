@@ -85,14 +85,14 @@ class ProposalCPT
 
         $snapshot = get_post_meta($postId, 'proposal_snapshot', true);
 
-        if (! $snapshot || Snapshot::instance()->isScheduled($postId)) {
+        if (! $snapshot || Snapshot::isScheduled($postId)) {
             return;
         }
 
         $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
         $timestamp = strtotime(implode(' ', $snapshot));
 
-        Snapshot::instance()->schedule($timestamp - $difference, $postId);
+        Snapshot::schedule($timestamp - $difference, $postId);
     }
 
     public function customizeStatus(WP_Query $query): void
