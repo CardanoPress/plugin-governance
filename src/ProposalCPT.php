@@ -17,6 +17,7 @@ class ProposalCPT
     public function __construct()
     {
         add_action('wp_insert_post', [$this, 'prepareData'], 10, 2);
+        add_action('wp_insert_post', [$this, 'scheduleSnapshot'], 10, 2);
         add_filter('pre_get_posts', [$this, 'customizeStatus']);
         add_filter('use_block_editor_for_post_type', [$this, 'noBlocks'], 10, 2);
     }
@@ -74,6 +75,24 @@ class ProposalCPT
         if ($updated) {
             update_post_meta($postId, '_proposal_data', $data);
         }
+    }
+
+    public function scheduleSnapshot(int $postId, WP_Post $post): void
+    {
+        if ('proposal' !== $post->post_type) {
+            return;
+        }
+
+        $snapshot = get_post_meta($postId, 'proposal_snapshot', true);
+
+        if (! $snapshot || Snapshot::instance()->isScheduled($postId)) {
+            return;
+        }
+
+        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+        $timestamp = strtotime(implode(' ', $snapshot));
+
+        Snapshot::instance()->schedule($timestamp - $difference, $postId);
     }
 
     public function customizeStatus(WP_Query $query): void

@@ -31,6 +31,11 @@ class Snapshot
         add_action(self::HOOK . '_wallet', [$this, 'scanWallet'], 10, 2);
     }
 
+    public function isScheduled(int $proposalPostId): bool
+    {
+        return as_has_scheduled_action(self::HOOK . '_wallets', compact('proposalPostId'), self::GROUP);
+    }
+
     public function schedule(int $timestamp, int $proposalPostId): int
     {
         return as_schedule_single_action(
