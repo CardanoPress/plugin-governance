@@ -25,7 +25,6 @@ class Proposal
         return [
             'post_id' => $this->postId,
             'identifier' => $this->getID(),
-            'snapshot' => $this->getSnapshot(),
             'discussion_link' => $this->getDiscussionLink(),
             'policy' => $this->getPolicy(),
             'calculation' => $this->getCalculation(),
@@ -55,7 +54,7 @@ class Proposal
         return $status ?: 0;
     }
 
-    public function getSnapshot(): array
+    protected function getSnapshot(): array
     {
         $status = get_post_meta($this->postId, 'proposal_snapshot', true);
 
@@ -144,13 +143,20 @@ class Proposal
         $format = get_option('date_format') . ' ' . get_option('time_format');
         $start = get_post_time($format, true, $this->postId);
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
-        $end = '&mdash;';
+        $end = $snapshot = '&mdash;';
 
         if ($expiration) {
             $end = wp_date($format, strtotime($expiration));
         }
 
-        return compact('start', 'end');
+        $imploded = implode(' ', $this->getSnapshot());
+
+        if ('' !== trim($imploded)) {
+            $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+            $snapshot = wp_date($format, strtotime($imploded) - $difference);
+        }
+
+        return compact('start', 'end', 'snapshot');
     }
 
     public function updateData(string $option, int $value, bool $increase = true): bool

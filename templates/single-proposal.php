@@ -51,6 +51,7 @@ get_header();
                 <h1 class="pb-3"><?php the_title(); ?></h1>
                 <p><b>Status: <?php echo $statusText; ?></b>
                 <p><b><?php echo $dateLabel; ?>: <?php echo $dateText; ?> UTC</b></p>
+                <p><b>Snapshot: <?php echo $proposalDates['snapshot']; ?> UTC</b></p>
 
                 <?php the_content(); ?>
 
