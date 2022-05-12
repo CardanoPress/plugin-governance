@@ -141,19 +141,19 @@ class Proposal
     public function getDates(): array
     {
         $format = get_option('date_format') . ' ' . get_option('time_format');
+        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
         $start = get_post_time($format, true, $this->postId);
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
         $end = $snapshot = '&mdash;';
 
         if ($expiration) {
-            $end = wp_date($format, strtotime($expiration));
+            $end = wp_date($format, strtotime($expiration) - $difference);
         }
 
         $imploded = implode(' ', $this->getSnapshot());
 
         if ('' !== trim($imploded)) {
-            $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
-            $snapshot = wp_date($format, strtotime($imploded) - $difference);
+            $snapshot = wp_date($format, strtotime($imploded) - ($difference * 2));
         }
 
         return compact('start', 'end', 'snapshot');
