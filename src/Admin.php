@@ -24,12 +24,13 @@ class Admin
     public function __construct()
     {
         $this->data = new Data();
-        $this->proposalFields = new ProposalFields();
-        $this->proposalCPT = new ProposalCPT();
     }
 
     public function init(): void
     {
+        $this->proposalFields = new ProposalFields();
+        $this->proposalCPT = new ProposalCPT();
+
         $this->proposalFields->populate();
         $this->proposalCPT->register();
         $this->settingsPage();
