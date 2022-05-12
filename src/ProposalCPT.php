@@ -85,7 +85,7 @@ class ProposalCPT
 
         $snapshot = get_post_meta($postId, 'proposal_snapshot', true);
 
-        if (! $snapshot || Snapshot::isScheduled($postId)) {
+        if (! $snapshot || Snapshot::isScheduled($postId) || Snapshot::wasScheduled($postId)) {
             return;
         }
 

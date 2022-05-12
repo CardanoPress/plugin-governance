@@ -36,6 +36,18 @@ class Snapshot
         return as_has_scheduled_action(self::HOOK . 'wallets', compact('proposalPostId'), self::GROUP);
     }
 
+    public static function wasScheduled(int $proposalPostId): int
+    {
+        $retries = as_get_scheduled_actions([
+            'hook'     => self::HOOK . 'wallets',
+            'args'     => compact('proposalPostId'),
+            'group'    => self::GROUP,
+            'per_page' => -1,
+        ], 'ids');
+
+        return count($retries);
+    }
+
     public static function schedule(int $timestamp, int $proposalPostId): int
     {
         return as_schedule_single_action(
