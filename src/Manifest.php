@@ -30,7 +30,6 @@ class Manifest extends AbstractManifest
 
     public function autoEnqueues(): void
     {
-        wp_script_add_data($this->getAssetPrefix() . 'script', 'defer', true);
         wp_register_style(
             $this->getAssetPrefix() . 'bootstrap',
             'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
@@ -56,7 +55,6 @@ class Manifest extends AbstractManifest
             'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
         );
         wp_script_add_data($this->getAssetPrefix() . 'bootstrap', 'crossorigin', 'anonymous');
-        wp_script_add_data($this->getAssetPrefix() . 'recaptcha', 'defer', true);
 
         if (is_singular('proposal') || is_post_type_archive('proposal')) {
             if (apply_filters($this->getAssetPrefix() . 'enqueue-bootstrap-style', true)) {
