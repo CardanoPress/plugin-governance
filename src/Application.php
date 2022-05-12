@@ -25,10 +25,10 @@ class Application
 
     private function __construct()
     {
-        add_action('cardanopress_loaded', [$this, 'init']);
-        add_action('admin_notices', [$this, 'notice']);
+        $this->admin = new Admin();
 
-        $this->setup();
+        add_action('init', [$this->admin, 'init']);
+        add_action('cardanopress_loaded', [$this, 'init']);
     }
 
     public function init(): void
@@ -56,32 +56,6 @@ class Application
         } else {
             error_log(strtoupper($channel) . '>>> ' . $message);
         }
-    }
-
-    public function notice(): void
-    {
-        if (self::isCoreActive()) {
-            return;
-        }
-
-        ob_start();
-
-        ?>
-        <div class="notice notice-info">
-            <p>
-                <strong>CardanoPress - Governance</strong> requires the core plugin for its full functionality.
-            </p>
-        </div>
-        <?php
-
-        echo ob_get_clean();
-    }
-
-    public function setup(): void
-    {
-        $this->admin = new Admin();
-
-        add_action('init', [$this->admin, 'init']);
     }
 
     public function template(string $name, array $variables = []): void

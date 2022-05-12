@@ -26,11 +26,32 @@ class Installer
     {
         $this->application = Application::instance();
         $this->admin = new Admin();
+
+        add_action('admin_notices', [$this, 'notice']);
     }
 
     public function log(string $message): void
     {
         $this->application::log($message, 'installer');
+    }
+
+    public function notice(): void
+    {
+        if ($this->application::isCoreActive()) {
+            return;
+        }
+
+        ob_start();
+
+        ?>
+        <div class="notice notice-info">
+            <p>
+                <strong>CardanoPress - Governance</strong> requires the core plugin for its full functionality.
+            </p>
+        </div>
+        <?php
+
+        echo ob_get_clean();
     }
 
     public function activate(): void
