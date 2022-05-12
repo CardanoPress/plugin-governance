@@ -116,6 +116,22 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'options' => ['min' => 1],
                         'required' => true,
                     ],
+                    'snapshot' => [
+                        'title' => __('Snapshot', 'cardanopress-governance'),
+                        'type' => 'group',
+                        'fields' => [
+                            'date' => [
+                                'title' => __('Date', 'cardanopress-governance'),
+                                'type' => 'date',
+                                'required' => true,
+                            ],
+                            'time' => [
+                                'title' => __('Time', 'cardanopress-governance'),
+                                'type' => 'time',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
                     'config' => $this->proposalFields->getConfig(),
                     'discussion' => $this->proposalFields->getDiscussion(),
                     'policy' => $this->proposalFields->getPolicy(),

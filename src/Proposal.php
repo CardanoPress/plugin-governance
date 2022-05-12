@@ -25,6 +25,7 @@ class Proposal
         return [
             'post_id' => $this->postId,
             'identifier' => $this->getID(),
+            'snapshot' => $this->getSnapshot(),
             'discussion_link' => $this->getDiscussionLink(),
             'policy' => $this->getPolicy(),
             'calculation' => $this->getCalculation(),
@@ -52,6 +53,16 @@ class Proposal
         $status = get_post_meta($this->postId, 'proposal_id', true);
 
         return $status ?: 0;
+    }
+
+    public function getSnapshot(): array
+    {
+        $status = get_post_meta($this->postId, 'proposal_snapshot', true);
+
+        return $status ?: [
+            'date' => '',
+            'time' => '',
+        ];
     }
 
     protected function getConfig(): bool
