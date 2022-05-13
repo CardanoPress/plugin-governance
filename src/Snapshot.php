@@ -116,7 +116,7 @@ class Snapshot
             $details = $blockfrost->getAccountDetails($stakeAddress);
             $assets[] = [
                 'unit' => 'lovelace',
-                'quantity' => $details['controlled_amount'],
+                'quantity' => $details['controlled_amount'] ?? '0',
             ];
 
             do {
@@ -126,7 +126,7 @@ class Snapshot
                 $page++;
             } while (100 === count($response));
 
-            add_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, array_filter($assets));
+            update_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, array_filter($assets));
         }
 
         $this->unlock();
