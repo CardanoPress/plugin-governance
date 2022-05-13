@@ -151,4 +151,29 @@ class ProposalFields
 
         return $data;
     }
+
+    public function getSchedule(): array
+    {
+        return [
+            'type' => 'html',
+            'default' => $this->getProposalSnapshot(),
+        ];
+    }
+
+    protected function getProposalSnapshot(): string
+    {
+        if (! $this->inEditPage()) {
+            return '';
+        }
+
+        $text = __('Unscheduled', 'cardanopress-governance');
+
+        if (Snapshot::isScheduled($_REQUEST['post'])) {
+            $text = __('Scheduled', 'cardanopress-governance');
+        } elseif (Snapshot::wasScheduled($_REQUEST['post'])) {
+            $text = __('Completed', 'cardanopress-governance');
+        }
+
+        return sprintf(__('Snapshot: <b>%s</b>', 'cardanopress-governance'), $text);
+    }
 }

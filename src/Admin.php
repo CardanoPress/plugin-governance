@@ -179,6 +179,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'context' => 'side',
                 'priority' => 'high',
                 'fields' => [
+                    'snapshot' => $this->proposalFields->getSchedule(),
                     'data' => $this->proposalFields->getStatus(),
                 ],
             ]);
