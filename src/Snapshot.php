@@ -73,7 +73,10 @@ class Snapshot
         foreach (get_users() as $user) {
             $userProfile = new Profile($user);
 
-            if (! $userProfile->isConnected()) {
+            if (
+                ! $userProfile->isConnected() ||
+                md5($userProfile->connectedWallet()) === $userProfile->getData('user_login')
+            ) {
                 continue;
             }
 
