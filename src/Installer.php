@@ -7,11 +7,14 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use Monolog\Logger;
+
 class Installer
 {
     private static Installer $instance;
     private Application $application;
     private Admin $admin;
+    private Logger $logger;
 
     public static function instance(): Installer
     {
@@ -25,14 +28,15 @@ class Installer
     private function __construct()
     {
         $this->application = Application::instance();
+        $this->logger = $this->application::logger('installer');
         $this->admin = new Admin();
 
         add_action('admin_notices', [$this, 'notice']);
     }
 
-    protected function log(string $message): void
+    protected function log(string $message, string $level = 'info'): void
     {
-        $this->application::logger('installer')->info($message);
+        $this->logger->log($level, $message);
     }
 
     public function notice(): void

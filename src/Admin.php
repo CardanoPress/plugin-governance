@@ -8,6 +8,7 @@
 namespace PBWebDev\CardanoPress\Governance;
 
 use Exception;
+use Monolog\Logger;
 use ThemePlate\Core\Data;
 use ThemePlate\Meta\Post;
 use ThemePlate\Page;
@@ -16,6 +17,7 @@ use ThemePlate\Settings;
 class Admin
 {
     protected Data $data;
+    protected Logger $logger;
     protected ProposalFields $proposalFields;
     protected ProposalCPT $proposalCPT;
 
@@ -24,12 +26,18 @@ class Admin
     public function __construct()
     {
         $this->data = new Data();
+        $this->logger = Application::logger('admin');
+    }
+
+    protected function log(string $message, string $level = 'error'): void
+    {
+        $this->logger->log($level, $message);
     }
 
     public function init(): void
     {
         $this->proposalFields = new ProposalFields();
-        $this->proposalCPT = new ProposalCPT();
+        $this->proposalCPT = new ProposalCPT($this->logger);
 
         $this->proposalFields->populate();
         $this->proposalCPT->register();
@@ -50,7 +58,7 @@ class Admin
                 'title' => 'CardanoPress - Governance',
             ]);
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->log($exception->getMessage());
         }
     }
 
@@ -79,7 +87,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($settings->get_config());
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->log($exception->getMessage());
         }
     }
 
@@ -99,7 +107,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($settings->get_config());
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->log($exception->getMessage());
         }
     }
 
@@ -157,7 +165,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($post->get_config());
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->log($exception->getMessage());
         }
     }
 
@@ -177,7 +185,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($post->get_config());
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->log($exception->getMessage());
         }
     }
 

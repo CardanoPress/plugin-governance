@@ -8,14 +8,19 @@
 namespace PBWebDev\CardanoPress\Governance;
 
 use Exception;
+use Monolog\Logger;
 use ThemePlate\CPT\PostType;
 use WP_Post;
 use WP_Query;
 
 class ProposalCPT
 {
-    public function __construct()
+    protected Logger $logger;
+
+    public function __construct(Logger $logger)
     {
+        $this->logger = $logger;
+
         add_action('wp_insert_post', [$this, 'prepareData'], 10, 2);
         add_action('wp_insert_post', [$this, 'scheduleSnapshot'], 10, 2);
         add_filter('pre_get_posts', [$this, 'customizeStatus']);
@@ -39,7 +44,7 @@ class ProposalCPT
                 ],
             ]);
         } catch (Exception $exception) {
-            Application::logger('admin')->error($exception->getMessage());
+            $this->logger->error($exception->getMessage());
         }
     }
 

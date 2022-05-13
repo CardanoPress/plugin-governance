@@ -7,12 +7,13 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use Monolog\Logger;
 use PBWebDev\CardanoPress\Blockfrost;
 
 class Snapshot
 {
     private static Snapshot $instance;
-    private Application $application;
+    private Logger $logger;
     private string $lockKey = '';
 
     public const LOCK = 'cpg_snapshot_lock_';
@@ -30,7 +31,7 @@ class Snapshot
 
     private function __construct()
     {
-        $this->application = Application::instance();
+        $this->logger = Application::logger('snapshot');
 
         add_action(self::HOOK . 'wallets', [$this, 'scanWallets']);
         add_action(self::HOOK . 'wallet', [$this, 'scanWallet'], 10, 2);
@@ -175,8 +176,8 @@ class Snapshot
         delete_transient($this->lockKey);
     }
 
-    protected function log(string $message): void
+    protected function log(string $message, string $level = 'info'): void
     {
-        $this->application::logger('snapshot')->info($message);
+        $this->logger->log($level, $message);
     }
 }
