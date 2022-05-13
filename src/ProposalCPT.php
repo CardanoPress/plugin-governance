@@ -39,7 +39,7 @@ class ProposalCPT
                 ],
             ]);
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 

@@ -30,9 +30,9 @@ class Installer
         add_action('admin_notices', [$this, 'notice']);
     }
 
-    public function log(string $message): void
+    protected function log(string $message): void
     {
-        $this->application::log($message, 'installer');
+        $this->application::logger('installer')->info($message);
     }
 
     public function notice(): void

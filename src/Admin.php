@@ -50,7 +50,7 @@ class Admin
                 'title' => 'CardanoPress - Governance',
             ]);
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 
@@ -79,7 +79,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($settings->get_config());
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($settings->get_config());
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 
@@ -157,7 +157,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($post->get_config());
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 
@@ -177,7 +177,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
             $this->data->store($post->get_config());
         } catch (Exception $exception) {
-            Application::log($exception->getMessage());
+            Application::logger('admin')->error($exception->getMessage());
         }
     }
 

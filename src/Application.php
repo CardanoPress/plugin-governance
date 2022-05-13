@@ -7,9 +7,13 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use Monolog\Logger as MonoLogger;
+use ThemePlate\Logger;
+
 class Application
 {
     private static Application $instance;
+    private static Logger $logger;
     public const VERSION = '0.4.0';
     private Admin $admin;
     private Templates $templates;
@@ -25,6 +29,7 @@ class Application
 
     private function __construct()
     {
+        self::$logger = new Logger('cardanopress-logs');
         $this->admin = new Admin();
 
         add_action('init', [$this->admin, 'init']);
@@ -49,13 +54,9 @@ class Application
         return $function && $admin;
     }
 
-    public static function log(string $message, string $channel = 'admin'): void
+    public static function logger(string $channel): MonoLogger
     {
-        if (self::isCoreActive()) {
-            cardanoPress()->logger($channel)->error($message);
-        } else {
-            error_log(strtoupper($channel) . '>>> ' . $message);
-        }
+        return self::$logger->channel($channel);
     }
 
     public function template(string $name, array $variables = []): void

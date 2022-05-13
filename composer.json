@@ -33,7 +33,8 @@
     "kermage/external-update-manager": "^2.2",
     "themeplate/settings": "^1.2",
     "themeplate/page": "^1.1",
-    "woocommerce/action-scheduler": "^3.4"
+    "woocommerce/action-scheduler": "^3.4",
+    "themeplate/logger": "^1.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
