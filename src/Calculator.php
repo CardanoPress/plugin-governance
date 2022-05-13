@@ -13,15 +13,22 @@ class Calculator
 {
     private Proposal $proposal;
     private Profile $profile;
+    private bool $getFromSnapshot;
 
     public function __construct(Proposal $proposal, Profile $profile)
     {
         $this->proposal = $proposal;
         $this->profile = $profile;
+
+        $this->getFromSnapshot = 'future' !== get_post_status($proposal->postId);
     }
 
     public function getTokenPower(): int
     {
+        if ($this->getFromSnapshot) {
+            return $this->getSnapshotPower('token');
+        }
+
         $storedAssets = $this->profile->storedAssets();
 
         if (empty($storedAssets)) {
@@ -41,6 +48,10 @@ class Calculator
 
     public function getAdaPower(): int
     {
+        if ($this->getFromSnapshot) {
+            return $this->getSnapshotPower('ada');
+        }
+
         if (! $this->profile->isConnected()) {
             return 0;
         }
@@ -59,5 +70,38 @@ class Calculator
         }
 
         return $response['amount'][$index]['quantity'] / 1000000;
+    }
+
+    protected function getSnapshotPower(string $type): int
+    {
+        $status = get_post_meta(
+            $this->proposal->postId,
+            '_proposal_snapshot_' . $this->profile->getData('ID'),
+            true
+        );
+
+        if (empty($status)) {
+            return 0;
+        }
+
+        if ('ada' === $type) {
+            $index = array_search('lovelace', array_column($status, 'unit'), true);
+
+            if (false === $index) {
+                return 0;
+            }
+
+            return $status[$index]['quantity'] / 1000000;
+        }
+
+        $result = 0;
+
+        foreach ($status as $asset) {
+            if (0 === strpos($asset['unit'], $this->proposal->getPolicy())) {
+                $result += $asset['quantity'];
+            }
+        }
+
+        return $result;
     }
 }
