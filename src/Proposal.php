@@ -7,8 +7,6 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-use PBWebDev\CardanoPress\Blockfrost;
-
 class Proposal
 {
     public int $postId;
@@ -180,57 +178,17 @@ class Proposal
 
     public function getVotingPower(Profile $profile): int
     {
+        $calculator = new Calculator($this, $profile);
         $total = 0;
 
         foreach ($this->getCalculation() as $type) {
             $method = 'get' . ucfirst($type) . 'Power';
 
-            if (method_exists($this, $method)) {
-                $total += $this->$method($profile);
+            if (method_exists($calculator, $method)) {
+                $total += $calculator->$method();
             }
         }
 
         return $total;
-    }
-
-    protected function getTokenPower(Profile $profile): int
-    {
-        $storedAssets = $profile->storedAssets();
-
-        if (empty($storedAssets)) {
-            return 0;
-        }
-
-        $policyIds = array_column($storedAssets, 'policy_id');
-
-        if (! in_array($this->getPolicy(), $policyIds, true)) {
-            return 0;
-        }
-
-        $assetsCount = array_count_values($policyIds);
-
-        return $assetsCount[$this->getPolicy()];
-    }
-
-    protected function getAdaPower(Profile $profile): int
-    {
-        if (! $profile->isConnected()) {
-            return 0;
-        }
-
-        $blockfrost = new Blockfrost($profile->connectedNetwork());
-        $response = $blockfrost->getAddressDetails($profile->connectedWallet());
-
-        if (empty($response) || empty($response['amount'])) {
-            return 0;
-        }
-
-        $index = array_search('lovelace', array_column($response['amount'], 'unit'), true);
-
-        if (false === $index) {
-            return 0;
-        }
-
-        return $response['amount'][$index]['quantity'] / 1000000;
     }
 }

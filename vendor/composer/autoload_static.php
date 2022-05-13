@@ -46,9 +46,9 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'ThemePlate\\' => 
         array (
             0 => __DIR__ . '/..' . '/themeplate/column',
-            1 => __DIR__ . '/..' . '/themeplate/page',
-            2 => __DIR__ . '/..' . '/themeplate/settings',
-            3 => __DIR__ . '/..' . '/themeplate/logger/src',
+            1 => __DIR__ . '/..' . '/themeplate/logger/src',
+            2 => __DIR__ . '/..' . '/themeplate/page',
+            3 => __DIR__ . '/..' . '/themeplate/settings',
         ),
         'Psr\\Log\\' => 
         array (
@@ -183,6 +183,7 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'PBWebDev\\CardanoPress\\Governance\\Actions' => __DIR__ . '/../..' . '/src/Actions.php',
         'PBWebDev\\CardanoPress\\Governance\\Admin' => __DIR__ . '/../..' . '/src/Admin.php',
         'PBWebDev\\CardanoPress\\Governance\\Application' => __DIR__ . '/../..' . '/src/Application.php',
+        'PBWebDev\\CardanoPress\\Governance\\Calculator' => __DIR__ . '/../..' . '/src/Calculator.php',
         'PBWebDev\\CardanoPress\\Governance\\Installer' => __DIR__ . '/../..' . '/src/Installer.php',
         'PBWebDev\\CardanoPress\\Governance\\Manifest' => __DIR__ . '/../..' . '/src/Manifest.php',
         'PBWebDev\\CardanoPress\\Governance\\Profile' => __DIR__ . '/../..' . '/src/Profile.php',

@@ -124,6 +124,7 @@ return array(
     'PBWebDev\\CardanoPress\\Governance\\Actions' => $baseDir . '/src/Actions.php',
     'PBWebDev\\CardanoPress\\Governance\\Admin' => $baseDir . '/src/Admin.php',
     'PBWebDev\\CardanoPress\\Governance\\Application' => $baseDir . '/src/Application.php',
+    'PBWebDev\\CardanoPress\\Governance\\Calculator' => $baseDir . '/src/Calculator.php',
     'PBWebDev\\CardanoPress\\Governance\\Installer' => $baseDir . '/src/Installer.php',
     'PBWebDev\\CardanoPress\\Governance\\Manifest' => $baseDir . '/src/Manifest.php',
     'PBWebDev\\CardanoPress\\Governance\\Profile' => $baseDir . '/src/Profile.php',

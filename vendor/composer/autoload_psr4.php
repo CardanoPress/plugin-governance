@@ -9,7 +9,7 @@ return array(
     'ThemePlate\\Meta\\' => array($vendorDir . '/themeplate/meta'),
     'ThemePlate\\Core\\' => array($vendorDir . '/themeplate/core'),
     'ThemePlate\\CPT\\' => array($vendorDir . '/themeplate/cpt'),
-    'ThemePlate\\' => array($vendorDir . '/themeplate/column', $vendorDir . '/themeplate/page', $vendorDir . '/themeplate/settings', $vendorDir . '/themeplate/logger/src'),
+    'ThemePlate\\' => array($vendorDir . '/themeplate/column', $vendorDir . '/themeplate/logger/src', $vendorDir . '/themeplate/page', $vendorDir . '/themeplate/settings'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'PBWebDev\\CardanoPress\\Governance\\' => array($baseDir . '/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
