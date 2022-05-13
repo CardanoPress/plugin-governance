@@ -7,6 +7,8 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use PBWebDev\CardanoPress\Blockfrost;
+
 class Snapshot
 {
     private static Snapshot $instance;
@@ -97,9 +99,41 @@ class Snapshot
 
         $this->lock();
 
-        error_log(__METHOD__ . ' ' . $proposalPostId . ' ' . $userId);
+        $user = get_user_by('id', $userId);
+        $userProfile = new Profile($user);
+
+        if ($userProfile->isConnected()) {
+            $stakeAddress = $userProfile->connectedStake();
+            $blockfrost = new Blockfrost($userProfile->connectedNetwork());
+            $proposal = new Proposal($proposalPostId);
+            $policyId = $proposal->getPolicy();
+            $assets = [];
+            $page = 1;
+
+            do {
+                $response = $blockfrost->associatedAssets($stakeAddress, $page);
+                $assets[] = $this->filter($response, $policyId);
+
+                $page++;
+            } while (100 === count($response));
+
+            add_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, array_filter($assets));
+        }
 
         $this->unlock();
+    }
+
+    protected function filter(array $assets, string $policyId): array
+    {
+        $result = [];
+
+        foreach ($assets as $asset) {
+            if (0 === strpos($asset['unit'], $policyId)) {
+                $result[] = $asset;
+            }
+        }
+
+        return $result;
     }
 
     protected function isRunning(): int
