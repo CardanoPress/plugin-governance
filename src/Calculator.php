@@ -63,13 +63,7 @@ class Calculator
             return 0;
         }
 
-        $index = array_search('lovelace', array_column($response['amount'], 'unit'), true);
-
-        if (false === $index) {
-            return 0;
-        }
-
-        return $response['amount'][$index]['quantity'] / 1000000;
+        return $this->getLovelace($response['amount']);
     }
 
     protected function getSnapshotPower(string $type): int
@@ -85,13 +79,7 @@ class Calculator
         }
 
         if ('ada' === $type) {
-            $index = array_search('lovelace', array_column($status, 'unit'), true);
-
-            if (false === $index) {
-                return 0;
-            }
-
-            return $status[$index]['quantity'] / 1000000;
+            return $this->getLovelace($status);
         }
 
         $result = 0;
@@ -103,5 +91,16 @@ class Calculator
         }
 
         return $result;
+    }
+
+    protected function getLovelace(array $assets): int
+    {
+        $index = array_search('lovelace', array_column($assets, 'unit'), true);
+
+        if (false === $index) {
+            return 0;
+        }
+
+        return $assets[$index]['quantity'] / 1000000;
     }
 }
