@@ -12,6 +12,7 @@ use PBWebDev\CardanoPress\Blockfrost;
 class Snapshot
 {
     private static Snapshot $instance;
+    private Application $application;
     private string $lockKey = '';
 
     public const LOCK = 'cpg_snapshot_lock_';
@@ -29,6 +30,8 @@ class Snapshot
 
     private function __construct()
     {
+        $this->application = Application::instance();
+
         add_action(self::HOOK . 'wallets', [$this, 'scanWallets']);
         add_action(self::HOOK . 'wallet', [$this, 'scanWallet'], 10, 2);
     }
@@ -65,6 +68,8 @@ class Snapshot
         $this->lockKey = self::LOCK . md5(__METHOD__ . $proposalPostId);
 
         if ($this->isRunning()) {
+            $this->log(__METHOD__ . 'Is already running ' . $this->lockKey);
+
             return;
         }
 
@@ -72,15 +77,20 @@ class Snapshot
 
         foreach (get_users() as $user) {
             $userProfile = new Profile($user);
+            $userId = $userProfile->getData('ID');
 
-            if (
-                ! $userProfile->isConnected() ||
-                md5($userProfile->connectedWallet()) === $userProfile->getData('user_login')
-            ) {
+            if (! $userProfile->isConnected()) {
+                $this->log('User: ' . $userId . ' is not connected');
+
                 continue;
             }
 
-            $userId = $userProfile->getData('ID');
+            if (md5($userProfile->connectedWallet()) === $userProfile->getData('user_login')) {
+                $this->log('User: ' . $userId . ' is an old instance');
+
+                continue;
+            }
+
 
             as_enqueue_async_action(
                 self::HOOK . 'wallet',
@@ -97,6 +107,8 @@ class Snapshot
         $this->lockKey = self::LOCK . md5(__METHOD__ . $proposalPostId . $userId);
 
         if ($this->isRunning()) {
+            $this->log(__METHOD__ . 'Is already running ' . $this->lockKey);
+
             return;
         }
 
@@ -127,6 +139,9 @@ class Snapshot
             } while (100 === count($response));
 
             update_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, array_filter($assets));
+            $this->log('User: ' . $userId . ' got scanned');
+        } else {
+            $this->log('User: ' . $userId . ' is not connected');
         }
 
         $this->unlock();
@@ -158,5 +173,10 @@ class Snapshot
     protected function unlock(): void
     {
         delete_transient($this->lockKey);
+    }
+
+    protected function log(string $message): void
+    {
+        $this->application::logger('snapshot')->info($message);
     }
 }
