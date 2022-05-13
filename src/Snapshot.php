@@ -110,6 +110,12 @@ class Snapshot
             $assets = [];
             $page = 1;
 
+            $details = $blockfrost->getAccountDetails($stakeAddress);
+            $assets[] = [
+                'unit' => 'lovelace',
+                'quantity' => $details['controlled_amount'],
+            ];
+
             do {
                 $response = $blockfrost->associatedAssets($stakeAddress, $page);
                 $assets[] = $this->filter($response, $policyId);
