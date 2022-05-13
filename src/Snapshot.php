@@ -134,7 +134,12 @@ class Snapshot
 
             do {
                 $response = $blockfrost->associatedAssets($stakeAddress, $page);
-                $assets[] = $this->filter($response, $policyId);
+
+                foreach ($response as $asset) {
+                    if (0 === strpos($asset['unit'], $policyId)) {
+                        $assets[] = $asset;
+                    }
+                }
 
                 $page++;
             } while (100 === count($response));
@@ -146,19 +151,6 @@ class Snapshot
         }
 
         $this->unlock();
-    }
-
-    protected function filter(array $assets, string $policyId): array
-    {
-        $result = [];
-
-        foreach ($assets as $asset) {
-            if (0 === strpos($asset['unit'], $policyId)) {
-                $result[] = $asset;
-            }
-        }
-
-        return $result;
     }
 
     protected function isRunning(): int
