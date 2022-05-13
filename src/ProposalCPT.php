@@ -95,9 +95,14 @@ class ProposalCPT
         }
 
         $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
-        $timestamp = strtotime(implode(' ', $snapshot));
+        $datetime = strtotime(implode(' ', $snapshot));
+        $timestamp = $datetime - $difference;
 
-        Snapshot::schedule($timestamp - $difference, $postId);
+        if (time() > $timestamp) {
+            return;
+        }
+
+        Snapshot::schedule($timestamp, $postId);
     }
 
     public function customizeStatus(WP_Query $query): void
