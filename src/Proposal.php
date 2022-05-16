@@ -45,6 +45,21 @@ class Proposal
         return $result[0] ?? 0;
     }
 
+    public function isComplete(): bool
+    {
+        if ('archive' !== get_post_status($this->postId)) {
+            return false;
+        }
+
+        $data = $this->getData();
+
+        if (empty($data) || !array_filter(array_values($data))) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function getID(): int
     {
         $status = get_post_meta($this->postId, 'proposal_id', true);
