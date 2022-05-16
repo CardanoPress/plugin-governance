@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying a proposal status.
+ * The template for displaying the proposal voting status.
  *
  * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal/voting-status.php.
  *

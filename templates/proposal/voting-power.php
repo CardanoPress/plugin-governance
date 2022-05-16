@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying the single proposal.
+ * The template for displaying the proposal voting power.
  *
  * This can be overridden by copying it to yourtheme/cardanopress/governance/proposal/voting-power.php.
  *

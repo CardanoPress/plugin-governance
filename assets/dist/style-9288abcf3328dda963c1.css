@@ -53,6 +53,9 @@
 .mt-3 {
     margin-top: 0.75rem
 }
+.table {
+    display: table
+}
 .py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem
