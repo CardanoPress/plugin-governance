@@ -191,4 +191,19 @@ class Proposal
 
         return $total;
     }
+
+    public function getCastedVotes(): array
+    {
+        global $wpdb;
+
+        $key = $wpdb->esc_like('cp_governance_') . '%';
+        $sql = "SELECT `user_id`,`meta_value` FROM $wpdb->usermeta WHERE `meta_key` LIKE %s ORDER BY `umeta_id` DESC";
+        $result = [];
+
+        foreach ($wpdb->get_results($wpdb->prepare($sql, $key), ARRAY_A) as $saved) {
+            $result[$saved['user_id']] = maybe_unserialize($saved['meta_value']);
+        }
+
+        return $result;
+    }
 }
