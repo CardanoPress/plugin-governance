@@ -74,6 +74,13 @@ get_header();
                             compact('proposal', 'currentStatus')
                         ); ?>
                     </div>
+
+                    <div class="mt-5">
+                        <?php Application::instance()->template(
+                            'proposal/voting-transactions',
+                            compact('proposal')
+                        ); ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
