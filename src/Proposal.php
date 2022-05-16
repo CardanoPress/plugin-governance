@@ -211,8 +211,8 @@ class Proposal
     {
         global $wpdb;
 
-        $key = $wpdb->esc_like('cp_governance_') . '%';
-        $sql = "SELECT `user_id`,`meta_value` FROM $wpdb->usermeta WHERE `meta_key` LIKE %s ORDER BY `umeta_id` DESC";
+        $key = 'cp_governance_' . $this->getID();
+        $sql = "SELECT `user_id`,`meta_value` FROM $wpdb->usermeta WHERE `meta_key` = %s ORDER BY `umeta_id` DESC";
         $result = [];
 
         foreach ($wpdb->get_results($wpdb->prepare($sql, $key), ARRAY_A) as $saved) {
