@@ -32,6 +32,7 @@ class Installer
         $this->admin = new Admin();
 
         add_action('admin_notices', [$this, 'notice']);
+        add_filter('plugin_action_links_' . plugin_basename(CP_GOVERNANCE_FILE), [$this, 'addSettingsLink']);
     }
 
     protected function log(string $message, string $level = 'info'): void
@@ -56,6 +57,19 @@ class Installer
         <?php
 
         echo ob_get_clean();
+    }
+
+    public function addSettingsLink(array $links): array
+    {
+        $settings = sprintf(
+            '<a href="%1$s" id="settings-%2$s" aria-label="%3$s">%4$s</a>',
+            admin_url('edit.php?post_type=proposal&page=' . Admin::OPTION_KEY),
+            Admin::OPTION_KEY,
+            __('Settings CardanoPress - Governance', 'cardanopress-governance'),
+            __('Settings', 'cardanopress-governance'),
+        );
+
+        return array_merge(compact('settings'), $links);
     }
 
     public function activate(): void
