@@ -142,7 +142,11 @@ class ProposalFields
         ];
 
         if ($this->inAddNewPage()) {
-            $data['default'] = array_values(Application::instance()->option('global_calculation'));
+            $global = Application::instance()->option('global_calculation');
+
+            if ($global) {
+                $data['default'] = array_values($global);
+            }
         }
 
         if ($this->inAddNewPage() || $this->inEditPage()) {
