@@ -20,7 +20,20 @@ class Calculator
         $this->proposal = $proposal;
         $this->profile = $profile;
 
-        $this->getFromSnapshot = 'future' !== get_post_status($proposal->postId);
+        $this->getFromSnapshot = $this->isSnapshotAvailable($proposal);
+    }
+
+    private function isSnapshotAvailable(Proposal $proposal): bool
+    {
+        if ('future' === get_post_status($proposal->postId)) {
+            return false;
+        }
+
+        if (! Snapshot::wasScheduled($proposal->postId)) {
+            return false;
+        }
+
+        return true;
     }
 
     public function getTokenPower(): int
@@ -83,9 +96,10 @@ class Calculator
         }
 
         $result = 0;
+        $policy = $this->proposal->getPolicy();
 
         foreach ($status as $asset) {
-            if (0 === strpos($asset['unit'], $this->proposal->getPolicy())) {
+            if (0 === strpos($asset['unit'], $policy)) {
                 $result += $asset['quantity'];
             }
         }
