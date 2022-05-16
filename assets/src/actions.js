@@ -9,7 +9,7 @@ export const handleVote = async (proposalId, optionValue) => {
     const result = await pushTransaction(proposalId, optionValue)
 
     if (result.success) {
-        return await pushToDB(proposalId, optionValue, result.transaction)
+        return await pushToDB(proposalId, optionValue, result.data.transaction)
     }
 
     return result

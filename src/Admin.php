@@ -122,7 +122,10 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                     'id' => [
                         'title' => __('Identifier', 'cardanopress-governance'),
                         'type' => 'number',
-                        'options' => ['min' => 1],
+                        'options' => [
+                            'min' => 1,
+                            'max' => 999,
+                        ],
                         'required' => true,
                     ],
                     'snapshot' => [
@@ -152,7 +155,11 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'fields' => [
                             'value' => [
                                 'title' => __('Value', 'cardanopress-governance'),
-                                'type' => 'text',
+                                'type' => 'number',
+                                'options' => [
+                                    'min' => 1,
+                                    'max' => 999,
+                                ],
                             ],
                             'label' => [
                                 'title' => __('Label', 'cardanopress-governance'),
