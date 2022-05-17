@@ -207,6 +207,16 @@ class Proposal
         return $total;
     }
 
+    public function getTotalVotes(): int
+    {
+        global $wpdb;
+
+        $key = 'cp_governance_' . $this->getID();
+        $sql = "SELECT COUNT(*) FROM $wpdb->usermeta WHERE `meta_key` = %s";
+
+        return (int) $wpdb->get_var($wpdb->prepare($sql, $key));
+    }
+
     public function getCastedVotes(): array
     {
         global $wpdb;
