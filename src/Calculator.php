@@ -33,7 +33,20 @@ class Calculator
             return false;
         }
 
+        if (! $this->getSnapshotData()) {
+            return false;
+        }
+
         return true;
+    }
+
+    protected function getSnapshotData()
+    {
+        return get_post_meta(
+            $this->proposal->postId,
+            '_proposal_snapshot_' . $this->profile->getData('ID'),
+            true
+        );
     }
 
     public function getTokenPower(): int
@@ -81,11 +94,7 @@ class Calculator
 
     protected function getSnapshotPower(string $type): int
     {
-        $status = get_post_meta(
-            $this->proposal->postId,
-            '_proposal_snapshot_' . $this->profile->getData('ID'),
-            true
-        );
+        $status = $this->getSnapshotData();
 
         if (empty($status)) {
             return 0;
