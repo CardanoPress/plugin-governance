@@ -124,7 +124,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'type' => 'number',
                         'options' => [
                             'min' => 1,
-                            'max' => 999,
+                            'max' => 9999,
                         ],
                         'required' => true,
                     ],
@@ -152,13 +152,16 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                         'title' => __('Options', 'cardanopress-governance'),
                         'type' => 'group',
                         'repeatable' => true,
+                        'required' => true,
+                        'minimum' => 1,
+                        'maximum' => 99,
                         'fields' => [
                             'value' => [
                                 'title' => __('Value', 'cardanopress-governance'),
                                 'type' => 'number',
                                 'options' => [
                                     'min' => 1,
-                                    'max' => 999,
+                                    'max' => 99,
                                 ],
                             ],
                             'label' => [

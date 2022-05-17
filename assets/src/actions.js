@@ -1,3 +1,13 @@
+const transformToAda = (proposalId, optionValue) => {
+    proposalId = parseFloat(proposalId) * 100
+    optionValue = parseFloat(optionValue)
+
+    // ADA Amount = 1.xxxxyy
+    // xxxx = proposalId
+    // yy   = optionValue
+    return (1 + ((proposalId + optionValue) / 1000000)).toFixed(6)
+}
+
 export const handleVote = async (proposalId, optionValue) => {
     if ('0' === proposalId) {
         return {
@@ -16,10 +26,7 @@ export const handleVote = async (proposalId, optionValue) => {
 }
 
 const pushTransaction = async (proposalId, optionValue) => {
-    const adaAmount = 1 + (((proposalId * 1000) + (optionValue * 1)) / 1000000)
-    // ADA Amount = 1.xxxyyy
-    // xxx = proposalId
-    // yyy = optionValue
+    const adaAmount = transformToAda(proposalId, optionValue)
 
     try {
         const amount = cardanoPress.api.adaToLovelace(adaAmount)
