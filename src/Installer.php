@@ -31,7 +31,8 @@ class Installer
         $this->logger = $this->application::logger('installer');
         $this->admin = new Admin();
 
-        add_action('admin_notices', [$this, 'notice']);
+        add_action('admin_notices', [$this, 'noticeNeedingCorePlugin']);
+        add_action('admin_notices', [$this, 'noticeNeedingGlobalPolicy']);
         add_filter('plugin_action_links_' . plugin_basename(CP_GOVERNANCE_FILE), [$this, 'addSettingsLink']);
     }
 
@@ -40,7 +41,7 @@ class Installer
         $this->logger->log($level, $message);
     }
 
-    public function notice(): void
+    public function noticeNeedingCorePlugin(): void
     {
         if ($this->application::isCoreActive()) {
             return;
@@ -52,6 +53,26 @@ class Installer
         <div class="notice notice-info">
             <p>
                 <strong>CardanoPress - Governance</strong> requires the core plugin for its full functionality.
+            </p>
+        </div>
+        <?php
+
+        echo ob_get_clean();
+    }
+
+    public function noticeNeedingGlobalPolicy(): void
+    {
+        if ($this->admin->getOption('global_policy')) {
+            return;
+        }
+
+        ob_start();
+
+        ?>
+        <div class="notice notice-info">
+            <p>
+                <strong>CardanoPress - Governance</strong> requires a fallback / global config for proposals.
+                <?php echo self::getSettingsLink(__('Please set here', 'cardanopress-governance'), '_blank'); ?>
             </p>
         </div>
         <?php
