@@ -36,15 +36,16 @@ $link = [
                 <?php $userProfile = new Profile(get_user_by('id', $userId)); ?>
                 <tr>
                     <td>
-                        <a
+                        <p><a
                             href="<?php echo $link[$userProfile->connectedNetwork()] . $casted['transaction']; ?>"
                             target="_blank"
                         >
                             <?php echo $casted['transaction']; ?>
-                        </a>
+                        </a></p>
+                        <small><?php echo $casted['time']; ?></small>
                     </td>
                     <td><?php echo $proposal->getOptionLabel($casted['option']); ?></td>
-                    <td><?php echo $proposal->getVotingPower($userProfile); ?>&curren;</td>
+                    <td><?php echo $casted['power']; ?>&curren;</td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>

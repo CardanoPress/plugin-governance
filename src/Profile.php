@@ -31,10 +31,12 @@ class Profile extends CoreProfile
 
     public function saveVote(int $proposalId, string $option, string $transaction, int $power): bool
     {
+        $time = time();
+
         return (bool) update_user_meta(
             $this->user->ID,
             $this->prefix . $proposalId,
-            compact('option', 'transaction', 'power')
+            compact('option', 'transaction', 'power', 'time')
         );
     }
 
@@ -45,6 +47,8 @@ class Profile extends CoreProfile
         return $saved ?: [
             'option' => '',
             'transaction' => '',
+            'power' => '',
+            'time' => '',
         ];
     }
 
