@@ -217,6 +217,14 @@ class Proposal
         return (int) $wpdb->get_var($wpdb->prepare($sql, $key));
     }
 
+    public function getTotalPower(): int
+    {
+        $votes = $this->getCastedVotes();
+        $powers = array_column($votes, 'power');
+
+        return array_sum($powers);
+    }
+
     public function getCastedVotes(): array
     {
         global $wpdb;
@@ -229,7 +237,7 @@ class Proposal
             $user = $saved['user_id'];
             $data = maybe_unserialize($saved['meta_value']);
 
-            $result[$user] = $this->formatVoteData($user, $data);
+            $result[] = $this->formatVoteData($user, $data);
         }
 
         return $result;
