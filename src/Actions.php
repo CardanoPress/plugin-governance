@@ -43,7 +43,7 @@ class Actions
             wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
         }
 
-        $userProfile->saveVote($proposalId, $_POST['option'], $_POST['transaction']);
+        $userProfile->saveVote($proposalId, $_POST['option'], $_POST['transaction'], $votingPower);
 
         wp_send_json_success([
             'message' => __('Successfully voted ' . $votingPower, 'cardanopress-governance'),

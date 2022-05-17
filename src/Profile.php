@@ -29,9 +29,13 @@ class Profile extends CoreProfile
         }, $meta);
     }
 
-    public function saveVote(int $proposalId, string $option, string $transaction): bool
+    public function saveVote(int $proposalId, string $option, string $transaction, int $power): bool
     {
-        return (bool) update_user_meta($this->user->ID, $this->prefix . $proposalId, compact('option', 'transaction'));
+        return (bool) update_user_meta(
+            $this->user->ID,
+            $this->prefix . $proposalId,
+            compact('option', 'transaction', 'power')
+        );
     }
 
     public function getVote(int $proposalId): array
