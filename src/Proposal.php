@@ -216,9 +216,32 @@ class Proposal
         $result = [];
 
         foreach ($wpdb->get_results($wpdb->prepare($sql, $key), ARRAY_A) as $saved) {
-            $result[$saved['user_id']] = maybe_unserialize($saved['meta_value']);
+            $user = $saved['user_id'];
+            $data = maybe_unserialize($saved['meta_value']);
+
+            $result[$user] = $this->formatVoteData($user, $data);
         }
 
         return $result;
+    }
+
+    protected function formatVoteData(int $userId, array $data): array
+    {
+        $userProfile = new Profile(get_user_by('id', $userId));
+        $link = [
+            'mainnet' => 'https://cardanoscan.io/transaction/',
+            'testnet' => 'https://testnet.cardanoscan.io/transaction/',
+        ];
+        $format = get_option('date_format') . ' ' . get_option('time_format');
+        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+
+        $data['option'] = $this->getOptionLabel($data['option']);
+        $data['transaction'] = [
+            'hash' => $data['transaction'],
+            'link' => $link[$userProfile->connectedNetwork()] . $data['transaction'],
+        ];
+        $data['time'] = wp_date($format, $data['time'] - $difference);
+
+        return $data;
     }
 }

@@ -9,7 +9,6 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Profile;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
 if (! isset($proposal) || ! $proposal instanceof Proposal) {
@@ -17,10 +16,6 @@ if (! isset($proposal) || ! $proposal instanceof Proposal) {
 }
 
 $votes = $proposal->getCastedVotes();
-$link = [
-    'mainnet' => 'https://cardanoscan.io/transaction/',
-    'testnet' => 'https://testnet.cardanoscan.io/transaction/',
-];
 
 ?>
 
@@ -32,19 +27,15 @@ $link = [
         <?php if (! $votes) :?>
             <tr>Nothing to show here.</tr>
         <?php else : ?>
-            <?php foreach ($votes as $userId => $casted) : ?>
-                <?php $userProfile = new Profile(get_user_by('id', $userId)); ?>
+            <?php foreach ($votes as $casted) : ?>
                 <tr>
                     <td>
-                        <p><a
-                            href="<?php echo $link[$userProfile->connectedNetwork()] . $casted['transaction']; ?>"
-                            target="_blank"
-                        >
-                            <?php echo $casted['transaction']; ?>
+                        <p><a href="<?php echo $casted['transaction']['link']; ?>" target="_blank">
+                            <?php echo $casted['transaction']['hash']; ?>
                         </a></p>
-                        <small><?php echo $casted['time']; ?></small>
+                        <small><?php echo $casted['time']; ?> UTC</small>
                     </td>
-                    <td><?php echo $proposal->getOptionLabel($casted['option']); ?></td>
+                    <td><?php echo $casted['option']; ?></td>
                     <td><?php echo $casted['power']; ?>&curren;</td>
                 </tr>
             <?php endforeach; ?>
