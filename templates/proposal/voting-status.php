@@ -21,7 +21,7 @@ if (! isset($proposal) || ! $proposal instanceof Proposal) {
     <?php foreach ($proposal->getOptions() as $option) : ?>
         <div>
             <p>
-                <?php echo $option['label']; ?>
+                <strong><?php echo $option['label']; ?></strong>
                 <span x-show="hasVoted('<?php echo $option['value']; ?>')">&curren;</span>
             </p>
             <p>
@@ -30,4 +30,9 @@ if (! isset($proposal) || ! $proposal instanceof Proposal) {
             </p>
         </div>
     <?php endforeach; ?>
+
+    <p class="mt-4 mb-0 italic">*
+        <strong><?php echo $proposal->getTotalVotes(); ?></strong> unique votes with
+        <strong><?php echo $proposal->getTotalPower(); ?></strong> total voting power.
+    </p>
 </div>
