@@ -59,15 +59,21 @@ class Installer
         echo ob_get_clean();
     }
 
-    public function addSettingsLink(array $links): array
+    public static function getSettingsLink(string $text, string $target="_self"): string
     {
-        $settings = sprintf(
-            '<a href="%1$s" id="settings-%2$s" aria-label="%3$s">%4$s</a>',
+        return sprintf(
+            '<a href="%1$s" id="settings-%2$s" aria-label="%3$s" target="%4$s">%5$s</a>',
             admin_url('edit.php?post_type=proposal&page=' . Admin::OPTION_KEY),
             Admin::OPTION_KEY,
             __('Settings CardanoPress - Governance', 'cardanopress-governance'),
-            __('Settings', 'cardanopress-governance'),
+            $target,
+            $text,
         );
+    }
+
+    public function addSettingsLink(array $links): array
+    {
+        $settings = self::getSettingsLink(__('Settings', 'cardanopress-governance'));
 
         return array_merge(compact('settings'), $links);
     }

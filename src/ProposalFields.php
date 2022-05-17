@@ -86,6 +86,7 @@ class ProposalFields
     {
         return [
             'title' => __('Use Global Config', 'cardanopress-governance'),
+            'description' => Installer::getSettingsLink(__('Set here', 'cardanopress-governance'), '_blank'),
             'type' => 'checkbox',
             'default' => $this->inAddNewPage(),
         ];
