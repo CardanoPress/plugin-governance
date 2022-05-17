@@ -59,7 +59,7 @@ class Installer
         echo ob_get_clean();
     }
 
-    public static function getSettingsLink(string $text, string $target="_self"): string
+    public static function getSettingsLink(string $text, string $target = "_self"): string
     {
         return sprintf(
             '<a href="%1$s" id="settings-%2$s" aria-label="%3$s" target="%4$s">%5$s</a>',
@@ -120,7 +120,7 @@ class Installer
             foreach ($meta as $key => $value) {
                 $proposalId = str_replace($userProfile->getMetaPrefix(), '', $key);
 
-                $userProfile->saveVote($proposalId, $value, '');
+                $userProfile->saveVote($proposalId, $value, '', 0);
             }
 
             $this->log(print_r($meta, true));
