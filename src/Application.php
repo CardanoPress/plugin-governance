@@ -14,7 +14,7 @@ class Application
 {
     private static Application $instance;
     private static Logger $logger;
-    public const VERSION = '0.5.0';
+    public const VERSION = '0.6.0';
     private Admin $admin;
     private Templates $templates;
 
