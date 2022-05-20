@@ -7,6 +7,8 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use DateTimeZone;
+
 class Proposal
 {
     public int $postId;
@@ -266,9 +268,8 @@ class Proposal
     {
         $format = get_option('date_format') . ' ' . get_option('time_format');
         $format = apply_filters('cp-governance-date_format', $format);
-        $timezone = apply_filters('cp-governance-date_timezone', wp_timezone());
-        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+        $timezone = apply_filters('cp-governance-date_timezone', 'UTC');
 
-        return wp_date($format, $timestamp - $difference, $timezone);
+        return wp_date($format, $timestamp, new DateTimeZone($timezone));
     }
 }
