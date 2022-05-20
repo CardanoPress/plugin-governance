@@ -34,7 +34,7 @@ if ('upcoming' === $type) {
     <div class="col py-2">
         <h2><?php the_title(); ?></h2>
         <p><?php the_excerpt(); ?></p>
-        <p><b><?php echo $voteText; ?>: <?php echo $voteDate; ?> UTC</b></p>
+        <p><b><?php echo $voteText; ?>: <?php echo $voteDate; ?></b></p>
     </div>
 
     <div class="col-auto py-2">

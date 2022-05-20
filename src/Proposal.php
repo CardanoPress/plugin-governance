@@ -269,7 +269,10 @@ class Proposal
         $format = get_option('date_format') . ' ' . get_option('time_format');
         $format = apply_filters('cp-governance-date_format', $format);
         $timezone = apply_filters('cp-governance-date_timezone', 'UTC');
+        $timezone = new DateTimeZone($timezone);
+        $value = wp_date($format, $timestamp, $timezone);
+        $string = apply_filters('cp-governance-date_string', '%format% %timezone%');
 
-        return wp_date($format, $timestamp, new DateTimeZone($timezone));
+        return str_replace(['%format%', '%timezone%'], [$value, $timezone->getName()], $string);
     }
 }

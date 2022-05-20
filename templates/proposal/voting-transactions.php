@@ -33,7 +33,7 @@ $votes = $proposal->getCastedVotes();
                         <p><a href="<?php echo $casted['transaction']['link']; ?>" target="_blank">
                             <?php echo $casted['transaction']['hash']; ?>
                         </a></p>
-                        <small><?php echo $casted['time']; ?> UTC</small>
+                        <small><?php echo $casted['time']; ?></small>
                     </td>
                     <td><?php echo $casted['option']; ?></td>
                     <td><?php echo $casted['power']; ?>&curren;</td>
