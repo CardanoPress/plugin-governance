@@ -153,20 +153,21 @@ class Proposal
 
     public function getDates(): array
     {
-        $format = get_option('date_format') . ' ' . get_option('time_format');
-        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
-        $start = get_post_time($format, true, $this->postId);
+        $start = get_post_datetime($this->postId);
+        $start = $this->formatDate($start->getTimestamp());
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
         $end = $snapshot = '&mdash;';
 
+
         if ($expiration) {
-            $end = wp_date($format, strtotime($expiration) - $difference);
+            $end = $this->formatDate(strtotime($expiration));
         }
 
         $imploded = implode(' ', $this->getSnapshot());
 
         if ('' !== trim($imploded)) {
-            $snapshot = wp_date($format, strtotime($imploded) - ($difference * 2));
+            $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+            $snapshot = $this->formatDate(strtotime($imploded) - $difference);
         }
 
         return compact('start', 'end', 'snapshot');
@@ -250,16 +251,24 @@ class Proposal
             'mainnet' => 'https://cardanoscan.io/transaction/',
             'testnet' => 'https://testnet.cardanoscan.io/transaction/',
         ];
-        $format = get_option('date_format') . ' ' . get_option('time_format');
-        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
 
         $data['option'] = $this->getOptionLabel($data['option']);
         $data['transaction'] = [
             'hash' => $data['transaction'],
             'link' => $link[$userProfile->connectedNetwork()] . $data['transaction'],
         ];
-        $data['time'] = wp_date($format, $data['time'] - $difference);
+        $data['time'] = $this->formatDate($data['time']);
 
         return $data;
+    }
+
+    protected function formatDate(int $timestamp): string
+    {
+        $format = get_option('date_format') . ' ' . get_option('time_format');
+        $format = apply_filters('cp-governance-date_format', $format);
+        $timezone = apply_filters('cp-governance-date_timezone', wp_timezone());
+        $difference = get_option('gmt_offset') * HOUR_IN_SECONDS;
+
+        return wp_date($format, $timestamp - $difference, $timezone);
     }
 }
