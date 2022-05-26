@@ -33,8 +33,7 @@ class Profile extends CoreProfile
     {
         $time = time();
 
-        return (bool) update_user_meta(
-            $this->user->ID,
+        return (bool) $this->updateMeta(
             $this->prefix . $proposalId,
             compact('option', 'transaction', 'power', 'time')
         );
@@ -42,7 +41,7 @@ class Profile extends CoreProfile
 
     public function getVote(int $proposalId): array
     {
-        $saved = get_user_meta($this->user->ID, $this->prefix . $proposalId, true);
+        $saved = $this->getMeta($this->prefix . $proposalId, true);
 
         return $saved ?: [
             'option' => '',

@@ -7,111 +7,77 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Foundation\AbstractAdmin;
 use Exception;
-use Monolog\Logger;
-use ThemePlate\Core\Data;
 use ThemePlate\Meta\Post;
-use ThemePlate\Page;
-use ThemePlate\Settings;
 
-class Admin
+class Admin extends AbstractAdmin
 {
-    protected Data $data;
-    protected Logger $logger;
+    public const OPTION_KEY = 'cp-governance';
+
     protected ProposalFields $proposalFields;
     protected ProposalCPT $proposalCPT;
 
-    public const OPTION_KEY = 'cp-governance';
-
-    public function __construct()
-    {
-        $this->data = new Data();
-        $this->logger = Application::logger('admin');
-    }
-
-    protected function log(string $message, string $level = 'error'): void
-    {
-        $this->logger->log($level, $message);
-    }
-
-    public function init(): void
+    protected function initialize(): void
     {
         $this->proposalFields = new ProposalFields();
-        $this->proposalCPT = new ProposalCPT($this->logger);
-
-        $this->proposalFields->populate();
-        $this->proposalCPT->register();
-        $this->settingsPage();
-        $this->proposalArchiveFields();
-        $this->proposalConfigFields();
-        $this->proposalSettingsMetaBox();
-        $this->proposalStatusMetaBox();
+        $this->proposalCPT    = new ProposalCPT($this->getLogger());
     }
 
-    public function settingsPage(): void
+    public function setupHooks(): void
     {
-        try {
-            new Page([
-                'id' => self::OPTION_KEY,
-                'parent' => 'edit.php?post_type=proposal',
-                'menu' => 'Settings',
-                'title' => 'CardanoPress - Governance',
-            ]);
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage());
-        }
+        $this->proposalFields->setupHooks();
+        $this->proposalCPT->setupHooks();
+
+        $this->settingsPage('CardanoPress - Governance', [
+            'parent' => 'edit.php?post_type=proposal',
+            'menu' => 'Settings',
+        ]);
+
+        add_action('init', function () {
+            $this->proposalArchiveFields();
+            $this->proposalConfigFields();
+            $this->proposalSettingsMetaBox();
+            $this->proposalStatusMetaBox();
+        });
     }
 
-    public function proposalArchiveFields(): void
+    private function proposalArchiveFields(): void
     {
-        try {
-            $settings = new Settings([
-                'id' => 'proposal',
-                'title' => __('Proposal Archives', 'cardanopress'),
-                'page' => self::OPTION_KEY,
-                'fields' => [
-                    'title' => [
-                        'title' => __('Title', 'cardanopress-governance'),
-                        'type' => 'text',
-                        'default' => 'Project Governance'
-                    ],
-                    'content' => [
-                        'title' => __('Content', 'cardanopress-governance'),
-                        'type' => 'editor',
-                        'default' => 'Vote on upcoming decision of the projects DAO.
+        $this->optionFields([
+            'id' => 'proposal',
+            'title' => __('Proposal Archives', 'cardanopress-governance'),
+            'fields' => [
+                'title' => [
+                    'title' => __('Title', 'cardanopress-governance'),
+                    'type' => 'text',
+                    'default' => 'Project Governance'
+                ],
+                'content' => [
+                    'title' => __('Content', 'cardanopress-governance'),
+                    'type' => 'editor',
+                    'default' => 'Vote on upcoming decision of the projects DAO.
 
 Submit a proposal for discussion or vote in current proposals in our ecosystem.'
-                    ],
                 ],
-            ]);
-
-            $this->data->store($settings->get_config());
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage());
-        }
+            ],
+        ]);
     }
 
-    public function proposalConfigFields(): void
+    private function proposalConfigFields(): void
     {
-        try {
-            $settings = new Settings([
-                'id' => 'global',
-                'title' => __('Global Config', 'cardanopress'),
-                'page' => self::OPTION_KEY,
-                'fields' => [
-                    'discussion' => $this->proposalFields->getDiscussion(),
-                    'policy' => $this->proposalFields->getPolicy(),
-                    'calculation' => $this->proposalFields->getCalculation(),
-                ],
-            ]);
-
-            $this->data->store($settings->get_config());
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage());
-        }
+        $this->optionFields([
+            'id' => 'global',
+            'title' => __('Global Config', 'cardanopress-governance'),
+            'fields' => [
+                'discussion' => $this->proposalFields->getDiscussion(),
+                'policy' => $this->proposalFields->getPolicy(),
+                'calculation' => $this->proposalFields->getCalculation(),
+            ],
+        ]);
     }
 
-    public function proposalSettingsMetaBox(): void
+    private function proposalSettingsMetaBox(): void
     {
         try {
             $post = new Post([
@@ -173,13 +139,13 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 ],
             ]);
 
-            $this->data->store($post->get_config());
+            $this->storeConfig($post->get_config());
         } catch (Exception $exception) {
             $this->log($exception->getMessage());
         }
     }
 
-    public function proposalStatusMetaBox(): void
+    private function proposalStatusMetaBox(): void
     {
         try {
             $post = new Post([
@@ -194,21 +160,9 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 ],
             ]);
 
-            $this->data->store($post->get_config());
+            $this->storeConfig($post->get_config());
         } catch (Exception $exception) {
             $this->log($exception->getMessage());
         }
-    }
-
-    public function getOption(string $key)
-    {
-        $options = get_option(static::OPTION_KEY, []);
-        $value = $options[$key] ?? '';
-
-        if ($value) {
-            return $value;
-        }
-
-        return $this->data->get_default(static::OPTION_KEY, $key);
     }
 }

@@ -93,7 +93,7 @@ class Proposal
         }
 
         if ($this->useGlobalConfig) {
-            $status = Application::instance()->option('global_' . $key);
+            $status = Application::getInstance()->option('global_' . $key);
         } else {
             $status = get_post_meta($this->postId, 'proposal_' . $key, true);
         }

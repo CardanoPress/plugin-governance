@@ -45,9 +45,9 @@ get_header();
                 </ol>
             </nav>
 
-            <h1 class="pb-3"><?php echo Application::instance()->option('proposal_title'); ?></h1>
+            <h1 class="pb-3"><?php echo Application::getInstance()->option('proposal_title'); ?></h1>
 
-            <?php echo apply_filters('the_content', Application::instance()->option('proposal_content')); ?>
+            <?php echo apply_filters('the_content', Application::getInstance()->option('proposal_content')); ?>
 
             <ul class="nav nav-tabs mt-5" id="tab-proposal" role="tablist">
                 <?php foreach ($types as $index => $type) : ?>
@@ -79,7 +79,7 @@ get_header();
                             <?php while (${$type}->have_posts()) : ?>
                                 <?php ${$type}->the_post(); ?>
 
-                                <?php Application::instance()->template('proposal/tab-content', compact('type')); ?>
+                                <?php Application::getInstance()->template('proposal/tab-content', compact('type')); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>

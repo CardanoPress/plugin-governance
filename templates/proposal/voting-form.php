@@ -45,9 +45,7 @@ $currentStatus ??= 'publish';
             <?php if ($voted) : ?>
                 <p><b>You voted: <?php echo $proposal->getOptionLabel($voted); ?></b></p>
             <?php else : ?>
-                <template x-if='!isConnected'>
-                    <?php cardanoPress()->template('part/modal-trigger', ['text' => 'Connect Wallet']); ?>
-                </template>
+                <?php echo do_shortcode('[cardanopress_template name="part/modal-trigger" if="!isConnected"]'); ?>
 
                 <template x-if='isConnected'>
                     <button class="btn btn-primary" @click="handleVote" :disabled="isDisabled(true)">Submit</button>

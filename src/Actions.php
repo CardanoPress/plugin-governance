@@ -7,9 +7,11 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-class Actions
+use CardanoPress\Interfaces\HookInterface;
+
+class Actions implements HookInterface
 {
-    public function __construct()
+    public function setupHooks(): void
     {
         add_action('wp_ajax_cp-governance_proposal_vote', [$this, 'saveProposalVote']);
     }

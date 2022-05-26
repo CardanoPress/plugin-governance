@@ -7,75 +7,50 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-use Monolog\Logger as MonoLogger;
-use ThemePlate\Logger;
+use CardanoPress\Foundation\AbstractApplication;
+use CardanoPress\Traits\Configurable;
+use CardanoPress\Traits\Enqueueable;
+use CardanoPress\Traits\Instantiable;
+use CardanoPress\Traits\Templatable;
 
-class Application
+class Application extends AbstractApplication
 {
-    private static Application $instance;
-    private static Logger $logger;
-    public const VERSION = '0.7.0';
-    private Admin $admin;
-    private Templates $templates;
+    use Configurable;
+    use Enqueueable;
+    use Instantiable;
+    use Templatable;
 
-    public static function instance(): Application
+    protected function initialize(): void
     {
-        if (! isset(self::$instance)) {
-            self::$instance = new self();
-        }
+        $this->setInstance($this);
 
-        return self::$instance;
+        $path = plugin_dir_path($this->getPluginFile());
+        $this->admin = new Admin($this->logger('admin'));
+        $this->manifest = new Manifest($path . 'assets/dist', $this->getData('Version'));
+        $this->templates = new Templates($path . 'templates');
     }
 
-    private function __construct()
+    public function setupHooks(): void
     {
-        self::$logger = new Logger('cardanopress-logs');
-        $this->admin = new Admin();
+        $this->admin->setupHooks();
+        $this->manifest->setupHooks();
+        $this->templates->setupHooks();
 
-        add_action('init', [$this->admin, 'init']);
         add_action('cardanopress_loaded', [$this, 'init']);
     }
 
     public function init(): void
     {
-        $load_path = plugin_dir_path(CP_GOVERNANCE_FILE);
-        $this->templates = new Templates($load_path . 'templates');
-
-        new Manifest($load_path . 'assets/dist', self::VERSION);
-        new Actions();
+        (new Snapshot($this->logger('snapshot')))->setupHooks();
+        (new Actions())->setupHooks();
     }
 
-    public static function isCoreActive(): bool
+    public function isReady(): bool
     {
         $function = function_exists('cardanoPress');
         $namespace = 'PBWebDev\\CardanoPress\\';
         $admin = class_exists($namespace . 'Admin');
 
         return $function && $admin;
-    }
-
-    public static function logger(string $channel): MonoLogger
-    {
-        return self::$logger->channel($channel);
-    }
-
-    public function template(string $name, array $variables = []): void
-    {
-        $name .= '.php';
-        $file = locate_template($this->templates->getPath() . $name);
-
-        if (! $file) {
-            $file = $this->templates->getPath(true) . $name;
-        }
-
-        if (file_exists($file)) {
-            extract($variables, EXTR_OVERWRITE);
-            include $file;
-        }
-    }
-
-    public function option(string $key)
-    {
-        return $this->admin->getOption($key);
     }
 }

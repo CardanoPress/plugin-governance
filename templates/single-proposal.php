@@ -69,14 +69,14 @@ get_header();
 
                 <?php if ('future' !== $currentStatus) : ?>
                     <div class="mt-5">
-                        <?php Application::instance()->template(
+                        <?php Application::getInstance()->template(
                             'proposal/voting-area',
                             compact('proposal', 'currentStatus')
                         ); ?>
                     </div>
 
                     <div class="mt-5">
-                        <?php Application::instance()->template(
+                        <?php Application::getInstance()->template(
                             'proposal/voting-transactions',
                             compact('proposal')
                         ); ?>

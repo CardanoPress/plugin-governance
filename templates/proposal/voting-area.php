@@ -42,7 +42,7 @@ if ('archive' === $currentStatus) {
         <h2><?php echo $voteText; ?></h2>
         <hr/>
 
-        <?php Application::instance()->template(
+        <?php Application::getInstance()->template(
             'proposal/voting-form',
             compact('proposal', 'votedOption', 'currentStatus')
         ); ?>
@@ -53,7 +53,7 @@ if ('archive' === $currentStatus) {
             <h2>Vote Stats</h2>
             <hr/>
 
-            <?php Application::instance()->template(
+            <?php Application::getInstance()->template(
                 'proposal/voting-status',
                 compact('proposal')
             ); ?>
@@ -61,7 +61,7 @@ if ('archive' === $currentStatus) {
             <h2>Your voting power</h2>
             <hr/>
 
-            <?php Application::instance()->template(
+            <?php Application::getInstance()->template(
                 'proposal/voting-power',
                 compact('proposal', 'userProfile')
             ); ?>

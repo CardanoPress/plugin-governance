@@ -21,7 +21,6 @@ if (! defined('ABSPATH')) {
 
 use PBWebDev\CardanoPress\Governance\Application;
 use PBWebDev\CardanoPress\Governance\Installer;
-use PBWebDev\CardanoPress\Governance\Snapshot;
 
 /* ==================================================
 Global constants
@@ -39,6 +38,16 @@ require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/woocommerce/action-sc
 EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/pbwebdev/cardanopress-governance/main/update-data.json');
 
 // Instantiate
-Application::instance();
-Snapshot::instance();
-register_activation_hook(CP_GOVERNANCE_FILE, [Installer::instance(), 'activate']);
+function cpGovernance(): Application
+{
+    static $application;
+
+    if (null === $application) {
+        $application = new Application(CP_GOVERNANCE_FILE);
+    }
+
+    return $application;
+}
+
+cpGovernance()->setupHooks();
+(new Installer(cpGovernance()))->setupHooks();

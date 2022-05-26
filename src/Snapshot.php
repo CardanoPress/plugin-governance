@@ -7,32 +7,29 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-use Monolog\Logger;
+use CardanoPress\Interfaces\HookInterface;
+use CardanoPress\Traits\Loggable;
 use PBWebDev\CardanoPress\Blockfrost;
+use Psr\Log\LoggerInterface;
 
-class Snapshot
+class Snapshot implements HookInterface
 {
+    use Loggable;
+
     private static Snapshot $instance;
-    private Logger $logger;
     private string $lockKey = '';
 
     public const LOCK = 'cpg_snapshot_lock_';
     public const HOOK = 'cp_governance_snapshot_';
     public const GROUP = 'cardanopress-governance';
 
-    public static function instance(): Snapshot
+    public function __construct(LoggerInterface $logger)
     {
-        if (! isset(self::$instance)) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
+        $this->setLogger($logger);
     }
 
-    private function __construct()
+    public function setupHooks(): void
     {
-        $this->logger = Application::logger('snapshot');
-
         add_action(self::HOOK . 'wallets', [$this, 'scanWallets']);
         add_action(self::HOOK . 'wallet', [$this, 'scanWallet'], 10, 2);
     }

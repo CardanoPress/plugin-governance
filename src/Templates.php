@@ -7,19 +7,14 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-use PBWebDev\CardanoPress\Foundation\AbstractTemplates;
+use CardanoPress\Foundation\AbstractTemplates;
 
 class Templates extends AbstractTemplates
 {
+    public const OVERRIDES_PREFIX = 'cardanopress/governance/';
 
-    protected function getPathPrefix(): string
+    protected function initialize(): void
     {
-        return 'cardanopress/governance/';
-    }
-
-    protected function getTitlePrefix(): string
-    {
-        return 'CP - Governance:';
     }
 
     protected function getLoaderFile(): string

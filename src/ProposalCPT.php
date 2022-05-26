@@ -7,24 +7,37 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Interfaces\HookInterface;
+use CardanoPress\Traits\Loggable;
 use Exception;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 use ThemePlate\CPT\PostType;
 use WP_Post;
 use WP_Query;
 
-class ProposalCPT
+class ProposalCPT implements HookInterface
 {
-    protected Logger $logger;
+    use Loggable;
 
-    public function __construct(Logger $logger)
+    public function __construct(LoggerInterface $logger)
     {
-        $this->logger = $logger;
+        $this->setLogger($logger);
+    }
 
+    public function setupHooks(): void
+    {
         add_action('wp_insert_post', [$this, 'prepareData'], 10, 2);
         add_action('wp_insert_post', [$this, 'scheduleSnapshot'], 10, 2);
         add_filter('pre_get_posts', [$this, 'customizeStatus']);
         add_filter('use_block_editor_for_post_type', [$this, 'noBlocks'], 10, 2);
+        add_action(Installer::DATA_PREFIX . 'activating', [$this, 'pluginActivating']);
+        $this->register();
+    }
+
+    public function pluginActivating(): void
+    {
+        $this->register();
+        flush_rewrite_rules();
     }
 
     public function register(): void
@@ -44,7 +57,7 @@ class ProposalCPT
                 ],
             ]);
         } catch (Exception $exception) {
-            $this->logger->error($exception->getMessage());
+            $this->log($exception->getMessage(), 'error');
         }
     }
 

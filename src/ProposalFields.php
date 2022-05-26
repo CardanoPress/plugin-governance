@@ -7,17 +7,27 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-class ProposalFields
+use CardanoPress\Interfaces\HookInterface;
+
+class ProposalFields implements HookInterface
 {
+    protected Application $application;
     protected array $policyIds = [];
 
-    public function populate(): void
+    public function __construct()
     {
-        if (Application::isCoreActive()) {
-            foreach (cardanoPress()->option('policy_ids') as $policy) {
-                $this->policyIds[$policy['value']] = $policy['label'];
+        $this->application = Application::getInstance();
+    }
+
+    public function setupHooks(): void
+    {
+        add_action('plugins_loaded', function () {
+            if ($this->application->isReady()) {
+                foreach (cardanoPress()->option('policy_ids') as $policy) {
+                    $this->policyIds[$policy['value']] = $policy['label'];
+                }
             }
-        }
+        });
     }
 
     public function getStatus(): array
@@ -84,9 +94,11 @@ class ProposalFields
 
     public function getConfig(): array
     {
+        $installer = new Installer(cpGovernance());
+
         return [
             'title' => __('Use Global Config', 'cardanopress-governance'),
-            'description' => Installer::getSettingsLink(__('Set here', 'cardanopress-governance'), '_blank'),
+            'description' => $installer->getSettingsLink(__('Set here', 'cardanopress-governance'), '_blank'),
             'type' => 'checkbox',
             'default' => $this->inAddNewPage(),
         ];
@@ -100,7 +112,7 @@ class ProposalFields
         ];
 
         if ($this->inAddNewPage()) {
-            $data['default'] = Application::instance()->option('global_discussion');
+            $data['default'] = $this->application->option('global_discussion');
         }
 
         if ($this->inAddNewPage() || $this->inEditPage()) {
@@ -120,7 +132,7 @@ class ProposalFields
         ];
 
         if ($this->inAddNewPage()) {
-            $data['default'] = Application::instance()->option('global_policy');
+            $data['default'] = $this->application->option('global_policy');
         }
 
         if ($this->inAddNewPage() || $this->inEditPage()) {
@@ -143,7 +155,7 @@ class ProposalFields
         ];
 
         if ($this->inAddNewPage()) {
-            $global = Application::instance()->option('global_calculation');
+            $global = $this->application->option('global_calculation');
 
             if ($global) {
                 $data['default'] = array_values($global);
