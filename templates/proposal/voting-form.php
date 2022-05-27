@@ -21,7 +21,7 @@ $currentStatus ??= 'publish';
 
 ?>
 
-<fieldset<?php echo 'publish' === $currentStatus ? '' : ' disabled="true"'; ?>>
+<fieldset<?php echo $proposal->isReady() ? '' : ' disabled="true"'; ?>>
     <?php foreach ($options as $option) : ?>
         <div
             x-id="['vote-option']"

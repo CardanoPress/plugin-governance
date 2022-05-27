@@ -47,6 +47,19 @@ class Proposal
         return $result[0] ?? 0;
     }
 
+    public function isReady(): bool
+    {
+        if (! Application::getInstance()->isReady()) {
+            return false;
+        }
+
+        if ('publish' !== get_post_status($this->postId)) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function isComplete(): bool
     {
         if ('archive' !== get_post_status($this->postId)) {
