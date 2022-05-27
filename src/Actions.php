@@ -33,6 +33,11 @@ class Actions implements HookInterface
 
         $postId = Proposal::getPostId($proposalId);
         $proposal = new Proposal($postId);
+
+        if (! $proposal->isReady() || $proposal->isComplete()) {
+            wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
+        }
+
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {
