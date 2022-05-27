@@ -1,24 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '73e8a147255e7995434c69bc2f1b4a20c496485d',
+        'reference' => 'c65ac97315d23bf6f16258081c3d625826a31ce5',
         'name' => 'pbwebdev/cardanopress-governance',
         'dev' => false,
     ),
     'versions' => array(
         'cardanopress/framework' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'v1.0.0',
+            'version' => '1.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../cardanopress/framework',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'reference' => 'f81cb7e338301c04836cdaae5ac0b29381a2fc41',
+            'aliases' => array(),
+            'reference' => '095a020579f02a591e9b98303abe2a4ce284951d',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(
@@ -67,12 +65,12 @@
             'dev_requirement' => false,
         ),
         'pbwebdev/cardanopress-governance' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '73e8a147255e7995434c69bc2f1b4a20c496485d',
+            'reference' => 'c65ac97315d23bf6f16258081c3d625826a31ce5',
             'dev_requirement' => false,
         ),
         'psr/http-client' => array(

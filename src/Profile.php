@@ -7,11 +7,15 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
-use PBWebDev\CardanoPress\Profile as CoreProfile;
+use CardanoPress\Foundation\AbstractProfile;
 
-class Profile extends CoreProfile
+class Profile extends AbstractProfile
 {
     private string $prefix = 'cp_governance_';
+
+    protected function initialize(): void
+    {
+    }
 
     public function getMetaPrefix(): string
     {
