@@ -50,7 +50,8 @@ class Application extends AbstractApplication
         $function = function_exists('cardanoPress');
         $namespace = 'PBWebDev\\CardanoPress\\';
         $admin = class_exists($namespace . 'Admin');
+        $blockfrost = class_exists($namespace . 'Blockfrost');
 
-        return $function && $admin;
+        return $function && $admin && $blockfrost;
     }
 }

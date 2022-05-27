@@ -78,7 +78,7 @@ class Calculator
             return $this->getSnapshotPower('ada');
         }
 
-        if (! $this->profile->isConnected()) {
+        if (! Application::getInstance()->isReady() || ! $this->profile->isConnected()) {
             return 0;
         }
 

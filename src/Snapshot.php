@@ -115,7 +115,7 @@ class Snapshot implements HookInterface
         $user = get_user_by('id', $userId);
         $userProfile = new Profile($user);
 
-        if ($userProfile->isConnected()) {
+        if (Application::getInstance()->isReady() && $userProfile->isConnected()) {
             $stakeAddress = $userProfile->connectedStake();
             $blockfrost = new Blockfrost($userProfile->connectedNetwork());
             $proposal = new Proposal($proposalPostId);
