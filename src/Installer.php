@@ -25,12 +25,10 @@ class Installer extends AbstractInstaller
     {
         parent::setupHooks();
 
-        $plugin = plugin_basename($this->application->getPluginFile());
-
         add_action('admin_notices', [$this, 'noticeNeedingCorePlugin']);
         add_action('admin_notices', [$this, 'noticeNeedingGlobalPolicy']);
-        add_filter('plugin_action_links_' . $plugin, [$this, 'mergeSettingsLink']);
         add_action(self::DATA_PREFIX . 'upgrading', [$this, 'doUpgrade'], 10, 2);
+        add_filter('plugin_action_links_' . $this->pluginBaseName, [$this, 'mergeSettingsLink']);
     }
 
     public function noticeNeedingCorePlugin(): void
@@ -74,35 +72,43 @@ class Installer extends AbstractInstaller
 
     public function doUpgrade(string $currentVersion, string $appVersion): void
     {
-        if ('' !== $currentVersion) {
-            $this->upgrade();
+        if ('' === $currentVersion) {
+            $this->updateOldVotes();
         }
     }
 
-    public function upgrade(): void
+    public function updateOldVotes(): void
     {
-        $this->log('Governance: Upgrading database values');
+        $this->log('Governance: Checking for old user votes');
 
         foreach (get_users() as $user) {
             $userProfile = new Profile($user);
+            $userId = $userProfile->getData('ID');
 
             if (! $userProfile->isConnected()) {
+                $this->log('Unconnected user ' . $userId);
                 continue;
             }
 
             $meta = $userProfile->getAllOwnedMeta();
 
             if (empty($meta)) {
+                $this->log('Absentee user ' . $userId);
                 continue;
             }
 
+            $this->log('Elector user ' . $userId);
+
             foreach ($meta as $key => $value) {
+                if (is_array(maybe_unserialize($value))) {
+                    continue;
+                }
+
                 $proposalId = str_replace($userProfile->getMetaPrefix(), '', $key);
 
                 $userProfile->saveVote($proposalId, $value, '', 0);
+                $this->log('Updating vote ' . $key);
             }
-
-            $this->log(print_r($meta, true));
         }
     }
 }

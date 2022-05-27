@@ -24,7 +24,7 @@ class Profile extends AbstractProfile
 
     public function getAllOwnedMeta(): array
     {
-        $meta = array_filter(get_user_meta($this->user->ID), function ($key) {
+        $meta = array_filter($this->getMeta(''), function ($key) {
             return 0 === strpos($key, $this->prefix);
         }, ARRAY_FILTER_USE_KEY);
 
