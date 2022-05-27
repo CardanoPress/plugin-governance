@@ -1,12 +1,12 @@
 {
-  "new_version"    : "0.7.0",
+  "new_version"    : "0.8.0",
   "homepage"       : "https://github.com/pbwebdev/cardanopress-governance",
-  "download_link"  : "https://github.com/pbwebdev/cardanopress-governance/archive/refs/tags/v0.7.0.zip",
-  "last_updated"   : "2022-05-20",
+  "download_link"  : "https://github.com/pbwebdev/cardanopress-governance/archive/refs/tags/v0.8.0.zip",
+  "last_updated"   : "2022-05-27",
   "author"         : "Gene Alyson Fortunado Torcende",
   "author_profile" : "https://pbwebdev.com",
   "requires"       : "5.8.0",
-  "tested"         : "5.9.3",
+  "tested"         : "6.0.0",
   "requires_php"   : "7.4",
   "sections"       : {
     "description"  : "<p>A CardanoPress extension for governance.</p>"
