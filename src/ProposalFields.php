@@ -21,13 +21,13 @@ class ProposalFields implements HookInterface
 
     public function setupHooks(): void
     {
-        add_action('plugins_loaded', function () {
+        add_action('init', function () {
             if ($this->application->isReady()) {
                 foreach (cardanoPress()->option('policy_ids') as $policy) {
                     $this->policyIds[$policy['value']] = $policy['label'];
                 }
             }
-        });
+        }, 11);
     }
 
     public function getStatus(): array

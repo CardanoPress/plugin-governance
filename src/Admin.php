@@ -39,7 +39,7 @@ class Admin extends AbstractAdmin
             $this->proposalConfigFields();
             $this->proposalSettingsMetaBox();
             $this->proposalStatusMetaBox();
-        });
+        }, 11);
     }
 
     private function proposalArchiveFields(): void
