@@ -16,44 +16,57 @@ class Actions implements HookInterface
         add_action('wp_ajax_cp-governance_proposal_vote', [$this, 'saveProposalVote']);
     }
 
+    public function getAjaxMessage(string $type): string
+    {
+        $messages = [
+            'somethingWrong' => __('Something is wrong. Please try again', 'cardanopress-governance'),
+            'alreadyVoted' => __('Sorry, you already voted', 'cardanopress-governance'),
+            'noVotingPower' => __('Sorry, you do not have a voting power', 'cardanopress-governance'),
+            'successfulVote' => __('Successfully voted %s', 'cardanopress-governance'),
+        ];
+        $messages = apply_filters('cp-governance-ajax_messages', $messages);
+
+        return $messages[$type] ?? '';
+    }
+
     public function saveProposalVote(): void
     {
         check_ajax_referer('cardanopress-actions');
 
         if (empty($_POST['proposalId']) || empty($_POST['option']) || empty($_POST['transaction'])) {
-            wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
         $proposalId = (int) $_POST['proposalId'];
         $userProfile = new Profile(wp_get_current_user());
 
         if ($userProfile->hasVoted($proposalId)) {
-            wp_send_json_error(__('Sorry, you already voted', 'cardanopress-governance'));
+            wp_send_json_error(self::getAjaxMessage('alreadyVoted'));
         }
 
         $postId = Proposal::getPostId($proposalId);
         $proposal = new Proposal($postId);
 
         if (! $proposal->isReady() || $proposal->isComplete()) {
-            wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {
-            wp_send_json_error(__('Sorry, you do not have a voting power', 'cardanopress-governance'));
+            wp_send_json_error($this->getAjaxMessage('noVotingPower'));
         }
 
         $success = $proposal->updateData($_POST['option'], $votingPower);
 
         if (! $success) {
-            wp_send_json_error(__('Something is wrong. Please try again', 'cardanopress-governance'));
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
         $userProfile->saveVote($proposalId, $_POST['option'], $_POST['transaction'], $votingPower);
 
         wp_send_json_success([
-            'message' => __('Successfully voted ' . $votingPower, 'cardanopress-governance'),
+            'message' => sprintf($this->getAjaxMessage('successfulVote'), $votingPower),
             'data' => $proposal->getData(),
         ]);
     }
