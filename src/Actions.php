@@ -64,6 +64,7 @@ class Actions implements HookInterface
         }
 
         $userProfile->saveVote($proposalId, $_POST['option'], $_POST['transaction'], $votingPower);
+        $userProfile->saveTransaction($userProfile->connectedNetwork(), 'payment', $_POST['transaction']);
 
         wp_send_json_success([
             'message' => sprintf($this->getAjaxMessage('successfulVote'), $votingPower),
