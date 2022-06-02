@@ -20,7 +20,7 @@ class Manifest extends AbstractManifest
     public function setupHooks(): void
     {
         parent::setupHooks();
-        add_action('wp_enqueue_scripts', [$this, 'autoEnqueues']);
+        add_action('wp_enqueue_scripts', [$this, 'autoEnqueues'], 25);
     }
 
     public function autoEnqueues(): void
@@ -52,11 +52,11 @@ class Manifest extends AbstractManifest
         wp_script_add_data(self::HANDLE_PREFIX . 'bootstrap', 'crossorigin', 'anonymous');
 
         if (is_singular('proposal') || is_post_type_archive('proposal')) {
-            if (apply_filters(self::HANDLE_PREFIX . 'enqueue-bootstrap-style', true)) {
+            if (! wp_style_is('cardanopress_bootstrap-style')) {
                 wp_enqueue_style(self::HANDLE_PREFIX . 'bootstrap');
             }
 
-            if (apply_filters(self::HANDLE_PREFIX . 'enqueue-bootstrap-script', true)) {
+            if (! wp_script_is('cardanopress_bootstrap-script')) {
                 wp_enqueue_script(self::HANDLE_PREFIX . 'bootstrap');
             }
 
