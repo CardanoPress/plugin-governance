@@ -3,7 +3,7 @@
 /**
  * Plugin Name: CardanoPress - Governance
  * Plugin URI:  https://github.com/CardanoPress/plugin-governance
- * Author:      Gene Alyson Fortunado Torcende
+ * Author:      CardanoPress
  * Author URI:  https://cardanopress.io
  * Description: A CardanoPress extension for governance
  * Version:     0.9.0
