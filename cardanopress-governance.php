@@ -2,9 +2,9 @@
 
 /**
  * Plugin Name: CardanoPress - Governance
- * Plugin URI:  https://github.com/pbwebdev/cardanopress-governance
+ * Plugin URI:  https://github.com/CardanoPress/plugin-governance
  * Author:      Gene Alyson Fortunado Torcende
- * Author URI:  https://pbwebdev.com
+ * Author URI:  https://cardanopress.io
  * Description: A CardanoPress extension for governance
  * Version:     0.8.0
  * License:     GPL-2.0-only
@@ -35,7 +35,7 @@ require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/autoload.php';
 require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/woocommerce/action-scheduler/action-scheduler.php';
 
 // Instantiate the updater
-EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/pbwebdev/cardanopress-governance/main/update-data.json');
+EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/CardanoPress/plugin-governance/main/update-data.json');
 
 // Instantiate
 function cpGovernance(): Application
