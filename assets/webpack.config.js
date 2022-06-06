@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     experiments: {
         asyncWebAssembly: true,
     },
