@@ -7,6 +7,7 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Helpers\NumberHelper;
 use PBWebDev\CardanoPress\Blockfrost;
 
 class Calculator
@@ -89,7 +90,7 @@ class Calculator
             return 0;
         }
 
-        return $this->lovelaceToAda($response['controlled_amount']);
+        return NumberHelper::lovelaceToAda($response['controlled_amount']);
     }
 
     protected function getSnapshotPower(string $type): int
@@ -124,11 +125,6 @@ class Calculator
             return 0;
         }
 
-        return $this->lovelaceToAda($assets[$index]['quantity']);
-    }
-
-    protected function lovelaceToAda(string $value): int
-    {
-        return $value / 1000000;
+        return NumberHelper::lovelaceToAda($assets[$index]['quantity']);
     }
 }

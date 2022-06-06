@@ -1,5 +1,5 @@
 {
-  "name": "pbwebdev/cardanopress-governance",
+  "name": "cardanopress/plugin-governance",
   "description": "A CardanoPress extension for governance",
   "type": "wordpress-plugin",
   "keywords": [
