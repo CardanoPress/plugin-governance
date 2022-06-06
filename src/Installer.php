@@ -26,6 +26,7 @@ class Installer extends AbstractInstaller
         parent::setupHooks();
 
         add_action('admin_notices', [$this, 'noticeNeedingCorePlugin']);
+        add_action('admin_notices', [$this, 'noticeNeedingAugmentTypes']);
         add_action('admin_notices', [$this, 'noticeNeedingGlobalPolicy']);
         add_action(self::DATA_PREFIX . 'upgrading', [$this, 'doUpgrade'], 10, 2);
         add_filter('plugin_action_links_' . $this->pluginBaseName, [$this, 'mergeSettingsLink']);
@@ -37,14 +38,44 @@ class Installer extends AbstractInstaller
             return;
         }
 
+        $message = sprintf(
+            '<strong>%1$s</strong> requires a fallback / global config for proposals. %2$s',
+            $this->application->getData('Name'),
+            $this->getSettingsLink(__('Please set here', 'cardanopress-governance'), '_blank')
+        );
+
         ob_start();
 
         ?>
         <div class="notice notice-info">
-            <p>
-                <strong>CardanoPress - Governance</strong> requires a fallback / global config for proposals.
-                <?php echo $this->getSettingsLink(__('Please set here', 'cardanopress-governance'), '_blank'); ?>
-            </p>
+            <p><?php echo $message; ?></p>
+        </div>
+        <?php
+
+        echo ob_get_clean();
+    }
+
+    public function noticeNeedingAugmentTypes(): void
+    {
+        if (class_exists('AugmentTypes', false)) {
+            return;
+        }
+
+        $plugin  = sprintf(
+            '<a href="%1$s" target="_blank">Augment Types</a>',
+            'https://github.com/kermage/augment-types'
+        );
+        $message = sprintf(
+            '<strong>%1$s</strong> requires the %2$s plugin for marking past proposals.',
+            $this->application->getData('Name'),
+            $plugin
+        );
+
+        ob_start();
+
+        ?>
+        <div class="notice notice-info">
+            <p><?php echo $message; ?></p>
         </div>
         <?php
 
