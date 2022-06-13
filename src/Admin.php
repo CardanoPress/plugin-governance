@@ -8,8 +8,7 @@
 namespace PBWebDev\CardanoPress\Governance;
 
 use CardanoPress\Foundation\AbstractAdmin;
-use Exception;
-use ThemePlate\Meta\Post;
+use ThemePlate\Meta\PostMeta;
 
 class Admin extends AbstractAdmin
 {
@@ -31,7 +30,7 @@ class Admin extends AbstractAdmin
 
         $this->settingsPage('CardanoPress - Governance', [
             'parent' => 'edit.php?post_type=proposal',
-            'menu' => 'Settings',
+            'menu_title' => 'Settings',
         ]);
 
         add_action('init', function () {
@@ -44,9 +43,8 @@ class Admin extends AbstractAdmin
 
     private function proposalArchiveFields(): void
     {
-        $this->optionFields([
-            'id' => 'proposal',
-            'title' => __('Proposal Archives', 'cardanopress-governance'),
+        $this->optionFields(__('Proposal Archives', 'cardanopress-governance'), [
+            'data_prefix' => 'proposal_',
             'fields' => [
                 'title' => [
                     'title' => __('Title', 'cardanopress-governance'),
@@ -66,9 +64,8 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
     private function proposalConfigFields(): void
     {
-        $this->optionFields([
-            'id' => 'global',
-            'title' => __('Global Config', 'cardanopress-governance'),
+        $this->optionFields(__('Global Config', 'cardanopress-governance'), [
+            'data_prefix' => 'global_',
             'fields' => [
                 'discussion' => $this->proposalFields->getDiscussion(),
                 'policy' => $this->proposalFields->getPolicy(),
@@ -79,90 +76,82 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
     private function proposalSettingsMetaBox(): void
     {
-        try {
-            $post = new Post([
-                'id' => 'proposal',
-                'title' => __('Proposal Settings', 'cardanopress-governance'),
-                'screen' => ['proposal'],
+        $postMeta = new PostMeta(__('Proposal Settings', 'cardanopress-governance'), [
+            'data_prefix' => 'proposal_',
+        ]);
+
+        $postMeta->fields([
+            'id' => [
+                'title' => __('Identifier', 'cardanopress-governance'),
+                'type' => 'number',
+                'options' => [
+                    'min' => 1,
+                    'max' => 9999,
+                ],
+                'required' => true,
+            ],
+            'snapshot' => [
+                'title' => __('Snapshot', 'cardanopress-governance'),
+                'type' => 'group',
                 'fields' => [
-                    'id' => [
-                        'title' => __('Identifier', 'cardanopress-governance'),
+                    'date' => [
+                        'title' => __('Date', 'cardanopress-governance'),
+                        'type' => 'date',
+                        'required' => true,
+                    ],
+                    'time' => [
+                        'title' => __('Time', 'cardanopress-governance'),
+                        'type' => 'time',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'config' => $this->proposalFields->getConfig(),
+            'discussion' => $this->proposalFields->getDiscussion(),
+            'policy' => $this->proposalFields->getPolicy(),
+            'calculation' => $this->proposalFields->getCalculation(),
+            'options' => [
+                'title' => __('Options', 'cardanopress-governance'),
+                'type' => 'group',
+                'repeatable' => true,
+                'required' => true,
+                'minimum' => 1,
+                'maximum' => 99,
+                'fields' => [
+                    'value' => [
+                        'title' => __('Value', 'cardanopress-governance'),
                         'type' => 'number',
                         'options' => [
                             'min' => 1,
-                            'max' => 9999,
-                        ],
-                        'required' => true,
-                    ],
-                    'snapshot' => [
-                        'title' => __('Snapshot', 'cardanopress-governance'),
-                        'type' => 'group',
-                        'fields' => [
-                            'date' => [
-                                'title' => __('Date', 'cardanopress-governance'),
-                                'type' => 'date',
-                                'required' => true,
-                            ],
-                            'time' => [
-                                'title' => __('Time', 'cardanopress-governance'),
-                                'type' => 'time',
-                                'required' => true,
-                            ],
+                            'max' => 99,
                         ],
                     ],
-                    'config' => $this->proposalFields->getConfig(),
-                    'discussion' => $this->proposalFields->getDiscussion(),
-                    'policy' => $this->proposalFields->getPolicy(),
-                    'calculation' => $this->proposalFields->getCalculation(),
-                    'options' => [
-                        'title' => __('Options', 'cardanopress-governance'),
-                        'type' => 'group',
-                        'repeatable' => true,
-                        'required' => true,
-                        'minimum' => 1,
-                        'maximum' => 99,
-                        'fields' => [
-                            'value' => [
-                                'title' => __('Value', 'cardanopress-governance'),
-                                'type' => 'number',
-                                'options' => [
-                                    'min' => 1,
-                                    'max' => 99,
-                                ],
-                            ],
-                            'label' => [
-                                'title' => __('Label', 'cardanopress-governance'),
-                                'type' => 'text',
-                            ],
-                        ],
+                    'label' => [
+                        'title' => __('Label', 'cardanopress-governance'),
+                        'type' => 'text',
                     ],
                 ],
-            ]);
+            ],
+        ]);
 
-            $this->storeConfig($post->get_config());
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage());
-        }
+        $postMeta->location('proposal')->create();
+        $this->storeConfig($postMeta->get_config());
     }
 
     private function proposalStatusMetaBox(): void
     {
-        try {
-            $post = new Post([
-                'id' => '_proposal',
-                'title' => __('Proposal Status', 'cardanopress-governance'),
-                'screen' => ['proposal'],
-                'context' => 'side',
-                'priority' => 'high',
-                'fields' => [
-                    'snapshot' => $this->proposalFields->getSchedule(),
-                    'data' => $this->proposalFields->getStatus(),
-                ],
-            ]);
+        $postMeta = new PostMeta(__('Proposal Status', 'cardanopress-governance'), [
+            'data_prefix' => '_proposal_',
+            'context' => 'side',
+            'priority' => 'high',
+        ]);
 
-            $this->storeConfig($post->get_config());
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage());
-        }
+        $postMeta->fields([
+            'snapshot' => $this->proposalFields->getSchedule(),
+            'data' => $this->proposalFields->getStatus(),
+        ]);
+
+        $postMeta->location('proposal')->create();
+        $this->storeConfig($postMeta->get_config());
     }
 }

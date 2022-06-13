@@ -30,8 +30,8 @@
     "ext-json": "*",
     "cardanopress/framework": "^1.0",
     "kermage/external-update-manager": "^2.2",
-    "themeplate/cpt": "^1.1",
-    "themeplate/meta": "^1.4",
+    "themeplate/cpt": "^2.0",
+    "themeplate/meta": "^2.0",
     "woocommerce/action-scheduler": "^3.4"
   },
   "require-dev": {

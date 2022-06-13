@@ -9,7 +9,6 @@ namespace PBWebDev\CardanoPress\Governance;
 
 use CardanoPress\Interfaces\HookInterface;
 use CardanoPress\Traits\Loggable;
-use Exception;
 use Psr\Log\LoggerInterface;
 use ThemePlate\CPT\PostType;
 use WP_Post;
@@ -42,23 +41,16 @@ class ProposalCPT implements HookInterface
 
     public function register(): void
     {
-        try {
-            new PostType([
-                'name' => 'proposal',
-                'plural' => __('Proposals', 'cardanopress-governance'),
-                'singular' => __('Proposal', 'cardanopress-governance'),
-                'args' => [
-                    'menu_position' => 5,
-                    'menu_icon' => 'dashicons-feedback',
-                    'supports' => ['title', 'editor', 'excerpt'],
-                    'has_archive' => true,
-                    'rewrite' => ['slug' => 'proposals'],
-                    'rest_base' => 'proposals',
-                ],
-            ]);
-        } catch (Exception $exception) {
-            $this->log($exception->getMessage(), 'error');
-        }
+        $postType = new PostType('proposal', [
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-feedback',
+            'supports' => ['title', 'editor', 'excerpt'],
+            'has_archive' => true,
+            'rewrite' => ['slug' => 'proposals'],
+            'rest_base' => 'proposals',
+        ]);
+
+        $postType->register();
     }
 
     public function prepareData(int $postId, WP_Post $post): void

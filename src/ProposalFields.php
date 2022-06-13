@@ -87,7 +87,7 @@ class ProposalFields implements HookInterface
     protected function showOnData(): array
     {
         return [
-            'key' => '#proposal_config',
+            'key' => '#themeplate_proposal_config',
             'value' => false,
         ];
     }

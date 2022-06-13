@@ -6,10 +6,13 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ThemePlate\\Meta\\' => array($vendorDir . '/themeplate/meta'),
-    'ThemePlate\\Core\\' => array($vendorDir . '/themeplate/core'),
-    'ThemePlate\\CPT\\' => array($vendorDir . '/themeplate/cpt'),
-    'ThemePlate\\' => array($vendorDir . '/themeplate/column', $vendorDir . '/themeplate/enqueue', $vendorDir . '/themeplate/logger/src', $vendorDir . '/themeplate/page', $vendorDir . '/themeplate/settings'),
+    'ThemePlate\\Settings\\' => array($vendorDir . '/themeplate/settings/src'),
+    'ThemePlate\\Page\\' => array($vendorDir . '/themeplate/page/src'),
+    'ThemePlate\\Meta\\' => array($vendorDir . '/themeplate/meta/src'),
+    'ThemePlate\\Enqueue\\' => array($vendorDir . '/themeplate/enqueue/src'),
+    'ThemePlate\\Core\\' => array($vendorDir . '/themeplate/core/src'),
+    'ThemePlate\\CPT\\' => array($vendorDir . '/themeplate/cpt/src'),
+    'ThemePlate\\' => array($vendorDir . '/themeplate/logger/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
