@@ -9,10 +9,8 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Proposal;
-
-if (! isset($proposal) || ! $proposal instanceof Proposal) {
-    return;
+if (empty($proposal)) {
+    $proposal = cpGovernance()->getProposalInstance(get_the_ID());
 }
 
 $votes = $proposal->getCastedVotes();
