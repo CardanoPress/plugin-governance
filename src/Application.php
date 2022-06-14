@@ -69,4 +69,15 @@ class Application extends AbstractApplication
             'posts_per_page' => -1,
         ]);
     }
+
+    public function userProfile(): Profile
+    {
+        static $user;
+
+        if (null === $user) {
+            $user = new Profile(wp_get_current_user());
+        }
+
+        return $user;
+    }
 }

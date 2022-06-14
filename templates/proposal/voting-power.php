@@ -9,16 +9,13 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Profile;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
 if (! isset($proposal) || ! $proposal instanceof Proposal) {
     return;
 }
 
-if (! isset($userProfile) || ! $userProfile instanceof Profile) {
-    $userProfile = new Profile(wp_get_current_user());
-}
+$userProfile = cpGovernance()->userProfile();
 
 ?>
 

@@ -38,7 +38,7 @@ class Actions implements HookInterface
         }
 
         $proposalId = (int) $_POST['proposalId'];
-        $userProfile = new Profile(wp_get_current_user());
+        $userProfile = Application::getInstance()->userProfile();
 
         if ($userProfile->hasVoted($proposalId)) {
             wp_send_json_error(self::getAjaxMessage('alreadyVoted'));

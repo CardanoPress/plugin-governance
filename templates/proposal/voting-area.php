@@ -9,14 +9,13 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Profile;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
 if (! isset($proposal) || ! $proposal instanceof Proposal) {
     return;
 }
 
-$userProfile = new Profile(wp_get_current_user());
+$userProfile = cpGovernance()->userProfile();
 $votedOption = $userProfile->hasVoted($proposal->getID());
 $proposalData = $proposal->getData();
 $currentStatus ??= 'publish';
@@ -62,7 +61,7 @@ if ('archive' === $currentStatus) {
 
             <?php cpGovernance()->template(
                 'proposal/voting-power',
-                compact('proposal', 'userProfile')
+                compact('proposal')
             ); ?>
         <?php endif; ?>
     </div>
