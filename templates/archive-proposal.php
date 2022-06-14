@@ -11,25 +11,7 @@
 
 use PBWebDev\CardanoPress\Governance\Application;
 
-$types = ['current', 'upcoming', 'past'];
-
-$current = new WP_Query([
-    'post_type' => 'proposal',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-]);
-
-$upcoming = new WP_Query([
-    'post_type' => 'proposal',
-    'post_status' => 'future',
-    'posts_per_page' => -1,
-]);
-
-$past = new WP_Query([
-    'post_type' => 'proposal',
-    'post_status' => 'archive',
-    'posts_per_page' => -1,
-]);
+$types = cpGovernance()->proposalTypes();
 
 get_header();
 
@@ -69,6 +51,7 @@ get_header();
 
             <div class="tab-content" id="content-proposal">
                 <?php foreach ($types as $index => $type) : ?>
+                    <?php $query = cpGovernance()->getProposalQuery($type); ?>
                     <div
                         class="tab-pane fade<?php echo 0 === $index ? ' show active' : ''; ?>"
                         id="<?php echo $type; ?>-tab-panel"
@@ -76,8 +59,8 @@ get_header();
                         aria-labelledby="<?php echo $type; ?>-tab-toggle"
                     >
                         <div class="container gx-0">
-                            <?php while (${$type}->have_posts()) : ?>
-                                <?php ${$type}->the_post(); ?>
+                            <?php while ($query->have_posts()) : ?>
+                                <?php $query->the_post(); ?>
 
                                 <?php Application::getInstance()->template('proposal/tab-content', compact('type')); ?>
                             <?php endwhile; ?>

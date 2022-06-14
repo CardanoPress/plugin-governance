@@ -18,6 +18,12 @@ class ProposalCPT implements HookInterface
 {
     use Loggable;
 
+    public const STATUSES = [
+        'current' => 'publish',
+        'upcoming' => 'future',
+        'past' => 'archive',
+    ];
+
     public function __construct(LoggerInterface $logger)
     {
         $this->setLogger($logger);

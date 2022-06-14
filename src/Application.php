@@ -12,6 +12,7 @@ use CardanoPress\Traits\Configurable;
 use CardanoPress\Traits\Enqueueable;
 use CardanoPress\Traits\Instantiable;
 use CardanoPress\Traits\Templatable;
+use WP_Query;
 
 class Application extends AbstractApplication
 {
@@ -53,5 +54,19 @@ class Application extends AbstractApplication
         $blockfrost = class_exists($namespace . 'Blockfrost');
 
         return $function && $admin && $blockfrost;
+    }
+
+    public function proposalTypes(): array
+    {
+        return array_keys(ProposalCPT::STATUSES);
+    }
+
+    public function getProposalQuery(string $type): WP_Query
+    {
+        return new WP_Query([
+            'post_type' => 'proposal',
+            'post_status' => ProposalCPT::STATUSES[$type] ?? 'publish',
+            'posts_per_page' => -1,
+        ]);
     }
 }
