@@ -9,8 +9,6 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Application;
-
 get_header();
 
 ?>
@@ -25,10 +23,10 @@ get_header();
                 </ol>
             </nav>
 
-            <h1 class="pb-3"><?php echo Application::getInstance()->option('proposal_title'); ?></h1>
+            <h1 class="pb-3"><?php echo cpGovernance()->option('proposal_title'); ?></h1>
 
-            <?php echo apply_filters('the_content', Application::getInstance()->option('proposal_content')); ?>
-            <?php Application::getInstance()->template('tabbed-proposals'); ?>
+            <?php echo apply_filters('the_content', cpGovernance()->option('proposal_content')); ?>
+            <?php cpGovernance()->template('tabbed-proposals'); ?>
         </div>
     </div>
 </div>

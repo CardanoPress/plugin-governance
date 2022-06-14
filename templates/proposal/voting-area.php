@@ -9,7 +9,6 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Application;
 use PBWebDev\CardanoPress\Governance\Profile;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
@@ -42,7 +41,7 @@ if ('archive' === $currentStatus) {
         <h2><?php echo $voteText; ?></h2>
         <hr/>
 
-        <?php Application::getInstance()->template(
+        <?php cpGovernance()->template(
             'proposal/voting-form',
             compact('proposal', 'votedOption', 'currentStatus')
         ); ?>
@@ -53,7 +52,7 @@ if ('archive' === $currentStatus) {
             <h2>Vote Stats</h2>
             <hr/>
 
-            <?php Application::getInstance()->template(
+            <?php cpGovernance()->template(
                 'proposal/voting-status',
                 compact('proposal')
             ); ?>
@@ -61,7 +60,7 @@ if ('archive' === $currentStatus) {
             <h2>Your voting power</h2>
             <hr/>
 
-            <?php Application::getInstance()->template(
+            <?php cpGovernance()->template(
                 'proposal/voting-power',
                 compact('proposal', 'userProfile')
             ); ?>

@@ -9,8 +9,6 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Application;
-
 $types = cpGovernance()->proposalTypes();
 
 ?>
@@ -47,7 +45,7 @@ $types = cpGovernance()->proposalTypes();
                     <?php while ($query->have_posts()) : ?>
                         <?php $query->the_post(); ?>
 
-                        <?php Application::getInstance()->template('proposal/tab-content', compact('type')); ?>
+                        <?php cpGovernance()->template('proposal/tab-content', compact('type')); ?>
                     <?php endwhile; ?>
                 </div>
             </div>

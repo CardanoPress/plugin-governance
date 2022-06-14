@@ -9,7 +9,6 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Application;
 use PBWebDev\CardanoPress\Governance\Proposal;
 
 $proposalId = get_the_ID();
@@ -69,14 +68,14 @@ get_header();
 
                 <?php if ('future' !== $currentStatus) : ?>
                     <div class="mt-5">
-                        <?php Application::getInstance()->template(
+                        <?php cpGovernance()->template(
                             'proposal/voting-area',
                             compact('proposal', 'currentStatus')
                         ); ?>
                     </div>
 
                     <div class="mt-5">
-                        <?php Application::getInstance()->template(
+                        <?php cpGovernance()->template(
                             'proposal/voting-transactions',
                             compact('proposal')
                         ); ?>
