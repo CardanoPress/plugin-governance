@@ -262,6 +262,7 @@ class Proposal
     protected function formatVoteData(int $userId, array $data): array
     {
         $userProfile = new Profile(get_user_by('id', $userId));
+        $network = $userProfile->connectedNetwork() ?: 'mainnet';
         $link = [
             'mainnet' => 'https://cardanoscan.io/transaction/',
             'testnet' => 'https://testnet.cardanoscan.io/transaction/',
@@ -270,7 +271,7 @@ class Proposal
         $data['option'] = $this->getOptionLabel($data['option']);
         $data['transaction'] = [
             'hash' => $data['transaction'],
-            'link' => $link[$userProfile->connectedNetwork()] . $data['transaction'],
+            'link' => $link[$network] . $data['transaction'],
         ];
         $data['time'] = $this->formatDate($data['time']);
 
