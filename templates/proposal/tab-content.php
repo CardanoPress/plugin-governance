@@ -7,10 +7,7 @@
  * @since   0.1.0
  */
 
-use PBWebDev\CardanoPress\Governance\Proposal;
-
-$proposalId = get_the_ID();
-$proposal = new Proposal($proposalId);
+$proposal = cpGovernance()->getProposalInstance(get_the_ID());
 $proposalDates = $proposal->getDates();
 
 $type ??= 'current';

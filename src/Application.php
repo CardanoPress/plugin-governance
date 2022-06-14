@@ -70,6 +70,11 @@ class Application extends AbstractApplication
         ]);
     }
 
+    public function getProposalInstance(int $postId): Proposal
+    {
+        return new Proposal($postId);
+    }
+
     public function userProfile(): Profile
     {
         static $user;
