@@ -7,7 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
 {
     public static $files = array (
-        'af4b52693518d6f741d0dab964786a35' => __DIR__ . '/..' . '/themeplate/core/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -407,6 +406,7 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'ThemePlate\\Core\\Fields' => __DIR__ . '/..' . '/themeplate/core/src/Fields.php',
         'ThemePlate\\Core\\Form' => __DIR__ . '/..' . '/themeplate/core/src/Form.php',
         'ThemePlate\\Core\\Handler' => __DIR__ . '/..' . '/themeplate/core/src/Handler.php',
+        'ThemePlate\\Core\\Helper\\AssetsHelper' => __DIR__ . '/..' . '/themeplate/core/src/Helper/AssetsHelper.php',
         'ThemePlate\\Core\\Helper\\BoxHelper' => __DIR__ . '/..' . '/themeplate/core/src/Helper/BoxHelper.php',
         'ThemePlate\\Core\\Helper\\FormHelper' => __DIR__ . '/..' . '/themeplate/core/src/Helper/FormHelper.php',
         'ThemePlate\\Core\\Helper\\MainHelper' => __DIR__ . '/..' . '/themeplate/core/src/Helper/MainHelper.php',
