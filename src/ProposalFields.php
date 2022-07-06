@@ -28,6 +28,26 @@ class ProposalFields implements HookInterface
                 }
             }
         }, 11);
+
+        foreach (['id', 'options'] as $metaKey) {
+            add_filter('sanitize_post_meta_proposal_' . $metaKey . '_for_proposal', [$this, 'sanitizeNumber'], 10, 2);
+        }
+    }
+
+    /**
+     * @param mixed $metaValue
+     * @param string $metaKey
+     * @return mixed
+     */
+    public function sanitizeNumber($metaValue, string $metaKey)
+    {
+        if ('proposal_id' === $metaKey) {
+            return (int) $metaValue;
+        }
+
+        $metaValue['value'] = (int) $metaValue['value'];
+
+        return $metaValue;
     }
 
     public function getStatus(): array
