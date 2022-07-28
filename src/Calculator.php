@@ -65,7 +65,7 @@ class Calculator
         $assets = array_map(function ($stored) {
             return array(
                 'unit' => $stored['asset'],
-                'quantity' => $stored['quantity'],
+                'quantity' => $stored['_quantity'],
             );
         }, $storedAssets);
 
