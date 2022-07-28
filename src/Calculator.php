@@ -62,15 +62,14 @@ class Calculator
             return 0;
         }
 
-        $policyIds = array_column($storedAssets, 'policy_id');
+        $assets = array_map(function ($stored) {
+            return array(
+                'unit' => $stored['asset'],
+                'quantity' => $stored['quantity'],
+            );
+        }, $storedAssets);
 
-        if (! in_array($this->proposal->getPolicy(), $policyIds, true)) {
-            return 0;
-        }
-
-        $assetsCount = array_count_values($policyIds);
-
-        return $assetsCount[$this->proposal->getPolicy()];
+        return $this->getToken($assets);
     }
 
     public function getAdaPower(): int
@@ -105,16 +104,7 @@ class Calculator
             return $this->getLovelace($status);
         }
 
-        $result = 0;
-        $policy = $this->proposal->getPolicy();
-
-        foreach ($status as $asset) {
-            if (0 === strpos($asset['unit'], $policy)) {
-                $result += $asset['quantity'];
-            }
-        }
-
-        return $result;
+        return $this->getToken($status);
     }
 
     protected function getLovelace(array $assets): int
@@ -126,5 +116,19 @@ class Calculator
         }
 
         return NumberHelper::lovelaceToAda($assets[$index]['quantity']);
+    }
+
+    protected function getToken(array $assets): int
+    {
+        $result = 0;
+        $policy = $this->proposal->getPolicy();
+
+        foreach ($assets as $asset) {
+            if (0 === strpos($asset['unit'], $policy)) {
+                $result += $asset['quantity'];
+            }
+        }
+
+        return $result;
     }
 }
