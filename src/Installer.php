@@ -44,15 +44,17 @@ class Installer extends AbstractInstaller
             $this->getSettingsLink(__('Please set here', 'cardanopress-governance'), '_blank')
         );
 
-        ob_start();
-
         ?>
         <div class="notice notice-info">
-            <p><?php echo $message; ?></p>
+            <p><?php echo wp_kses($message, [
+                'a' => [
+                    'href' => [],
+                    'target' => [],
+                ],
+                'strong' => [],
+            ]); ?></p>
         </div>
         <?php
-
-        echo ob_get_clean();
     }
 
     public function noticeNeedingAugmentTypes(): void
@@ -71,15 +73,17 @@ class Installer extends AbstractInstaller
             $plugin
         );
 
-        ob_start();
-
         ?>
         <div class="notice notice-info">
-            <p><?php echo $message; ?></p>
+            <p><?php echo wp_kses($message, [
+                'a' => [
+                    'href' => [],
+                    'target' => [],
+                ],
+                'strong' => [],
+            ]); ?></p>
         </div>
         <?php
-
-        echo ob_get_clean();
     }
 
     public function doUpgrade(string $currentVersion, string $appVersion): void

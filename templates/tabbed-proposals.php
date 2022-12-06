@@ -26,7 +26,7 @@ $types = cpGovernance()->proposalTypes();
                     aria-controls="<?php echo esc_attr($type); ?>-tab-panel"
                     aria-selected="<?php echo esc_attr(0 === $index ? 'true' : 'false'); ?>"
                 >
-                    <?php echo ucfirst($type); ?> Proposal
+                    <?php echo esc_html(ucfirst($type)); ?> Proposal
                 </button>
             </li>
         <?php endforeach; ?>

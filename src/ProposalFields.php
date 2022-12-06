@@ -72,8 +72,8 @@ class ProposalFields implements HookInterface
         <table>
             <?php foreach ($proposal->getData() as $key => $value) : ?>
                 <tr>
-                    <th><?php echo $key; ?></th>
-                    <td><?php echo $value; ?></td>
+                    <th><?php echo esc_html($key); ?></th>
+                    <td><?php echo esc_html($value); ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
