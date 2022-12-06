@@ -20,6 +20,9 @@ class Actions implements HookInterface
     {
         $messages = [
             'somethingWrong' => __('Something is wrong. Please try again', 'cardanopress-governance'),
+            'invalidIdentifier' => __('Invalid proposal identifier', 'cardanopress-governance'),
+            'invalidOption' => __('Invalid vote option', 'cardanopress-governance'),
+            'invalidHash' => __('Invalid transaction hash', 'cardanopress-governance'),
             'alreadyVoted' => __('Sorry, you already voted', 'cardanopress-governance'),
             'noVotingPower' => __('Sorry, you do not have a voting power', 'cardanopress-governance'),
             'successfulVote' => __('Successfully voted %s', 'cardanopress-governance'),
@@ -37,7 +40,24 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
-        $proposalId = (int) $_POST['proposalId'];
+        $proposalId = (int) sanitize_key($_POST['proposalId']);
+
+        if (1 > $proposalId || $proposalId > 9999) {
+            wp_send_json_error($this->getAjaxMessage('invalidIdentifier'));
+        }
+
+        $option = sanitize_key($_POST['option']);
+
+        if (! is_numeric($option) || 1 > $option || $option > 99) {
+            wp_send_json_error($this->getAjaxMessage('invalidOption'));
+        }
+
+        $transaction = sanitize_key($_POST['transaction']);
+
+        if (! ctype_xdigit($transaction) || 64 !== strlen($transaction)) {
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
+        }
+
         $userProfile = Application::getInstance()->userProfile();
 
         if ($userProfile->hasVoted($proposalId)) {
@@ -57,14 +77,14 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('noVotingPower'));
         }
 
-        $success = $proposal->updateData($_POST['option'], $votingPower);
+        $success = $proposal->updateData($option, $votingPower);
 
         if (! $success) {
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
-        $userProfile->saveVote($proposalId, $_POST['option'], $_POST['transaction'], $votingPower);
-        $userProfile->saveTransaction($userProfile->connectedNetwork(), 'payment', $_POST['transaction']);
+        $userProfile->saveVote($proposalId, $option, $transaction, $votingPower);
+        $userProfile->saveTransaction($userProfile->connectedNetwork(), 'payment', $transaction);
 
         wp_send_json_success([
             'message' => sprintf($this->getAjaxMessage('successfulVote'), $votingPower),
