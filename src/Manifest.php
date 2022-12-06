@@ -27,29 +27,17 @@ class Manifest extends AbstractManifest
     {
         wp_register_style(
             self::HANDLE_PREFIX . 'bootstrap',
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
+            plugin_dir_url($this->path) . 'vendor/bootstrap.min.css',
             [],
             '5.1.3'
         );
-        wp_style_add_data(
-            self::HANDLE_PREFIX . 'bootstrap',
-            'integrity',
-            'sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3'
-        );
-        wp_style_add_data(self::HANDLE_PREFIX . 'bootstrap', 'crossorigin', 'anonymous');
         wp_register_script(
             self::HANDLE_PREFIX . 'bootstrap',
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+            plugin_dir_url($this->path) . 'vendor/bootstrap.bundle.min.js',
             ['jquery'],
             '5.1.3',
             true,
         );
-        wp_script_add_data(
-            self::HANDLE_PREFIX . 'bootstrap',
-            'integrity',
-            'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
-        );
-        wp_script_add_data(self::HANDLE_PREFIX . 'bootstrap', 'crossorigin', 'anonymous');
 
         if (is_singular('proposal') || is_post_type_archive('proposal')) {
             if (! wp_style_is('cardanopress_bootstrap-style')) {
