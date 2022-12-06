@@ -28,14 +28,14 @@ if ('archive' === $currentStatus) {
 <div
     class="row"
     x-data="cardanoPressGovernance"
-    id="proposal-<?php echo $proposal->postId; ?>"
-    data-proposal="<?php echo $proposal->getID(); ?>"
+    id="proposal-<?php echo esc_attr($proposal->postId); ?>"
+    data-proposal="<?php echo esc_attr($proposal->getID()); ?>"
     data-options="<?php echo esc_attr(json_encode($proposalData)); ?>"
-    data-voted="<?php echo $votedOption; ?>"
-    data-complete="<?php echo $proposal->isComplete(); ?>"
+    data-voted="<?php echo esc_attr($votedOption); ?>"
+    data-complete="<?php echo esc_attr($proposal->isComplete()); ?>"
 >
     <div class="col col-md-7">
-        <h2><?php echo $voteText; ?></h2>
+        <h2><?php echo esc_html($voteText); ?></h2>
         <hr/>
 
         <?php cpGovernance()->template(

@@ -31,10 +31,10 @@ if ('upcoming' === $type) {
     <div class="col py-2">
         <h2><?php the_title(); ?></h2>
         <p><?php the_excerpt(); ?></p>
-        <p><b><?php echo $voteText; ?>: <?php echo $voteDate; ?></b></p>
+        <p><b><?php echo esc_html($voteText); ?>: <?php echo esc_html($voteDate); ?></b></p>
     </div>
 
     <div class="col-auto py-2">
-        <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php echo $linkText; ?></a>
+        <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php echo esc_html($linkText); ?></a>
     </div>
 </div>

@@ -28,13 +28,13 @@ $votes = $proposal->getCastedVotes();
             <?php foreach ($votes as $casted) : ?>
                 <tr>
                     <td>
-                        <p><a href="<?php echo $casted['transaction']['link']; ?>" target="_blank">
-                            <?php echo $casted['transaction']['hash']; ?>
+                        <p><a href="<?php echo esc_attr($casted['transaction']['link']); ?>" target="_blank">
+                            <?php echo esc_html($casted['transaction']['hash']); ?>
                         </a></p>
-                        <small><?php echo $casted['time']; ?></small>
+                        <small><?php echo esc_html($casted['time']); ?></small>
                     </td>
-                    <td><?php echo $casted['option']; ?></td>
-                    <td><?php echo $casted['power']; ?>&curren;</td>
+                    <td><?php echo esc_html($casted['option']); ?></td>
+                    <td><?php echo esc_html($casted['power']); ?>&curren;</td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>

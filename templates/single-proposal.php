@@ -31,7 +31,7 @@ get_header();
 
 ?>
 
-<div id="proposal-<?php echo $proposalId; ?>" class="py-5">
+<div id="proposal-<?php echo esc_attr($proposalId); ?>" class="py-5">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-md-10">
@@ -46,9 +46,9 @@ get_header();
                 </nav>
 
                 <h1 class="pb-3"><?php the_title(); ?></h1>
-                <p><b>Status: <?php echo $statusText; ?></b>
-                <p><b><?php echo $dateLabel; ?>: <?php echo $dateText; ?></b></p>
-                <p><b>Snapshot: <?php echo $proposalDates['snapshot']; ?></b></p>
+                <p><b>Status: <?php echo esc_html($statusText); ?></b>
+                <p><b><?php echo esc_html($dateLabel); ?>: <?php echo esc_html($dateText); ?></b></p>
+                <p><b>Snapshot: <?php echo esc_html($proposalDates['snapshot']); ?></b></p>
 
                 <?php the_content(); ?>
 
@@ -56,10 +56,10 @@ get_header();
                     <div class="mt-4">
                         <a
                             class="btn btn-primary"
-                            href="<?php echo $discussionLink['url']; ?>"
-                            target="<?php echo $discussionLink['target']; ?>"
+                            href="<?php echo esc_attr($discussionLink['url']); ?>"
+                            target="<?php echo esc_attr($discussionLink['target']); ?>"
                         >
-                            <?php echo $discussionLink['text']; ?>
+                            <?php echo esc_html($discussionLink['text']); ?>
                         </a>
                     </div>
                 <?php endif; ?>

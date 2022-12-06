@@ -19,12 +19,12 @@ $currentStatus ??= 'publish';
 
 ?>
 
-<fieldset<?php echo $proposal->isReady() ? '' : ' disabled="true"'; ?>>
+<fieldset<?php echo esc_html($proposal->isReady() ? '' : ' disabled="true"'); ?>>
     <?php foreach ($options as $option) : ?>
         <div
             x-id="['vote-option']"
             class="form-check py-1"
-            :class="isWinner('<?php echo $option['value']; ?>') ? 'bg-success text-white' : ''"
+            :class="isWinner('<?php echo esc_js($option['value']); ?>') ? 'bg-success text-white' : ''"
         >
             <input
                 class="form-check-input"
@@ -32,16 +32,16 @@ $currentStatus ??= 'publish';
                 :id="$id('vote-option')"
                 :disabled="isDisabled()"
                 x-model="selected"
-                value="<?php echo $option['value']; ?>"
+                value="<?php echo esc_attr($option['value']); ?>"
             >
-            <label class='form-check-label' :for="$id('vote-option')"><?php echo $option['label']; ?></label>
+            <label class='form-check-label' :for="$id('vote-option')"><?php echo esc_html($option['label']); ?></label>
         </div>
     <?php endforeach; ?>
 
     <?php if ('archive' !== $currentStatus || $voted) : ?>
         <div class="mt-3">
             <?php if ($voted) : ?>
-                <p><b>You voted: <?php echo $proposal->getOptionLabel($voted); ?></b></p>
+                <p><b>You voted: <?php echo esc_html($proposal->getOptionLabel($voted)); ?></b></p>
             <?php else : ?>
                 <?php echo do_shortcode('[cardanopress_template name="part/modal-trigger" if="!isConnected"]'); ?>
 

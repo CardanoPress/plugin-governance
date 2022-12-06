@@ -19,12 +19,12 @@ $types = cpGovernance()->proposalTypes();
             <li class="nav-item" role="presentation">
                 <button
                     class="nav-link<?php echo 0 === $index ? ' active' : ''; ?>"
-                    id="<?php echo $type; ?>-tab-toggle"
+                    id="<?php echo esc_attr($type); ?>-tab-toggle"
                     role="tab"
                     data-bs-toggle="tab"
-                    data-bs-target="#<?php echo $type; ?>-tab-panel"
-                    aria-controls="<?php echo $type; ?>-tab-panel"
-                    aria-selected="<?php echo 0 === $index ? 'true' : 'false'; ?>"
+                    data-bs-target="#<?php echo esc_attr($type); ?>-tab-panel"
+                    aria-controls="<?php echo esc_attr($type); ?>-tab-panel"
+                    aria-selected="<?php echo esc_attr(0 === $index ? 'true' : 'false'); ?>"
                 >
                     <?php echo ucfirst($type); ?> Proposal
                 </button>
@@ -37,9 +37,9 @@ $types = cpGovernance()->proposalTypes();
             <?php $query = cpGovernance()->getProposalQuery($type); ?>
             <div
                 class="tab-pane fade<?php echo 0 === $index ? ' show active' : ''; ?>"
-                id="<?php echo $type; ?>-tab-panel"
+                id="<?php echo esc_attr($type); ?>-tab-panel"
                 role="tabpanel"
-                aria-labelledby="<?php echo $type; ?>-tab-toggle"
+                aria-labelledby="<?php echo esc_attr($type); ?>-tab-toggle"
             >
                 <div class="container gx-0">
                     <?php while ($query->have_posts()) : ?>
