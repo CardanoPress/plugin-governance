@@ -39,6 +39,8 @@ class TermMeta extends BaseMeta {
 
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
+		$this->register_meta();
+
 	}
 
 
@@ -46,7 +48,11 @@ class TermMeta extends BaseMeta {
 
 		$this->current_id = $tag instanceof WP_Term ? $tag->term_id : 0;
 
-		$this->layout_postbox( $this->current_id );
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
+			return;
+		}
+
+		$this->layout_postbox( (string) $this->current_id );
 
 	}
 
@@ -70,7 +76,7 @@ class TermMeta extends BaseMeta {
 	}
 
 
-	public function maybe_wanted_page( string $hook_suffix ): void {
+	public function maybe_wanted_page(): void {
 
 		$screen = get_current_screen();
 
@@ -82,11 +88,11 @@ class TermMeta extends BaseMeta {
 			return;
 		}
 
-		if ( ! MetaHelper::should_display( $this->config, $this->current_id ) ) {
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
 			return;
 		}
 
-		FormHelper::enqueue_assets( $hook_suffix );
+		FormHelper::enqueue_assets( $screen->base . '.php' );
 
 	}
 

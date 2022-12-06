@@ -15,9 +15,14 @@ use ThemePlate\Core\Helper\MetaHelper;
 
 class MenuMeta extends BaseMeta {
 
+	protected array $locations = array();
+
+
 	protected function initialize( array &$config ): void {
 
 		$config['object_type'] = 'post';
+
+		$this->locations = array( 'nav_menu_item' );
 
 	}
 
@@ -37,14 +42,20 @@ class MenuMeta extends BaseMeta {
 		add_action( 'save_post_nav_menu_item', array( $this, 'save_data' ) );
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
+		$this->register_meta();
+
 	}
 
 
 	public function add_box( string $item_id ) {
 
-		$this->current_id = $item_id;
+		$this->current_id = (int) $item_id;
 
-		$this->layout_postbox( $this->current_id );
+		if ( ! MetaHelper::should_display( $this->config, $item_id ) ) {
+			return;
+		}
+
+		$this->layout_postbox( $item_id );
 
 	}
 
@@ -66,7 +77,7 @@ class MenuMeta extends BaseMeta {
 	}
 
 
-	public function maybe_wanted_page( string $hook_suffix ): void {
+	public function maybe_wanted_page(): void {
 
 		$screen = get_current_screen();
 
@@ -74,11 +85,11 @@ class MenuMeta extends BaseMeta {
 			return;
 		}
 
-		if ( ! MetaHelper::should_display( $this->config, $this->current_id ) ) {
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
 			return;
 		}
 
-		FormHelper::enqueue_assets( $hook_suffix );
+		FormHelper::enqueue_assets( $screen->base . '.php' );
 
 	}
 

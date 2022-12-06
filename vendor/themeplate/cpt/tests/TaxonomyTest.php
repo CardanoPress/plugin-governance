@@ -17,13 +17,12 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'name'     => 'classification',
 			'plural'   => 'Classifications',
 			'singular' => 'Classification',
-			'type'     => 'post',
 			'args'     => array(
 				'hierarchical' => true,
 			),
 		);
 
-		$tax = new Taxonomy( $config['name'], array( $config['type'] ), $config['args'] );
+		$tax = new Taxonomy( $config['name'], $config['args'] );
 
 		$tax->labels( $config['singular'], $config['plural'] );
 		$tax->register();
@@ -55,8 +54,42 @@ class TaxonomyTest extends WP_UnitTestCase {
 
 		$tax = get_taxonomy( $name );
 
+		$this->assertSame( $singular, $tax->labels->singular_name );
 		$this->assertSame( $plural, $tax->label );
 		$this->assertSame( $slug, $tax->rewrite['slug'] );
+	}
+
+	public function test_slug_applied_is_from_parsed_name(): void {
+		$name   = 'test';
+		$expect = 'tests';
+
+		( new Taxonomy( $name ) )->register();
+
+		$type = get_taxonomy( $name );
+
+		$this->assertSame( $expect, $type->rewrite['slug'] );
+	}
+
+	public function test_slug_applied_is_from_plural_label(): void {
+		$name = 'test';
+
+		( new Taxonomy( $name ) )->labels( 'Want', 'Wants' )->register();
+
+		$type = get_taxonomy( $name );
+
+		$this->assertSame( strtolower( $type->label ), $type->rewrite['slug'] );
+	}
+
+	public function test_slug_applied_is_from_custom_arg(): void {
+		$name = 'test';
+		$args = array( 'rewrite' => array( 'slug' => 'custom' ) );
+
+		( new Taxonomy( $name, $args ) )->labels( 'Want', 'Wants' )->register();
+
+		$type = get_taxonomy( $name );
+
+		$this->assertNotSame( strtolower( $type->label ), $type->rewrite['slug'] );
+		$this->assertSame( $args['rewrite']['slug'], $type->rewrite['slug'] );
 	}
 
 	public function test_for_messages_filter(): void {

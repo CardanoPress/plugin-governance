@@ -13,6 +13,7 @@ use ThemePlate\Core\Config;
 use ThemePlate\Core\Form;
 use ThemePlate\Core\Handler;
 use ThemePlate\Core\Helper\BoxHelper;
+use ThemePlate\Core\Helper\FieldsHelper;
 
 abstract class BaseMeta extends Form {
 
@@ -46,7 +47,7 @@ abstract class BaseMeta extends Form {
 
 	protected function maybe_nonce_fields( string $current_id ): void {
 
-		$data = $this->get_nonce_data( $current_id );
+		$data = $this->get_nonce_data( (int) $current_id );
 
 		wp_nonce_field( $data['action'], $data['name'] );
 
@@ -114,6 +115,33 @@ abstract class BaseMeta extends Form {
 	public function get_config(): Config {
 
 		return new Config( $this->config['data_prefix'], $this->fields );
+
+	}
+
+
+	public function register_meta(): void {
+
+		if ( null === $this->fields ) {
+			return;
+		}
+
+		$prefix = $this->config['data_prefix'];
+		$schema = FieldsHelper::build_schema( $this->fields, $prefix );
+		$types  = property_exists( $this, 'locations' ) ? $this->locations : array( '' );
+
+		foreach ( $this->fields->get_collection() as $field ) {
+			$args = $schema[ $field->data_key( $prefix ) ];
+
+			$args['single'] = ! $field->get_config( 'repeatable' );
+
+			$args['show_in_rest'] = array( 'schema' => $schema[ $field->data_key( $prefix ) ] );
+
+			foreach ( $types as $type ) {
+				$args['object_subtype'] = $type;
+
+				register_meta( $this->config['object_type'], $field->data_key( $prefix ), $args );
+			}
+		}
 
 	}
 

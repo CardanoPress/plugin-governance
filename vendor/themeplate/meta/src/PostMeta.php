@@ -35,20 +35,26 @@ class PostMeta extends BaseMeta {
 
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
+		$this->register_meta();
+
 	}
 
 
-	public function add_box( WP_Post $post ) {
-
-		$config = $this->config;
+	public function add_box( WP_Post $post ): void {
 
 		$this->current_id = $post->ID;
+
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
+			return;
+		}
+
+		$config = $this->config;
 
 		add_meta_box(
 			$this->fields_group_key() . '_' . $config['form_id'],
 			$this->title,
 			function( WP_Post $post ) {
-				$this->layout_inside( $post->ID );
+				$this->layout_inside( (string) $post->ID );
 			},
 			null,
 			$config['context'],
@@ -77,7 +83,7 @@ class PostMeta extends BaseMeta {
 	}
 
 
-	public function maybe_wanted_page( string $hook_suffix ): void {
+	public function maybe_wanted_page(): void {
 
 		$screen = get_current_screen();
 
@@ -89,11 +95,11 @@ class PostMeta extends BaseMeta {
 			return;
 		}
 
-		if ( ! MetaHelper::should_display( $this->config, $this->current_id ) ) {
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
 			return;
 		}
 
-		FormHelper::enqueue_assets( $hook_suffix );
+		FormHelper::enqueue_assets( $screen->base . '.php' );
 
 	}
 

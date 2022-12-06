@@ -35,6 +35,8 @@ class UserMeta extends BaseMeta {
 		add_action( 'edit_user_created_user', array( $this, 'save_data' ) );
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
+		$this->register_meta();
+
 	}
 
 
@@ -42,7 +44,11 @@ class UserMeta extends BaseMeta {
 
 		$this->current_id = $user instanceof WP_User ? $user->ID : 0;
 
-		$this->layout_postbox( $this->current_id );
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
+			return;
+		}
+
+		$this->layout_postbox( (string) $this->current_id );
 
 	}
 
@@ -70,7 +76,7 @@ class UserMeta extends BaseMeta {
 	}
 
 
-	public function maybe_wanted_page( string $hook_suffix ): void {
+	public function maybe_wanted_page(): void {
 
 		$screen = get_current_screen();
 
@@ -78,11 +84,11 @@ class UserMeta extends BaseMeta {
 			return;
 		}
 
-		if ( ! MetaHelper::should_display( $this->config, $this->current_id ) ) {
+		if ( ! MetaHelper::should_display( $this->config, (string) $this->current_id ) ) {
 			return;
 		}
 
-		FormHelper::enqueue_assets( $hook_suffix );
+		FormHelper::enqueue_assets( $screen->base . '.php' );
 
 	}
 
