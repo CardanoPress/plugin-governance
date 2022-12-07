@@ -18,7 +18,7 @@ get_header();
         <div class="col col-md-10">
             <nav class="breadcrumb" style="--bs-breadcrumb-divider: ' ';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo esc_attr(home_url()); ?>">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Governance</li>
                 </ol>
             </nav>

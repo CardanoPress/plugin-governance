@@ -28,7 +28,7 @@ $votes = $proposal->getCastedVotes();
             <?php foreach ($votes as $casted) : ?>
                 <tr>
                     <td>
-                        <p><a href="<?php echo esc_attr($casted['transaction']['link']); ?>" target="_blank">
+                        <p><a href="<?php echo esc_url($casted['transaction']['link']); ?>" target="_blank">
                             <?php echo esc_html($casted['transaction']['hash']); ?>
                         </a></p>
                         <small><?php echo esc_html($casted['time']); ?></small>

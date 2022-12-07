@@ -37,9 +37,9 @@ get_header();
             <div class="col col-md-10">
                 <nav class="breadcrumb" style="--bs-breadcrumb-divider: ' ';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
                         <li class="breadcrumb-item">
-                            <a href='<?php echo get_post_type_archive_link('proposal'); ?>'>Governance</a>
+                            <a href='<?php echo esc_url(get_post_type_archive_link('proposal')); ?>'>Governance</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
                     </ol>
@@ -56,7 +56,7 @@ get_header();
                     <div class="mt-4">
                         <a
                             class="btn btn-primary"
-                            href="<?php echo esc_attr($discussionLink['url']); ?>"
+                            href="<?php echo esc_url($discussionLink['url']); ?>"
                             target="<?php echo esc_attr($discussionLink['target']); ?>"
                         >
                             <?php echo esc_html($discussionLink['text']); ?>
