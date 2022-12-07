@@ -34,9 +34,6 @@ if (! defined('CP_GOVERNANCE_FILE')) {
 require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/autoload.php';
 require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/woocommerce/action-scheduler/action-scheduler.php';
 
-// Instantiate the updater
-EUM_Handler::run(CP_GOVERNANCE_FILE, 'https://raw.githubusercontent.com/CardanoPress/plugin-governance/main/update-data.json');
-
 // Instantiate
 function cpGovernance(): Application
 {
