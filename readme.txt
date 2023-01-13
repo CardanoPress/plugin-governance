@@ -19,13 +19,11 @@ The CardanoPress Governance plugin allows projects to engage with their users by
 For any decentralised autonomous organisation, this is a must. The Governance plugins will allow you to write and
 publish proposals, allow you to set up the parameters around voting power and view historic proposals and their results.
 
-This plugin requires the parent plugin [CardanoPress](https://wordpress.org/plugins/cardanopress/) and a free account
-with [Blockfrost](http://bit.ly/3W90KDd) to be able to talk to the Cardano blockchain.
+This plugin requires the parent plugin [CardanoPress](https://wordpress.org/plugins/cardanopress/) and a free account with [Blockfrost](http://bit.ly/3W90KDd) to be able to talk to the Cardano blockchain.
 
 The plugin is created by the team at [PB Web Development](https://pbwebdev.com).
 
-You can find out more information about CardanoPress and our blockchain integrations at [CardanoPress.io]
-(https://cardanopress.io).
+You can find out more information about CardanoPress and our blockchain integrations at [CardanoPress.io](https://cardanopress.io).
 
 = Example Use Cases =
 
@@ -117,7 +115,7 @@ This plugin does not collect or process any personal user data unless you expres
 
 == Changelog ==
 
-You can follow our [GitHub release](https://github.com/CardanoPress/cardanopress/releases) for full details on updates to the plugins.
+You can follow our [GitHub release](https://github.com/CardanoPress/plugin-governance/releases) for full details on updates to the plugins.
 
 = v0.14.0 =
 Check and clean URLs
