@@ -1,18 +1,35 @@
 # CardanoPress - Governance
 
-Plugin that allows for proposals to be voted against with on chain voting.
+## Summary
+Allows users to be able to submit, participate and vote on governance proposals. Voting is done on-chain by submitting
+transactions with metadata. Voting power is based on the amount of Non-Fungible Tokens or Fungible Tokens in a users
+connected wallet. Requires parent plugin CardanoPress.
 
-Users will submit transactions to themselves based on what they which to vote on for various proposals.
+## Description
+The CardanoPress Governance plugin allows projects to engage with their users by allowing them to cast votes on-chain.
+For any decentralised autonomous organisation, this is a must. The Governance plugins will allow you to write and
+publish proposals, allow you to set up the parameters around voting power and view historic proposals and their results.
 
-Each vote is then tracked and tally for the total results for that proposal.
+This plugin requires the parent plugin [CardanoPress](https://wordpress.org/plugins/cardanopress/).
 
-Governance can then be actioned.
+The plugin is created by the team at [PB Web Development](https://pbwebdev.com).
 
-We plan to tie these result actions in with smart contracts and related contracts to help be the foundation of DAOs.
+You can find out more information about CardanoPress and our blockchain integrations at [CardanoPress.io]
+(https://cardanopress.io).
 
-Visit the GitHub repo for more up to date builds on our code.
+### Example Use Cases
 
-https://github.com/CardanoPress/plugin-governance
+For projects that have a fungible token, you can configure the plugin to take into account the balance of that token in
+a users connected wallet. For each proposal that is listed on the website, you can define the voting power requirements
+and snapshot time and date. This will allow users to move assets to their wallets in time for a voting power snapshot.
+
+Users of the project can then case their vote but sending a transaction to their own wallet with a special unique
+decimal value. This value is recorded on chain along with some corresponding metadata to help identify the proposal and
+the voting decision by the wallet owner on that proposal.
+
+The same scenario can be setup but with a non-fungible token and the amount of NFTs in a user's wallet be used as the
+voting power.
+
 
 # Documentation
 We are still working on the documentation for the plugin but you can start reading what has been writted on our website.
