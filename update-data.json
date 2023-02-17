@@ -1,0 +1,15 @@
+{
+  "new_version"    : "1.0.0",
+  "homepage"       : "https://wordpress.org/plugins/cardanopress-governance/",
+  "download_link"  : "https://downloads.wordpress.org/plugin/cardanopress-governance.zip",
+  "last_updated"   : "2023-02-17",
+  "author"         : "Gene Alyson Fortunado Torcende",
+  "author_profile" : "https://cardanopress.io",
+  "requires"       : "5.8.0",
+  "tested"         : "6.1.1",
+  "requires_php"   : "7.4",
+  "upgrade_notice" : "Please do the update now to seamlessly use the official WordPress Plugin Directory version",
+  "sections"       : {
+    "description"  : "<p>The Governance plugins allows projects to engage with their users by allowing them to cast votes on-chain; set up the parameters around voting power and view historic proposals and their results.</p>"
+  }
+}
