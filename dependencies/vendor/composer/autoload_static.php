@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
+class ComposerStaticInit7d72a8178fe01c5711990ead5bd79ffb
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -344,18 +344,6 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Test\\TestCase' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Test/TestCase.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
-        'PBWebDev\\CardanoPress\\Governance\\Actions' => __DIR__ . '/../..' . '/src/Actions.php',
-        'PBWebDev\\CardanoPress\\Governance\\Admin' => __DIR__ . '/../..' . '/src/Admin.php',
-        'PBWebDev\\CardanoPress\\Governance\\Application' => __DIR__ . '/../..' . '/src/Application.php',
-        'PBWebDev\\CardanoPress\\Governance\\Calculator' => __DIR__ . '/../..' . '/src/Calculator.php',
-        'PBWebDev\\CardanoPress\\Governance\\Installer' => __DIR__ . '/../..' . '/src/Installer.php',
-        'PBWebDev\\CardanoPress\\Governance\\Manifest' => __DIR__ . '/../..' . '/src/Manifest.php',
-        'PBWebDev\\CardanoPress\\Governance\\Profile' => __DIR__ . '/../..' . '/src/Profile.php',
-        'PBWebDev\\CardanoPress\\Governance\\Proposal' => __DIR__ . '/../..' . '/src/Proposal.php',
-        'PBWebDev\\CardanoPress\\Governance\\ProposalCPT' => __DIR__ . '/../..' . '/src/ProposalCPT.php',
-        'PBWebDev\\CardanoPress\\Governance\\ProposalFields' => __DIR__ . '/../..' . '/src/ProposalFields.php',
-        'PBWebDev\\CardanoPress\\Governance\\Snapshot' => __DIR__ . '/../..' . '/src/Snapshot.php',
-        'PBWebDev\\CardanoPress\\Governance\\Templates' => __DIR__ . '/../..' . '/src/Templates.php',
         'Psr\\Http\\Client\\ClientExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientExceptionInterface.php',
         'Psr\\Http\\Client\\ClientInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientInterface.php',
         'Psr\\Http\\Client\\NetworkExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/NetworkExceptionInterface.php',
@@ -435,9 +423,9 @@ class ComposerStaticInit7c147f09c73e66e58facaffc5860df46
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7c147f09c73e66e58facaffc5860df46::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7c147f09c73e66e58facaffc5860df46::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7c147f09c73e66e58facaffc5860df46::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7d72a8178fe01c5711990ead5bd79ffb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7d72a8178fe01c5711990ead5bd79ffb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7d72a8178fe01c5711990ead5bd79ffb::$classMap;
 
         }, null, ClassLoader::class);
     }

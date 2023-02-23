@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'cardanopress/plugin-governance',
-        'pretty_version' => 'dev-trunk',
-        'version' => 'dev-trunk',
-        'reference' => 'dfcc911ae07c7e9665263fdc9413cf7358b11177',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => 'a74d43adabba8581345e5fa618baa5c23f4c3fb0',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'cardanopress/plugin-governance' => array(
-            'pretty_version' => 'dev-trunk',
-            'version' => 'dev-trunk',
-            'reference' => 'dfcc911ae07c7e9665263fdc9413cf7358b11177',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => 'a74d43adabba8581345e5fa618baa5c23f4c3fb0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

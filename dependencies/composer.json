@@ -26,7 +26,13 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": "^7.4|^8.0"
+    "php": "^7.4|^8.0",
+    "ext-json": "*",
+    "ext-ctype": "*",
+    "cardanopress/framework": "^1.0",
+    "themeplate/cpt": "^2.0",
+    "themeplate/meta": "^2.0",
+    "woocommerce/action-scheduler": "^3.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
