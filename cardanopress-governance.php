@@ -31,8 +31,8 @@ if (! defined('CP_GOVERNANCE_FILE')) {
 }
 
 // Load the main plugin class
-require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/autoload.php';
-require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'vendor/woocommerce/action-scheduler/action-scheduler.php';
+require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'dependencies/vendor/autoload_packages.php';
+require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'dependencies/vendor/woocommerce/action-scheduler/action-scheduler.php';
 
 // Instantiate
 function cpGovernance(): Application

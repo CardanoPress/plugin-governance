@@ -7,10 +7,10 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Governance\Dependencies\ThemePlate\CPT\PostType;
 use CardanoPress\Interfaces\HookInterface;
 use CardanoPress\Traits\Loggable;
 use Psr\Log\LoggerInterface;
-use ThemePlate\CPT\PostType;
 use WP_Post;
 use WP_Query;
 

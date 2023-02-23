@@ -11,7 +11,7 @@
     "ext-json": "*",
     "ext-ctype": "*",
     "automattic/jetpack-autoloader": "^2.11",
-    "cardanopress/framework": "^1.0",
+    "cardanopress/framework": "^2.0",
     "themeplate/cpt": "^2.0",
     "themeplate/meta": "^2.0",
     "woocommerce/action-scheduler": "^3.4"

@@ -363,35 +363,1103 @@ return array(
 		'path'    => $vendorDir . '/jetpack-autoloader/class-version-selector.php'
 	),
 	'CardanoPress\\Clients\\BlockfrostClient' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Clients/BlockfrostClient.php'
 	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\BodySummarizer' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/BodySummarizer.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\BodySummarizerInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/BodySummarizerInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Client' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Client.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\ClientInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/ClientInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\ClientTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/ClientTrait.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Cookie\\CookieJar' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Cookie/CookieJar.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Cookie\\CookieJarInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Cookie/CookieJarInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Cookie\\FileCookieJar' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Cookie/FileCookieJar.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Cookie\\SessionCookieJar' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Cookie/SessionCookieJar.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Cookie\\SetCookie' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Cookie/SetCookie.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\BadResponseException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/BadResponseException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\ClientException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/ClientException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\ConnectException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/ConnectException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\GuzzleException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/GuzzleException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\InvalidArgumentException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/InvalidArgumentException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\RequestException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/RequestException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\ServerException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/ServerException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\TooManyRedirectsException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/TooManyRedirectsException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Exception\\TransferException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Exception/TransferException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\HandlerStack' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/HandlerStack.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\CurlFactory' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/CurlFactory.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\CurlFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/CurlFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\CurlHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/CurlHandler.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\CurlMultiHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/CurlMultiHandler.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\EasyHandle' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/EasyHandle.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\HeaderProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/HeaderProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\MockHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/MockHandler.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\Proxy' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/Proxy.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Handler\\StreamHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Handler/StreamHandler.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\MessageFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/MessageFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\MessageFormatterInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/MessageFormatterInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Middleware' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Middleware.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Pool' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Pool.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\PrepareBodyMiddleware' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/PrepareBodyMiddleware.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\AggregateException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/AggregateException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\CancellationException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/CancellationException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Coroutine' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Coroutine.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Create' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Create.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Each' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Each.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\EachPromise' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/EachPromise.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\FulfilledPromise' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/FulfilledPromise.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Is' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Is.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Promise' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Promise.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\PromiseInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/PromiseInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\PromisorInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/PromisorInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\RejectedPromise' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/RejectedPromise.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\RejectionException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/RejectionException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\TaskQueue' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/TaskQueue.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\TaskQueueInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/TaskQueueInterface.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Promise\\Utils' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Promise/Utils.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\AppendStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/AppendStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\BufferStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/BufferStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\CachingStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/CachingStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\DroppingStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/DroppingStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Exception\\MalformedUriException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Exception/MalformedUriException.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\FnStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/FnStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Header' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Header.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\HttpFactory' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/HttpFactory.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\InflateStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/InflateStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\LazyOpenStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/LazyOpenStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\LimitStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/LimitStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Message' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Message.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\MessageTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/MessageTrait.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\MimeType' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/MimeType.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\MultipartStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/MultipartStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\NoSeekStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/NoSeekStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\PumpStream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/PumpStream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Query' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Query.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Request' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Request.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Response' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Response.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Rfc7230' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Rfc7230.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\ServerRequest' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/ServerRequest.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Stream' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Stream.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\StreamDecoratorTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/StreamDecoratorTrait.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\StreamWrapper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/StreamWrapper.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\UploadedFile' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/UploadedFile.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Uri' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Uri.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\UriComparator' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/UriComparator.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\UriNormalizer' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/UriNormalizer.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\UriResolver' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/UriResolver.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Psr7\\Utils' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Psr7/Utils.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\RedirectMiddleware' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/RedirectMiddleware.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\RequestOptions' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/RequestOptions.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\RetryMiddleware' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/RetryMiddleware.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\TransferStats' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/TransferStats.php'
+	),
+	'CardanoPress\\Dependencies\\GuzzleHttp\\Utils' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/GuzzleHttp/Utils.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Attribute\\AsMonologProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Attribute/AsMonologProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\DateTimeImmutable' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/DateTimeImmutable.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\ErrorHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/ErrorHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\ChromePHPFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/ChromePHPFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\ElasticaFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/ElasticaFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\ElasticsearchFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/ElasticsearchFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\FlowdockFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/FlowdockFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\FluentdFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/FluentdFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\FormatterInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/FormatterInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\GelfMessageFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/GelfMessageFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\GoogleCloudLoggingFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/GoogleCloudLoggingFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\HtmlFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/HtmlFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\JsonFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/JsonFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\LineFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/LineFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\LogglyFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/LogglyFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\LogmaticFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/LogmaticFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\LogstashFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/LogstashFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\MongoDBFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/MongoDBFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\NormalizerFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/NormalizerFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\ScalarFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/ScalarFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Formatter\\WildfireFormatter' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Formatter/WildfireFormatter.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\AbstractHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/AbstractHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\AbstractProcessingHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/AbstractProcessingHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\AbstractSyslogHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/AbstractSyslogHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\AmqpHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/AmqpHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\BrowserConsoleHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/BrowserConsoleHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\BufferHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/BufferHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ChromePHPHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ChromePHPHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\CouchDBHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/CouchDBHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\CubeHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/CubeHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\Curl\\Util' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/Curl/Util.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\DeduplicationHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/DeduplicationHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\DoctrineCouchDBHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/DoctrineCouchDBHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\DynamoDbHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/DynamoDbHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ElasticaHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ElasticaHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ElasticsearchHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ElasticsearchHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ErrorLogHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ErrorLogHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FallbackGroupHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FallbackGroupHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FilterHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FilterHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FingersCrossedHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FingersCrossedHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FingersCrossed\\ActivationStrategyInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FingersCrossed/ActivationStrategyInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FingersCrossed\\ChannelLevelActivationStrategy' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FingersCrossed\\ErrorLevelActivationStrategy' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FingersCrossed/ErrorLevelActivationStrategy.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FirePHPHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FirePHPHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FleepHookHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FleepHookHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FlowdockHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FlowdockHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FormattableHandlerInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FormattableHandlerInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\FormattableHandlerTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/FormattableHandlerTrait.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\GelfHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/GelfHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\GroupHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/GroupHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\Handler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/Handler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\HandlerInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/HandlerInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\HandlerWrapper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/HandlerWrapper.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\IFTTTHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/IFTTTHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\InsightOpsHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/InsightOpsHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\LogEntriesHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/LogEntriesHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\LogglyHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/LogglyHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\LogmaticHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/LogmaticHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\MailHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/MailHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\MandrillHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/MandrillHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\MissingExtensionException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/MissingExtensionException.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\MongoDBHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/MongoDBHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\NativeMailerHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/NativeMailerHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\NewRelicHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/NewRelicHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\NoopHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/NoopHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\NullHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/NullHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\OverflowHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/OverflowHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\PHPConsoleHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/PHPConsoleHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ProcessHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ProcessHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ProcessableHandlerInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ProcessableHandlerInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ProcessableHandlerTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ProcessableHandlerTrait.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\PsrHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/PsrHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\PushoverHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/PushoverHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\RedisHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/RedisHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\RedisPubSubHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/RedisPubSubHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\RollbarHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/RollbarHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\RotatingFileHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/RotatingFileHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SamplingHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SamplingHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SendGridHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SendGridHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SlackHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SlackHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SlackWebhookHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SlackWebhookHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\Slack\\SlackRecord' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/Slack/SlackRecord.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SocketHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SocketHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SqsHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SqsHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\StreamHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/StreamHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SwiftMailerHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SwiftMailerHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SymfonyMailerHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SymfonyMailerHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SyslogHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SyslogHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SyslogUdpHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SyslogUdpHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\SyslogUdp\\UdpSocket' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/SyslogUdp/UdpSocket.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\TelegramBotHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/TelegramBotHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\TestHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/TestHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\WebRequestRecognizerTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/WebRequestRecognizerTrait.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\WhatFailureGroupHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/WhatFailureGroupHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Handler\\ZendMonitorHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Handler/ZendMonitorHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\LogRecord' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/LogRecord.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Logger' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Logger.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\GitProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/GitProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\HostnameProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/HostnameProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\IntrospectionProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/IntrospectionProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\MemoryPeakUsageProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/MemoryPeakUsageProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\MemoryProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/MemoryProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\MemoryUsageProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/MemoryUsageProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\MercurialProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/MercurialProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\ProcessIdProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/ProcessIdProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\ProcessorInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/ProcessorInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\PsrLogMessageProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/PsrLogMessageProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\TagProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/TagProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\UidProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/UidProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Processor\\WebProcessor' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Processor/WebProcessor.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Registry' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Registry.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\ResettableInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/ResettableInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\SignalHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/SignalHandler.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Test\\TestCase' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Test/TestCase.php'
+	),
+	'CardanoPress\\Dependencies\\Monolog\\Utils' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Monolog/Utils.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Client\\ClientExceptionInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Client/ClientExceptionInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Client\\ClientInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Client/ClientInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Client\\NetworkExceptionInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Client/NetworkExceptionInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Client\\RequestExceptionInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Client/RequestExceptionInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\MessageInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/MessageInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\RequestFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/RequestFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\RequestInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/RequestInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\ResponseFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/ResponseFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\ResponseInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/ResponseInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\ServerRequestFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/ServerRequestFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\ServerRequestInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/ServerRequestInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\StreamFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/StreamFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\StreamInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/StreamInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\UploadedFileFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/UploadedFileFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\UploadedFileInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/UploadedFileInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\UriFactoryInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/UriFactoryInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Http\\Message\\UriInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Http/Message/UriInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\AbstractLogger' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/AbstractLogger.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\InvalidArgumentException' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/InvalidArgumentException.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\LogLevel' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/LogLevel.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\LoggerAwareInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/LoggerAwareInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\LoggerAwareTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/LoggerAwareTrait.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\LoggerInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/LoggerInterface.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\LoggerTrait' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/LoggerTrait.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\NullLogger' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/NullLogger.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\Test\\DummyTest' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/Test/DummyTest.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\Test\\LoggerInterfaceTest' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/Test/LoggerInterfaceTest.php'
+	),
+	'CardanoPress\\Dependencies\\Psr\\Log\\Test\\TestLogger' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/Psr/Log/Test/TestLogger.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Config' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Config.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\CheckboxField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/CheckboxField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\ColorField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/ColorField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\DateField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/DateField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\EditorField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/EditorField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\FileField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/FileField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\GroupField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/GroupField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\HtmlField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/HtmlField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\InputField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/InputField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\LinkField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/LinkField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\NumberField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/NumberField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\RadioField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/RadioField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\SelectField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/SelectField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\TextareaField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/TextareaField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Field\\TypeField' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Field/TypeField.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Fields' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Fields.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Form' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Form.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Handler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Handler.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\AssetsHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/AssetsHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\BoxHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/BoxHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\FieldsHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/FieldsHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\FormHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/FormHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\MainHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/MainHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Helper\\MetaHelper' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Helper/MetaHelper.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Core\\Repository' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Core/Repository.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Enqueue\\CustomData' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Enqueue/CustomData.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Enqueue\\Dynamic' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Enqueue/Dynamic.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Enqueue\\LoaderTag' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Enqueue/LoaderTag.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Enqueue\\ScriptsTag' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Enqueue/ScriptsTag.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Enqueue\\StylesTag' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Enqueue/StylesTag.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Logger' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Logger.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Page\\BasePage' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Page/BasePage.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Page\\CommonInterface' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Page/CommonInterface.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Page\\MenuPage' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Page/MenuPage.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Page\\SubMenuPage' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Page/SubMenuPage.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Settings\\OptionBox' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Settings/OptionBox.php'
+	),
+	'CardanoPress\\Dependencies\\ThemePlate\\Settings\\OptionHandler' => array(
+		'version' => '2.0.0.0',
+		'path'    => $vendorDir . '/cardanopress/framework/dependencies/ThemePlate/Settings/OptionHandler.php'
+	),
 	'CardanoPress\\Foundation\\AbstractAdmin' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractAdmin.php'
 	),
 	'CardanoPress\\Foundation\\AbstractApplication' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractApplication.php'
 	),
 	'CardanoPress\\Foundation\\AbstractBlockfrost' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractBlockfrost.php'
 	),
 	'CardanoPress\\Foundation\\AbstractInstaller' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractInstaller.php'
 	),
 	'CardanoPress\\Foundation\\AbstractManifest' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractManifest.php'
 	),
 	'CardanoPress\\Foundation\\AbstractProfile' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractProfile.php'
 	),
 	'CardanoPress\\Foundation\\AbstractTemplates' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractTemplates.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Base' => array(
@@ -543,71 +1611,71 @@ return array(
 		'path'    => $baseDir . '/ThemePlate/Meta/UserMeta.php'
 	),
 	'CardanoPress\\Helpers\\NumberHelper' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Helpers/NumberHelper.php'
 	),
 	'CardanoPress\\Helpers\\WalletHelper' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Helpers/WalletHelper.php'
 	),
 	'CardanoPress\\Interfaces\\AdminInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/AdminInterface.php'
 	),
 	'CardanoPress\\Interfaces\\ApplicationInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/ApplicationInterface.php'
 	),
 	'CardanoPress\\Interfaces\\HookInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/HookInterface.php'
 	),
 	'CardanoPress\\Interfaces\\InstallerInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/InstallerInterface.php'
 	),
 	'CardanoPress\\Interfaces\\ManifestInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/ManifestInterface.php'
 	),
 	'CardanoPress\\Interfaces\\TemplatesInterface' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Interfaces/TemplatesInterface.php'
 	),
 	'CardanoPress\\SharedBase' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/SharedBase.php'
 	),
 	'CardanoPress\\Traits\\Configurable' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Configurable.php'
 	),
 	'CardanoPress\\Traits\\Enqueueable' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Enqueueable.php'
 	),
 	'CardanoPress\\Traits\\HasData' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/HasData.php'
 	),
 	'CardanoPress\\Traits\\HasPageTemplates' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/HasPageTemplates.php'
 	),
 	'CardanoPress\\Traits\\HasSettingsLink' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/HasSettingsLink.php'
 	),
 	'CardanoPress\\Traits\\Instantiable' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Instantiable.php'
 	),
 	'CardanoPress\\Traits\\Loggable' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Loggable.php'
 	),
 	'CardanoPress\\Traits\\Templatable' => array(
-		'version' => '1.2.1.0',
+		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Templatable.php'
 	),
 	'ComposerAutoloaderInitc931f5fb67ae725e3e4f93d3bfb67ec4' => array(
@@ -670,350 +1738,6 @@ return array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_YearField.php'
 	),
-	'GuzzleHttp\\BodySummarizer' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/BodySummarizer.php'
-	),
-	'GuzzleHttp\\BodySummarizerInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/BodySummarizerInterface.php'
-	),
-	'GuzzleHttp\\Client' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Client.php'
-	),
-	'GuzzleHttp\\ClientInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/ClientInterface.php'
-	),
-	'GuzzleHttp\\ClientTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/ClientTrait.php'
-	),
-	'GuzzleHttp\\Cookie\\CookieJar' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Cookie/CookieJar.php'
-	),
-	'GuzzleHttp\\Cookie\\CookieJarInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php'
-	),
-	'GuzzleHttp\\Cookie\\FileCookieJar' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php'
-	),
-	'GuzzleHttp\\Cookie\\SessionCookieJar' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php'
-	),
-	'GuzzleHttp\\Cookie\\SetCookie' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Cookie/SetCookie.php'
-	),
-	'GuzzleHttp\\Exception\\BadResponseException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/BadResponseException.php'
-	),
-	'GuzzleHttp\\Exception\\ClientException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/ClientException.php'
-	),
-	'GuzzleHttp\\Exception\\ConnectException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/ConnectException.php'
-	),
-	'GuzzleHttp\\Exception\\GuzzleException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/GuzzleException.php'
-	),
-	'GuzzleHttp\\Exception\\InvalidArgumentException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/InvalidArgumentException.php'
-	),
-	'GuzzleHttp\\Exception\\RequestException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/RequestException.php'
-	),
-	'GuzzleHttp\\Exception\\ServerException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/ServerException.php'
-	),
-	'GuzzleHttp\\Exception\\TooManyRedirectsException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php'
-	),
-	'GuzzleHttp\\Exception\\TransferException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Exception/TransferException.php'
-	),
-	'GuzzleHttp\\HandlerStack' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/HandlerStack.php'
-	),
-	'GuzzleHttp\\Handler\\CurlFactory' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/CurlFactory.php'
-	),
-	'GuzzleHttp\\Handler\\CurlFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php'
-	),
-	'GuzzleHttp\\Handler\\CurlHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/CurlHandler.php'
-	),
-	'GuzzleHttp\\Handler\\CurlMultiHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php'
-	),
-	'GuzzleHttp\\Handler\\EasyHandle' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/EasyHandle.php'
-	),
-	'GuzzleHttp\\Handler\\HeaderProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php'
-	),
-	'GuzzleHttp\\Handler\\MockHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/MockHandler.php'
-	),
-	'GuzzleHttp\\Handler\\Proxy' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/Proxy.php'
-	),
-	'GuzzleHttp\\Handler\\StreamHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Handler/StreamHandler.php'
-	),
-	'GuzzleHttp\\MessageFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/MessageFormatter.php'
-	),
-	'GuzzleHttp\\MessageFormatterInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/MessageFormatterInterface.php'
-	),
-	'GuzzleHttp\\Middleware' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Middleware.php'
-	),
-	'GuzzleHttp\\Pool' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Pool.php'
-	),
-	'GuzzleHttp\\PrepareBodyMiddleware' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php'
-	),
-	'GuzzleHttp\\Promise\\AggregateException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/AggregateException.php'
-	),
-	'GuzzleHttp\\Promise\\CancellationException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/CancellationException.php'
-	),
-	'GuzzleHttp\\Promise\\Coroutine' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Coroutine.php'
-	),
-	'GuzzleHttp\\Promise\\Create' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Create.php'
-	),
-	'GuzzleHttp\\Promise\\Each' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Each.php'
-	),
-	'GuzzleHttp\\Promise\\EachPromise' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/EachPromise.php'
-	),
-	'GuzzleHttp\\Promise\\FulfilledPromise' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/FulfilledPromise.php'
-	),
-	'GuzzleHttp\\Promise\\Is' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Is.php'
-	),
-	'GuzzleHttp\\Promise\\Promise' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Promise.php'
-	),
-	'GuzzleHttp\\Promise\\PromiseInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/PromiseInterface.php'
-	),
-	'GuzzleHttp\\Promise\\PromisorInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/PromisorInterface.php'
-	),
-	'GuzzleHttp\\Promise\\RejectedPromise' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/RejectedPromise.php'
-	),
-	'GuzzleHttp\\Promise\\RejectionException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/RejectionException.php'
-	),
-	'GuzzleHttp\\Promise\\TaskQueue' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/TaskQueue.php'
-	),
-	'GuzzleHttp\\Promise\\TaskQueueInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/TaskQueueInterface.php'
-	),
-	'GuzzleHttp\\Promise\\Utils' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/promises/src/Utils.php'
-	),
-	'GuzzleHttp\\Psr7\\AppendStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/AppendStream.php'
-	),
-	'GuzzleHttp\\Psr7\\BufferStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/BufferStream.php'
-	),
-	'GuzzleHttp\\Psr7\\CachingStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/CachingStream.php'
-	),
-	'GuzzleHttp\\Psr7\\DroppingStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/DroppingStream.php'
-	),
-	'GuzzleHttp\\Psr7\\Exception\\MalformedUriException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Exception/MalformedUriException.php'
-	),
-	'GuzzleHttp\\Psr7\\FnStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/FnStream.php'
-	),
-	'GuzzleHttp\\Psr7\\Header' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Header.php'
-	),
-	'GuzzleHttp\\Psr7\\HttpFactory' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/HttpFactory.php'
-	),
-	'GuzzleHttp\\Psr7\\InflateStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/InflateStream.php'
-	),
-	'GuzzleHttp\\Psr7\\LazyOpenStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/LazyOpenStream.php'
-	),
-	'GuzzleHttp\\Psr7\\LimitStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/LimitStream.php'
-	),
-	'GuzzleHttp\\Psr7\\Message' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Message.php'
-	),
-	'GuzzleHttp\\Psr7\\MessageTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/MessageTrait.php'
-	),
-	'GuzzleHttp\\Psr7\\MimeType' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/MimeType.php'
-	),
-	'GuzzleHttp\\Psr7\\MultipartStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/MultipartStream.php'
-	),
-	'GuzzleHttp\\Psr7\\NoSeekStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/NoSeekStream.php'
-	),
-	'GuzzleHttp\\Psr7\\PumpStream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/PumpStream.php'
-	),
-	'GuzzleHttp\\Psr7\\Query' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Query.php'
-	),
-	'GuzzleHttp\\Psr7\\Request' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Request.php'
-	),
-	'GuzzleHttp\\Psr7\\Response' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Response.php'
-	),
-	'GuzzleHttp\\Psr7\\Rfc7230' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Rfc7230.php'
-	),
-	'GuzzleHttp\\Psr7\\ServerRequest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/ServerRequest.php'
-	),
-	'GuzzleHttp\\Psr7\\Stream' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Stream.php'
-	),
-	'GuzzleHttp\\Psr7\\StreamDecoratorTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/StreamDecoratorTrait.php'
-	),
-	'GuzzleHttp\\Psr7\\StreamWrapper' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/StreamWrapper.php'
-	),
-	'GuzzleHttp\\Psr7\\UploadedFile' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/UploadedFile.php'
-	),
-	'GuzzleHttp\\Psr7\\Uri' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Uri.php'
-	),
-	'GuzzleHttp\\Psr7\\UriComparator' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/UriComparator.php'
-	),
-	'GuzzleHttp\\Psr7\\UriNormalizer' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/UriNormalizer.php'
-	),
-	'GuzzleHttp\\Psr7\\UriResolver' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/UriResolver.php'
-	),
-	'GuzzleHttp\\Psr7\\Utils' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/psr7/src/Utils.php'
-	),
-	'GuzzleHttp\\RedirectMiddleware' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/RedirectMiddleware.php'
-	),
-	'GuzzleHttp\\RequestOptions' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/RequestOptions.php'
-	),
-	'GuzzleHttp\\RetryMiddleware' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/RetryMiddleware.php'
-	),
-	'GuzzleHttp\\TransferStats' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/TransferStats.php'
-	),
-	'GuzzleHttp\\Utils' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/guzzlehttp/guzzle/src/Utils.php'
-	),
 	'Hook_Manager' => array(
 		'version' => '2.11.16.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-hook-manager.php'
@@ -1025,466 +1749,6 @@ return array(
 	'Manifest_Reader' => array(
 		'version' => '2.11.16.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-manifest-reader.php'
-	),
-	'Monolog\\Attribute\\AsMonologProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php'
-	),
-	'Monolog\\DateTimeImmutable' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/DateTimeImmutable.php'
-	),
-	'Monolog\\ErrorHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/ErrorHandler.php'
-	),
-	'Monolog\\Formatter\\ChromePHPFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php'
-	),
-	'Monolog\\Formatter\\ElasticaFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php'
-	),
-	'Monolog\\Formatter\\ElasticsearchFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ElasticsearchFormatter.php'
-	),
-	'Monolog\\Formatter\\FlowdockFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/FlowdockFormatter.php'
-	),
-	'Monolog\\Formatter\\FluentdFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php'
-	),
-	'Monolog\\Formatter\\FormatterInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php'
-	),
-	'Monolog\\Formatter\\GelfMessageFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php'
-	),
-	'Monolog\\Formatter\\GoogleCloudLoggingFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/GoogleCloudLoggingFormatter.php'
-	),
-	'Monolog\\Formatter\\HtmlFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php'
-	),
-	'Monolog\\Formatter\\JsonFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php'
-	),
-	'Monolog\\Formatter\\LineFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/LineFormatter.php'
-	),
-	'Monolog\\Formatter\\LogglyFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/LogglyFormatter.php'
-	),
-	'Monolog\\Formatter\\LogmaticFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/LogmaticFormatter.php'
-	),
-	'Monolog\\Formatter\\LogstashFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/LogstashFormatter.php'
-	),
-	'Monolog\\Formatter\\MongoDBFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/MongoDBFormatter.php'
-	),
-	'Monolog\\Formatter\\NormalizerFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php'
-	),
-	'Monolog\\Formatter\\ScalarFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ScalarFormatter.php'
-	),
-	'Monolog\\Formatter\\WildfireFormatter' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/WildfireFormatter.php'
-	),
-	'Monolog\\Handler\\AbstractHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/AbstractHandler.php'
-	),
-	'Monolog\\Handler\\AbstractProcessingHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php'
-	),
-	'Monolog\\Handler\\AbstractSyslogHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/AbstractSyslogHandler.php'
-	),
-	'Monolog\\Handler\\AmqpHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/AmqpHandler.php'
-	),
-	'Monolog\\Handler\\BrowserConsoleHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php'
-	),
-	'Monolog\\Handler\\BufferHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/BufferHandler.php'
-	),
-	'Monolog\\Handler\\ChromePHPHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ChromePHPHandler.php'
-	),
-	'Monolog\\Handler\\CouchDBHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/CouchDBHandler.php'
-	),
-	'Monolog\\Handler\\CubeHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/CubeHandler.php'
-	),
-	'Monolog\\Handler\\Curl\\Util' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/Curl/Util.php'
-	),
-	'Monolog\\Handler\\DeduplicationHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/DeduplicationHandler.php'
-	),
-	'Monolog\\Handler\\DoctrineCouchDBHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/DoctrineCouchDBHandler.php'
-	),
-	'Monolog\\Handler\\DynamoDbHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/DynamoDbHandler.php'
-	),
-	'Monolog\\Handler\\ElasticaHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ElasticaHandler.php'
-	),
-	'Monolog\\Handler\\ElasticsearchHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ElasticsearchHandler.php'
-	),
-	'Monolog\\Handler\\ErrorLogHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ErrorLogHandler.php'
-	),
-	'Monolog\\Handler\\FallbackGroupHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FallbackGroupHandler.php'
-	),
-	'Monolog\\Handler\\FilterHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FilterHandler.php'
-	),
-	'Monolog\\Handler\\FingersCrossedHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php'
-	),
-	'Monolog\\Handler\\FingersCrossed\\ActivationStrategyInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FingersCrossed/ActivationStrategyInterface.php'
-	),
-	'Monolog\\Handler\\FingersCrossed\\ChannelLevelActivationStrategy' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php'
-	),
-	'Monolog\\Handler\\FingersCrossed\\ErrorLevelActivationStrategy' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FingersCrossed/ErrorLevelActivationStrategy.php'
-	),
-	'Monolog\\Handler\\FirePHPHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FirePHPHandler.php'
-	),
-	'Monolog\\Handler\\FleepHookHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FleepHookHandler.php'
-	),
-	'Monolog\\Handler\\FlowdockHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FlowdockHandler.php'
-	),
-	'Monolog\\Handler\\FormattableHandlerInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FormattableHandlerInterface.php'
-	),
-	'Monolog\\Handler\\FormattableHandlerTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/FormattableHandlerTrait.php'
-	),
-	'Monolog\\Handler\\GelfHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/GelfHandler.php'
-	),
-	'Monolog\\Handler\\GroupHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/GroupHandler.php'
-	),
-	'Monolog\\Handler\\Handler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/Handler.php'
-	),
-	'Monolog\\Handler\\HandlerInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/HandlerInterface.php'
-	),
-	'Monolog\\Handler\\HandlerWrapper' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php'
-	),
-	'Monolog\\Handler\\IFTTTHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php'
-	),
-	'Monolog\\Handler\\InsightOpsHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php'
-	),
-	'Monolog\\Handler\\LogEntriesHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php'
-	),
-	'Monolog\\Handler\\LogglyHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/LogglyHandler.php'
-	),
-	'Monolog\\Handler\\LogmaticHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/LogmaticHandler.php'
-	),
-	'Monolog\\Handler\\MailHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/MailHandler.php'
-	),
-	'Monolog\\Handler\\MandrillHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/MandrillHandler.php'
-	),
-	'Monolog\\Handler\\MissingExtensionException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/MissingExtensionException.php'
-	),
-	'Monolog\\Handler\\MongoDBHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php'
-	),
-	'Monolog\\Handler\\NativeMailerHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php'
-	),
-	'Monolog\\Handler\\NewRelicHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php'
-	),
-	'Monolog\\Handler\\NoopHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/NoopHandler.php'
-	),
-	'Monolog\\Handler\\NullHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/NullHandler.php'
-	),
-	'Monolog\\Handler\\OverflowHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/OverflowHandler.php'
-	),
-	'Monolog\\Handler\\PHPConsoleHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/PHPConsoleHandler.php'
-	),
-	'Monolog\\Handler\\ProcessHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ProcessHandler.php'
-	),
-	'Monolog\\Handler\\ProcessableHandlerInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ProcessableHandlerInterface.php'
-	),
-	'Monolog\\Handler\\ProcessableHandlerTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ProcessableHandlerTrait.php'
-	),
-	'Monolog\\Handler\\PsrHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/PsrHandler.php'
-	),
-	'Monolog\\Handler\\PushoverHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/PushoverHandler.php'
-	),
-	'Monolog\\Handler\\RedisHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/RedisHandler.php'
-	),
-	'Monolog\\Handler\\RedisPubSubHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/RedisPubSubHandler.php'
-	),
-	'Monolog\\Handler\\RollbarHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/RollbarHandler.php'
-	),
-	'Monolog\\Handler\\RotatingFileHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php'
-	),
-	'Monolog\\Handler\\SamplingHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SamplingHandler.php'
-	),
-	'Monolog\\Handler\\SendGridHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SendGridHandler.php'
-	),
-	'Monolog\\Handler\\SlackHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SlackHandler.php'
-	),
-	'Monolog\\Handler\\SlackWebhookHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SlackWebhookHandler.php'
-	),
-	'Monolog\\Handler\\Slack\\SlackRecord' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/Slack/SlackRecord.php'
-	),
-	'Monolog\\Handler\\SocketHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SocketHandler.php'
-	),
-	'Monolog\\Handler\\SqsHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SqsHandler.php'
-	),
-	'Monolog\\Handler\\StreamHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/StreamHandler.php'
-	),
-	'Monolog\\Handler\\SwiftMailerHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php'
-	),
-	'Monolog\\Handler\\SymfonyMailerHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SymfonyMailerHandler.php'
-	),
-	'Monolog\\Handler\\SyslogHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SyslogHandler.php'
-	),
-	'Monolog\\Handler\\SyslogUdpHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SyslogUdpHandler.php'
-	),
-	'Monolog\\Handler\\SyslogUdp\\UdpSocket' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/SyslogUdp/UdpSocket.php'
-	),
-	'Monolog\\Handler\\TelegramBotHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/TelegramBotHandler.php'
-	),
-	'Monolog\\Handler\\TestHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/TestHandler.php'
-	),
-	'Monolog\\Handler\\WebRequestRecognizerTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/WebRequestRecognizerTrait.php'
-	),
-	'Monolog\\Handler\\WhatFailureGroupHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php'
-	),
-	'Monolog\\Handler\\ZendMonitorHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php'
-	),
-	'Monolog\\LogRecord' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/LogRecord.php'
-	),
-	'Monolog\\Logger' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Logger.php'
-	),
-	'Monolog\\Processor\\GitProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/GitProcessor.php'
-	),
-	'Monolog\\Processor\\HostnameProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php'
-	),
-	'Monolog\\Processor\\IntrospectionProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php'
-	),
-	'Monolog\\Processor\\MemoryPeakUsageProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php'
-	),
-	'Monolog\\Processor\\MemoryProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php'
-	),
-	'Monolog\\Processor\\MemoryUsageProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php'
-	),
-	'Monolog\\Processor\\MercurialProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php'
-	),
-	'Monolog\\Processor\\ProcessIdProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php'
-	),
-	'Monolog\\Processor\\ProcessorInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php'
-	),
-	'Monolog\\Processor\\PsrLogMessageProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php'
-	),
-	'Monolog\\Processor\\TagProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/TagProcessor.php'
-	),
-	'Monolog\\Processor\\UidProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php'
-	),
-	'Monolog\\Processor\\WebProcessor' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php'
-	),
-	'Monolog\\Registry' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Registry.php'
-	),
-	'Monolog\\ResettableInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/ResettableInterface.php'
-	),
-	'Monolog\\SignalHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/SignalHandler.php'
-	),
-	'Monolog\\Test\\TestCase' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Test/TestCase.php'
-	),
-	'Monolog\\Utils' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/monolog/monolog/src/Monolog/Utils.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Actions' => array(
 		'version' => 'dev-develop',
@@ -1550,201 +1814,9 @@ return array(
 		'version' => '2.11.16.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-plugins-handler.php'
 	),
-	'Psr\\Http\\Client\\ClientExceptionInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-client/src/ClientExceptionInterface.php'
-	),
-	'Psr\\Http\\Client\\ClientInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-client/src/ClientInterface.php'
-	),
-	'Psr\\Http\\Client\\NetworkExceptionInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-client/src/NetworkExceptionInterface.php'
-	),
-	'Psr\\Http\\Client\\RequestExceptionInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-client/src/RequestExceptionInterface.php'
-	),
-	'Psr\\Http\\Message\\MessageInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/MessageInterface.php'
-	),
-	'Psr\\Http\\Message\\RequestFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/RequestFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\RequestInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/RequestInterface.php'
-	),
-	'Psr\\Http\\Message\\ResponseFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/ResponseFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\ResponseInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/ResponseInterface.php'
-	),
-	'Psr\\Http\\Message\\ServerRequestFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/ServerRequestFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\ServerRequestInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/ServerRequestInterface.php'
-	),
-	'Psr\\Http\\Message\\StreamFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/StreamFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\StreamInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/StreamInterface.php'
-	),
-	'Psr\\Http\\Message\\UploadedFileFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/UploadedFileFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\UploadedFileInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/UploadedFileInterface.php'
-	),
-	'Psr\\Http\\Message\\UriFactoryInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-factory/src/UriFactoryInterface.php'
-	),
-	'Psr\\Http\\Message\\UriInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/http-message/src/UriInterface.php'
-	),
-	'Psr\\Log\\AbstractLogger' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/AbstractLogger.php'
-	),
-	'Psr\\Log\\InvalidArgumentException' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/InvalidArgumentException.php'
-	),
-	'Psr\\Log\\LogLevel' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/LogLevel.php'
-	),
-	'Psr\\Log\\LoggerAwareInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/LoggerAwareInterface.php'
-	),
-	'Psr\\Log\\LoggerAwareTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/LoggerAwareTrait.php'
-	),
-	'Psr\\Log\\LoggerInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php'
-	),
-	'Psr\\Log\\LoggerTrait' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php'
-	),
-	'Psr\\Log\\NullLogger' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/NullLogger.php'
-	),
-	'Psr\\Log\\Test\\DummyTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/Test/DummyTest.php'
-	),
-	'Psr\\Log\\Test\\LoggerInterfaceTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php'
-	),
-	'Psr\\Log\\Test\\TestLogger' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/psr/log/Psr/Log/Test/TestLogger.php'
-	),
 	'Shutdown_Handler' => array(
 		'version' => '2.11.16.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-shutdown-handler.php'
-	),
-	'Tests\\AbstractTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/tests/AbstractTest.php'
-	),
-	'Tests\\CustomDataTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/tests/CustomDataTest.php'
-	),
-	'Tests\\DynamicTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/tests/DynamicTest.php'
-	),
-	'Tests\\EnqueueTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/tests/EnqueueTest.php'
-	),
-	'Tests\\LoggerTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/logger/tests/LoggerTest.php'
-	),
-	'Tests\\MenuPageTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/tests/MenuPageTest.php'
-	),
-	'Tests\\OptionBoxTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/settings/tests/OptionBoxTest.php'
-	),
-	'Tests\\OptionHandlerTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/settings/tests/OptionHandlerTest.php'
-	),
-	'Tests\\SubMenuPageTest' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/tests/SubMenuPageTest.php'
-	),
-	'Tests\\TestCommon' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/tests/TestCommon.php'
-	),
-	'ThemePlate\\Enqueue' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/Enqueue.php'
-	),
-	'ThemePlate\\Enqueue\\CustomData' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/src/CustomData.php'
-	),
-	'ThemePlate\\Enqueue\\Dynamic' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/enqueue/src/Dynamic.php'
-	),
-	'ThemePlate\\Logger' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/logger/src/Logger.php'
-	),
-	'ThemePlate\\Page\\BasePage' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/src/BasePage.php'
-	),
-	'ThemePlate\\Page\\CommonInterface' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/src/CommonInterface.php'
-	),
-	'ThemePlate\\Page\\MenuPage' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/src/MenuPage.php'
-	),
-	'ThemePlate\\Page\\SubMenuPage' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/page/src/SubMenuPage.php'
-	),
-	'ThemePlate\\Settings\\OptionBox' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/settings/src/OptionBox.php'
-	),
-	'ThemePlate\\Settings\\OptionHandler' => array(
-		'version' => 'dev-develop',
-		'path'    => $vendorDir . '/themeplate/settings/src/OptionHandler.php'
 	),
 	'Version_Loader' => array(
 		'version' => '2.11.16.0',

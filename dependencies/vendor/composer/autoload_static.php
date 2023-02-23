@@ -7,41 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        'cffb582bbe3444c214b7b73b61493f7d' => __DIR__ . '/..' . '/themeplate/enqueue/Enqueue.php',
+        '1adb4ff695388b04d573ca23d2979f89' => __DIR__ . '/..' . '/cardanopress/framework/dependencies/compatibility.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'ThemePlate\\Settings\\' => 20,
-            'ThemePlate\\Page\\' => 16,
-            'ThemePlate\\Enqueue\\' => 19,
-            'ThemePlate\\' => 11,
-        ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
             'PBWebDev\\CardanoPress\\Governance\\' => 33,
-        ),
-        'M' => 
-        array (
-            'Monolog\\' => 8,
-        ),
-        'G' => 
-        array (
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
         ),
         'C' => 
         array (
             'CardanoPress\\Governance\\Dependencies\\' => 37,
+            'CardanoPress\\Dependencies\\' => 26,
             'CardanoPress\\' => 13,
         ),
         'A' => 
@@ -51,58 +28,17 @@ class ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4
     );
 
     public static $prefixDirsPsr4 = array (
-        'ThemePlate\\Settings\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/themeplate/settings/src',
-        ),
-        'ThemePlate\\Page\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/themeplate/page/src',
-        ),
-        'ThemePlate\\Enqueue\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/themeplate/enqueue/src',
-        ),
-        'ThemePlate\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/themeplate/logger/src',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Http\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
-        ),
         'PBWebDev\\CardanoPress\\Governance\\' => 
         array (
             0 => __DIR__ . '/../..' . '/../src',
         ),
-        'Monolog\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
-        ),
-        'GuzzleHttp\\Psr7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
         'CardanoPress\\Governance\\Dependencies\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
+        ),
+        'CardanoPress\\Dependencies\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cardanopress/framework/dependencies',
         ),
         'CardanoPress\\' => 
         array (
