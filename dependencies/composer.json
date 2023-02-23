@@ -18,6 +18,9 @@
   },
   "autoload": {
     "exclude-from-classmap": ["vendor/"],
+    "files": [
+      "compatibility.php"
+    ],
     "psr-4": {
       "PBWebDev\\CardanoPress\\Governance\\": "../src/",
       "CardanoPress\\Governance\\Dependencies\\": "."
@@ -39,10 +42,12 @@
   "scripts": {
     "post-install-cmd": [
       "../vendor/bin/mozart compose",
+      "rm -rf ThemePlate/Core",
       "composer dump-autoload --classmap-authoritative"
     ],
     "post-update-cmd": [
       "../vendor/bin/mozart compose",
+      "rm -rf ThemePlate/Core",
       "composer dump-autoload --classmap-authoritative"
     ]
   }
