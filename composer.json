@@ -29,14 +29,8 @@
     "php": "^7.4|^8.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-    "wp-coding-standards/wpcs": "^2.2",
-    "squizlabs/php_codesniffer": "^3.5",
-    "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "phpunit/phpunit": "^9.5",
-    "phpstan/phpstan": "^1.0",
-    "szepeviktor/phpstan-wordpress": "^1.0"
+    "coenjacobs/mozart": "^0.7.1",
+    "themeplate/tester": "^2.1"
   },
   "autoload": {
     "psr-4": {
@@ -49,9 +43,11 @@
     }
   },
   "scripts": {
-    "analyse": "phpstan analyse --memory-limit=512M",
-    "lint": "phpcs --colors -p -s -v",
-    "fix": "phpcbf -p -v",
-    "test": "phpunit --colors=always"
+    "analyse": "themeplate analyse",
+    "lint": "themeplate lint",
+    "fix": "themeplate fix",
+    "test": "themeplate test",
+    "test:unit": "themeplate test --type unit",
+    "test:integration": "themeplate test --type integration"
   }
 }
