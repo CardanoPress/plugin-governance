@@ -7,271 +7,271 @@ $baseDir   = dirname($vendorDir);
 
 return array(
 	'ActionScheduler' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler.php'
 	),
 	'ActionScheduler_Abstract_ListTable' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php'
 	),
 	'ActionScheduler_Abstract_QueueRunner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_QueueRunner.php'
 	),
 	'ActionScheduler_Abstract_QueueRunner_Deprecated' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/deprecated/ActionScheduler_Abstract_QueueRunner_Deprecated.php'
 	),
 	'ActionScheduler_Abstract_RecurringSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_RecurringSchedule.php'
 	),
 	'ActionScheduler_Abstract_Schedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_Schedule.php'
 	),
 	'ActionScheduler_Abstract_Schema' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_Schema.php'
 	),
 	'ActionScheduler_Action' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/actions/ActionScheduler_Action.php'
 	),
 	'ActionScheduler_ActionClaim' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_ActionClaim.php'
 	),
 	'ActionScheduler_ActionFactory' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_ActionFactory.php'
 	),
 	'ActionScheduler_AdminView' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php'
 	),
 	'ActionScheduler_AdminView_Deprecated' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/deprecated/ActionScheduler_AdminView_Deprecated.php'
 	),
 	'ActionScheduler_AsyncRequest_QueueRunner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_AsyncRequest_QueueRunner.php'
 	),
 	'ActionScheduler_CanceledAction' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/actions/ActionScheduler_CanceledAction.php'
 	),
 	'ActionScheduler_CanceledSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_CanceledSchedule.php'
 	),
 	'ActionScheduler_Compatibility' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_Compatibility.php'
 	),
 	'ActionScheduler_CronSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_CronSchedule.php'
 	),
 	'ActionScheduler_DBLogger' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php'
 	),
 	'ActionScheduler_DBStore' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php'
 	),
 	'ActionScheduler_DBStoreMigrator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/ActionScheduler_DBStoreMigrator.php'
 	),
 	'ActionScheduler_DataController' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_DataController.php'
 	),
 	'ActionScheduler_DateTime' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_DateTime.php'
 	),
 	'ActionScheduler_Exception' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_Exception.php'
 	),
 	'ActionScheduler_FatalErrorMonitor' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_FatalErrorMonitor.php'
 	),
 	'ActionScheduler_FinishedAction' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/actions/ActionScheduler_FinishedAction.php'
 	),
 	'ActionScheduler_HybridStore' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_HybridStore.php'
 	),
 	'ActionScheduler_IntervalSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_IntervalSchedule.php'
 	),
 	'ActionScheduler_InvalidActionException' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_InvalidActionException.php'
 	),
 	'ActionScheduler_ListTable' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php'
 	),
 	'ActionScheduler_Lock' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Lock.php'
 	),
 	'ActionScheduler_LogEntry' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_LogEntry.php'
 	),
 	'ActionScheduler_Logger' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php'
 	),
 	'ActionScheduler_LoggerSchema' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schema/ActionScheduler_LoggerSchema.php'
 	),
 	'ActionScheduler_NullAction' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/actions/ActionScheduler_NullAction.php'
 	),
 	'ActionScheduler_NullLogEntry' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_NullLogEntry.php'
 	),
 	'ActionScheduler_NullSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_NullSchedule.php'
 	),
 	'ActionScheduler_OptionLock' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_OptionLock.php'
 	),
 	'ActionScheduler_QueueCleaner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_QueueCleaner.php'
 	),
 	'ActionScheduler_QueueRunner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_QueueRunner.php'
 	),
 	'ActionScheduler_Schedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_Schedule.php'
 	),
 	'ActionScheduler_Schedule_Deprecated' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/deprecated/ActionScheduler_Schedule_Deprecated.php'
 	),
 	'ActionScheduler_SimpleSchedule' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schedules/ActionScheduler_SimpleSchedule.php'
 	),
 	'ActionScheduler_Store' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php'
 	),
 	'ActionScheduler_StoreSchema' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/schema/ActionScheduler_StoreSchema.php'
 	),
 	'ActionScheduler_Store_Deprecated' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/deprecated/ActionScheduler_Store_Deprecated.php'
 	),
 	'ActionScheduler_TimezoneHelper' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_TimezoneHelper.php'
 	),
 	'ActionScheduler_Versions' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_Versions.php'
 	),
 	'ActionScheduler_WPCLI_QueueRunner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php'
 	),
 	'ActionScheduler_WPCLI_Scheduler_command' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php'
 	),
 	'ActionScheduler_WPCommentCleaner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php'
 	),
 	'ActionScheduler_wcSystemStatus' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/ActionScheduler_wcSystemStatus.php'
 	),
 	'ActionScheduler_wpCommentLogger' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpCommentLogger.php'
 	),
 	'ActionScheduler_wpPostStore' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php'
 	),
 	'ActionScheduler_wpPostStore_PostStatusRegistrar' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php'
 	),
 	'ActionScheduler_wpPostStore_PostTypeRegistrar' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php'
 	),
 	'ActionScheduler_wpPostStore_TaxonomyRegistrar' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_TaxonomyRegistrar.php'
 	),
 	'Action_Scheduler\\Migration\\ActionMigrator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/ActionMigrator.php'
 	),
 	'Action_Scheduler\\Migration\\BatchFetcher' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/BatchFetcher.php'
 	),
 	'Action_Scheduler\\Migration\\Config' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/Config.php'
 	),
 	'Action_Scheduler\\Migration\\Controller' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/Controller.php'
 	),
 	'Action_Scheduler\\Migration\\DryRun_ActionMigrator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/DryRun_ActionMigrator.php'
 	),
 	'Action_Scheduler\\Migration\\DryRun_LogMigrator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/DryRun_LogMigrator.php'
 	),
 	'Action_Scheduler\\Migration\\LogMigrator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/LogMigrator.php'
 	),
 	'Action_Scheduler\\Migration\\Runner' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/Runner.php'
 	),
 	'Action_Scheduler\\Migration\\Scheduler' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/migration/Scheduler.php'
 	),
 	'Action_Scheduler\\WP_CLI\\Migration_Command' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/WP_CLI/Migration_Command.php'
 	),
 	'Action_Scheduler\\WP_CLI\\ProgressBar' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/WP_CLI/ProgressBar.php'
 	),
 	'Autoloader' => array(
@@ -306,60 +306,60 @@ return array(
 		'version' => '2.11.16.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/ManifestGenerator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Autoloader' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Autoloader' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Autoloader_Handler' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Autoloader_Handler' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Autoloader_Locator' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Autoloader_Locator' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader-locator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Container' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Container' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-container.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Hook_Manager' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Hook_Manager' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-hook-manager.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Latest_Autoloader_Guard' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Latest_Autoloader_Guard' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-latest-autoloader-guard.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Manifest_Reader' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Manifest_Reader' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-manifest-reader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\PHP_Autoloader' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\PHP_Autoloader' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-php-autoloader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Path_Processor' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Path_Processor' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-path-processor.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Plugin_Locator' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Plugin_Locator' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-plugin-locator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Plugins_Handler' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Plugins_Handler' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-plugins-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Shutdown_Handler' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Shutdown_Handler' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-shutdown-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Version_Loader' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Version_Loader' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-version-loader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jpc931f5fb67ae725e3e4f93d3bfb67ec4\\Version_Selector' => array(
-		'version' => 'dev-develop',
+	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\Version_Selector' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-version-selector.php'
 	),
 	'CardanoPress\\Clients\\BlockfrostClient' => array(
@@ -1463,47 +1463,47 @@ return array(
 		'path'    => $vendorDir . '/cardanopress/framework/src/Foundation/AbstractTemplates.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Base' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/CPT/Base.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\CommonInterface' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/CPT/CommonInterface.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\PostType' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/CPT/PostType.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Taxonomy' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/CPT/Taxonomy.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\BaseMeta' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/BaseMeta.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\MenuMeta' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/MenuMeta.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\MetaHandler' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/MetaHandler.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\PostMeta' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/PostMeta.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\TermMeta' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/TermMeta.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\Traits\\HasLocation' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/Traits/HasLocation.php'
 	),
 	'CardanoPress\\Governance\\Dependencies\\ThemePlate\\Meta\\UserMeta' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/ThemePlate/Meta/UserMeta.php'
 	),
 	'CardanoPress\\Helpers\\NumberHelper' => array(
@@ -1574,20 +1574,20 @@ return array(
 		'version' => '2.0.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Templatable.php'
 	),
-	'ComposerAutoloaderInitc931f5fb67ae725e3e4f93d3bfb67ec4' => array(
-		'version' => 'dev-develop',
+	'ComposerAutoloaderInit0199295c9c9bc2809cd329bc582a0f4b' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/composer/autoload_real.php'
 	),
 	'Composer\\Autoload\\ClassLoader' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/composer/ClassLoader.php'
 	),
-	'Composer\\Autoload\\ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4' => array(
-		'version' => 'dev-develop',
+	'Composer\\Autoload\\ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b' => array(
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/composer/autoload_static.php'
 	),
 	'Composer\\InstalledVersions' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/composer/InstalledVersions.php'
 	),
 	'Container' => array(
@@ -1595,43 +1595,43 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-container.php'
 	),
 	'CronExpression' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression.php'
 	),
 	'CronExpression_AbstractField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_AbstractField.php'
 	),
 	'CronExpression_DayOfMonthField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_DayOfMonthField.php'
 	),
 	'CronExpression_DayOfWeekField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_DayOfWeekField.php'
 	),
 	'CronExpression_FieldFactory' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_FieldFactory.php'
 	),
 	'CronExpression_FieldInterface' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_FieldInterface.php'
 	),
 	'CronExpression_HoursField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_HoursField.php'
 	),
 	'CronExpression_MinutesField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_MinutesField.php'
 	),
 	'CronExpression_MonthField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_MonthField.php'
 	),
 	'CronExpression_YearField' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_YearField.php'
 	),
 	'Hook_Manager' => array(
@@ -1647,51 +1647,51 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-manifest-reader.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Actions' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Actions.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Admin' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Admin.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Application' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Application.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Calculator' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Calculator.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Installer' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Installer.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Manifest' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Manifest.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Profile' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Profile.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Proposal' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Proposal.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\ProposalCPT' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/ProposalCPT.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\ProposalFields' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/ProposalFields.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Snapshot' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Snapshot.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Templates' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Templates.php'
 	),
 	'PHP_Autoloader' => array(
@@ -1723,7 +1723,7 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-version-selector.php'
 	),
 	'WP_Async_Request' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/WP_Async_Request.php'
 	),
 );

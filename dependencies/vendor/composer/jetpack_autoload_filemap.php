@@ -11,7 +11,7 @@ return array(
 		'path'    => $vendorDir . '/cardanopress/framework/dependencies/compatibility.php'
 	),
 	'2b43a392f433dca4ade51933d5c0e521' => array(
-		'version' => 'dev-develop',
+		'version' => 'dev-main',
 		'path'    => $baseDir . '/compatibility.php'
 	),
 );

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4
+class ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b
 {
     public static $files = array (
         '1adb4ff695388b04d573ca23d2979f89' => __DIR__ . '/..' . '/cardanopress/framework/dependencies/compatibility.php',
@@ -81,9 +81,9 @@ class ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc931f5fb67ae725e3e4f93d3bfb67ec4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b::$classMap;
 
         }, null, ClassLoader::class);
     }

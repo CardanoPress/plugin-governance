@@ -41,11 +41,13 @@
   },
   "scripts": {
     "post-install-cmd": [
+      "touch vendor/woocommerce/action-scheduler/composer.json",
       "../vendor/bin/mozart compose",
       "rm -rf ThemePlate/Core",
       "composer dump-autoload --classmap-authoritative"
     ],
     "post-update-cmd": [
+      "touch vendor/woocommerce/action-scheduler/composer.json",
       "../vendor/bin/mozart compose",
       "rm -rf ThemePlate/Core",
       "composer dump-autoload --classmap-authoritative"
