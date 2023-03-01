@@ -4,5 +4,8 @@ parameters:
     - vendor
   scanFiles:
     - cardanopress-governance.php
+  scanDirectories:
+    - %currentWorkingDirectory%/.cache/wordpress
+    - %currentWorkingDirectory%/.cache/wordpress-tests-lib
   dynamicConstantNames:
     - CP_GOVERNANCE_FILE

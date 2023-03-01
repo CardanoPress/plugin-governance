@@ -55,7 +55,7 @@ class Actions implements HookInterface
         $transaction = sanitize_key($_POST['transaction']);
 
         if (! ctype_xdigit($transaction) || 64 !== strlen($transaction)) {
-            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
+            wp_send_json_error($this->getAjaxMessage('invalidHash'));
         }
 
         $userProfile = Application::getInstance()->userProfile();
