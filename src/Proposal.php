@@ -7,6 +7,7 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Helpers\WalletHelper;
 use DateTimeZone;
 
 class Proposal
@@ -263,15 +264,11 @@ class Proposal
     {
         $userProfile = new Profile(get_user_by('id', $userId));
         $network = $userProfile->connectedNetwork() ?: 'mainnet';
-        $link = [
-            'mainnet' => 'https://cardanoscan.io/transaction/',
-            'testnet' => 'https://testnet.cardanoscan.io/transaction/',
-        ];
 
         $data['option'] = $this->getOptionLabel($data['option']);
         $data['transaction'] = [
             'hash' => $data['transaction'],
-            'link' => $link[$network] . $data['transaction'],
+            'link' => WalletHelper::getCardanoscanLink($network, 'transaction/' . $data['transaction']),
         ];
         $data['time'] = $this->formatDate($data['time']);
 
