@@ -162,6 +162,11 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
     {
         $plugins = [
             [
+                'name'     => 'CardanoPress',
+                'slug'     => 'cardanopress',
+                'required' => true,
+            ],
+            [
                 'name' => 'Augment Types',
                 'slug' => 'augment-types',
             ],
