@@ -65,7 +65,7 @@ class Installer extends AbstractInstaller
 
         $plugin  = sprintf(
             '<a href="%1$s" target="_blank">Augment Types</a>',
-            'https://github.com/kermage/augment-types'
+            'https://wordpress.org/plugins/augment-types'
         );
         $message = sprintf(
             '<strong>%1$s</strong> requires the %2$s plugin for marking past proposals.',

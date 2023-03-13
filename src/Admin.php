@@ -19,6 +19,8 @@ class Admin extends AbstractAdmin
 
     protected function initialize(): void
     {
+        require_once plugin_dir_path(CP_GOVERNANCE_FILE) . 'class-tgm-plugin-activation.php';
+
         $this->proposalFields = new ProposalFields();
         $this->proposalCPT    = new ProposalCPT($this->getLogger());
     }
@@ -33,6 +35,7 @@ class Admin extends AbstractAdmin
             'menu_title' => 'Settings',
         ]);
 
+        add_action('tgmpa_register', [$this, 'recommendPlugins']);
         add_action('init', function () {
             $this->proposalArchiveFields();
             $this->proposalConfigFields();
@@ -153,5 +156,25 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
 
         $postMeta->location('proposal')->create();
         $this->storeConfig($postMeta->get_config());
+    }
+
+    public function recommendPlugins()
+    {
+        $plugins = [
+            [
+                'name' => 'Augment Types',
+                'slug' => 'augment-types',
+            ],
+        ];
+
+        $config = [
+            'id' => 'cardanopress-tgmpa',
+            'menu' => 'cardanopress-plugins',
+            'parent_slug' => 'cardanopress',
+            'dismissable' => true,
+            'is_automatic' => true,
+        ];
+
+        tgmpa($plugins, $config);
     }
 }
