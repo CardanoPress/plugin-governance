@@ -178,7 +178,7 @@ class ProposalFields implements HookInterface
             $global = $this->application->option('global_calculation');
 
             if ($global) {
-                $data['default'] = array_values($global);
+                $data['default'] = array_values((array)$global);
             }
         }
 

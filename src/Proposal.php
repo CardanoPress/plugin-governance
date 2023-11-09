@@ -137,7 +137,7 @@ class Proposal
     {
         $status = $this->getConfigValue('calculation');
 
-        return $status ?: [];
+        return (array)$status ?: [];
     }
 
     public function getOptions(): array
