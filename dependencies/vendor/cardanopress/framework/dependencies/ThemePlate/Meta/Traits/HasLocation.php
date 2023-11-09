@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @package ThemePlate
+ * @package CardanoPress\Dependencies\ThemePlate
  */
 
-namespace CardanoPress\Governance\Dependencies\ThemePlate\Meta\Traits;
+namespace CardanoPress\Dependencies\ThemePlate\Meta\Traits;
 
 trait HasLocation {
 

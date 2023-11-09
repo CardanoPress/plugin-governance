@@ -3,21 +3,32 @@
 /**
  * Setup meta boxes
  *
- * @package ThemePlate
+ * @package CardanoPress\Dependencies\ThemePlate
  * @since 0.1.0
  */
 
-namespace CardanoPress\Governance\Dependencies\ThemePlate\Meta;
+namespace CardanoPress\Dependencies\ThemePlate\Meta;
 
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Config;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Form;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Handler;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\BoxHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\FieldsHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Config;
+use CardanoPress\Dependencies\ThemePlate\Core\Form;
+use CardanoPress\Dependencies\ThemePlate\Core\Handler;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\BoxHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\FieldsHelper;
 
 abstract class BaseMeta extends Form {
 
 	protected int $current_id = 0;
+
+
+	protected function register(): void {
+
+		if ( did_action( 'init' ) ) {
+			$this->register_meta();
+		} else {
+			add_action( 'init', array( $this, 'register_meta' ) ); // @codeCoverageIgnore
+		}
+
+	}
 
 
 	protected function get_handler(): Handler {

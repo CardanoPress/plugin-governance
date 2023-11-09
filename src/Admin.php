@@ -8,7 +8,7 @@
 namespace PBWebDev\CardanoPress\Governance;
 
 use CardanoPress\Foundation\AbstractAdmin;
-use CardanoPress\Governance\Dependencies\ThemePlate\Meta\PostMeta;
+use CardanoPress\Dependencies\ThemePlate\Meta\PostMeta;
 
 class Admin extends AbstractAdmin
 {

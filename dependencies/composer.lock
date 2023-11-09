@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34f54c5f71fe228a9980b2c118e6d489",
+    "content-hash": "ec32d40558c29c38def2ead71dbf6496",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
-            "version": "v2.11.16",
+            "version": "v2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "43bc969fd90ce3d92e7b75fbf384a5fd03963dad"
+                "reference": "632b69cfc73ed5505f2b03165e7f68d414d0da12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/43bc969fd90ce3d92e7b75fbf384a5fd03963dad",
-                "reference": "43bc969fd90ce3d92e7b75fbf384a5fd03963dad",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/632b69cfc73ed5505f2b03165e7f68d414d0da12",
+                "reference": "632b69cfc73ed5505f2b03165e7f68d414d0da12",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1 || ^2.0"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "^3.3.2",
-                "yoast/phpunit-polyfills": "1.0.4"
+                "automattic/jetpack-changelogger": "^3.3.11",
+                "yoast/phpunit-polyfills": "1.1.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -35,8 +35,11 @@
                 "changelogger": {
                     "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
                 },
+                "version-constants": {
+                    "::VERSION": "src/AutoloadGenerator.php"
+                },
                 "branch-alias": {
-                    "dev-trunk": "2.11.x-dev"
+                    "dev-trunk": "2.12.x-dev"
                 }
             },
             "autoload": {
@@ -52,28 +55,39 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Creates a custom autoloader for a plugin or theme.",
+            "keywords": [
+                "autoload",
+                "autoloader",
+                "composer",
+                "jetpack",
+                "plugin",
+                "wordpress"
+            ],
             "support": {
-                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v2.11.16"
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v2.12.0"
             },
-            "time": "2023-02-20T19:47:16+00:00"
+            "time": "2023-09-28T18:33:34+00:00"
         },
         {
             "name": "cardanopress/framework",
-            "version": "v2.0.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CardanoPress/framework.git",
-                "reference": "fdf0f75ba39267048bcbd2396616f1338339c909"
+                "reference": "fd6b75ccb4d829a86f8c95db99293f7e373b345c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CardanoPress/framework/zipball/fdf0f75ba39267048bcbd2396616f1338339c909",
-                "reference": "fdf0f75ba39267048bcbd2396616f1338339c909",
+                "url": "https://api.github.com/repos/CardanoPress/framework/zipball/fd6b75ccb4d829a86f8c95db99293f7e373b345c",
+                "reference": "fd6b75ccb4d829a86f8c95db99293f7e373b345c",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "themeplate/tester": "^2.1"
             },
             "type": "library",
             "autoload": {
@@ -106,66 +120,22 @@
             ],
             "support": {
                 "issues": "https://github.com/CardanoPress/framework/issues",
-                "source": "https://github.com/CardanoPress/framework/tree/v2.0.0"
+                "source": "https://github.com/CardanoPress/framework/tree/v2.3.0"
             },
-            "time": "2023-02-16T09:58:23+00:00"
-        },
-        {
-            "name": "themeplate/core",
-            "version": "v2.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ThemePlate/Core.git",
-                "reference": "c00e67bc1d85696b6ea06a9f136a371fb2be9d31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ThemePlate/Core/zipball/c00e67bc1d85696b6ea06a9f136a371fb2be9d31",
-                "reference": "c00e67bc1d85696b6ea06a9f136a371fb2be9d31",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "themeplate/tester": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ThemePlate\\Core\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Gene Alyson Fortunado Torcende",
-                    "email": "genealyson.torcende@gmail.com"
-                }
-            ],
-            "description": "ThemePlate core functions and helpers",
-            "support": {
-                "issues": "https://github.com/ThemePlate/Core/issues",
-                "source": "https://github.com/ThemePlate/Core/tree/v2.2.2"
-            },
-            "time": "2022-06-30T13:59:01+00:00"
+            "time": "2023-10-27T03:58:39+00:00"
         },
         {
             "name": "themeplate/cpt",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThemePlate/CPT.git",
-                "reference": "2eaabd6c89075d41d56c67a52cb7f4f7339cb03f"
+                "reference": "ed093fc454cf6ababf07fd64549221e789be47aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ThemePlate/CPT/zipball/2eaabd6c89075d41d56c67a52cb7f4f7339cb03f",
-                "reference": "2eaabd6c89075d41d56c67a52cb7f4f7339cb03f",
+                "url": "https://api.github.com/repos/ThemePlate/CPT/zipball/ed093fc454cf6ababf07fd64549221e789be47aa",
+                "reference": "ed093fc454cf6ababf07fd64549221e789be47aa",
                 "shasum": ""
             },
             "require": {
@@ -193,66 +163,22 @@
             "description": "ThemePlate custom post types and taxonomies",
             "support": {
                 "issues": "https://github.com/ThemePlate/CPT/issues",
-                "source": "https://github.com/ThemePlate/CPT/tree/v2.1.0"
+                "source": "https://github.com/ThemePlate/CPT/tree/v2.2.0"
             },
-            "time": "2022-06-26T08:38:58+00:00"
-        },
-        {
-            "name": "themeplate/meta",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ThemePlate/Meta.git",
-                "reference": "0b82d271fbf1d8a805a5fb90f28b089541cc85c8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ThemePlate/Meta/zipball/0b82d271fbf1d8a805a5fb90f28b089541cc85c8",
-                "reference": "0b82d271fbf1d8a805a5fb90f28b089541cc85c8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4|^8.0",
-                "themeplate/core": "^2.0"
-            },
-            "require-dev": {
-                "themeplate/tester": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ThemePlate\\Meta\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Gene Alyson Fortunado Torcende",
-                    "email": "genealyson.torcende@gmail.com"
-                }
-            ],
-            "description": "ThemePlate custom meta boxes",
-            "support": {
-                "issues": "https://github.com/ThemePlate/Meta/issues",
-                "source": "https://github.com/ThemePlate/Meta/tree/v2.2.0"
-            },
-            "time": "2022-06-25T03:38:14+00:00"
+            "time": "2023-03-04T04:07:02+00:00"
         },
         {
             "name": "woocommerce/action-scheduler",
-            "version": "3.5.3",
+            "version": "3.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woocommerce/action-scheduler.git",
-                "reference": "63ef5af013ca3a6efdd8ef8e9363ac70778713cb"
+                "reference": "e7dafe215be5ef823392204535ee2e241f99a8cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/63ef5af013ca3a6efdd8ef8e9363ac70778713cb",
-                "reference": "63ef5af013ca3a6efdd8ef8e9363ac70778713cb",
+                "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/e7dafe215be5ef823392204535ee2e241f99a8cb",
+                "reference": "e7dafe215be5ef823392204535ee2e241f99a8cb",
                 "shasum": ""
             },
             "require-dev": {
@@ -277,9 +203,9 @@
             "homepage": "https://actionscheduler.org/",
             "support": {
                 "issues": "https://github.com/woocommerce/action-scheduler/issues",
-                "source": "https://github.com/woocommerce/action-scheduler/tree/3.5.3"
+                "source": "https://github.com/woocommerce/action-scheduler/tree/3.6.4"
             },
-            "time": "2022-11-09T17:45:19+00:00"
+            "time": "2023-10-11T18:24:47+00:00"
         }
     ],
     "packages-dev": [],
@@ -294,5 +220,5 @@
         "ext-ctype": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 
 trait Loggable
 {
-    private ?LoggerInterface $logger = null;
+    protected ?LoggerInterface $logger = null;
 
     protected function setLogger(LoggerInterface $logger): void
     {
@@ -25,6 +25,11 @@ trait Loggable
 
     protected function log(string $message, string $level = 'info'): void
     {
+        if (null === $this->logger) {
+            error_log(strtoupper($level) . ' > ' . print_r($message, true));
+            return;
+        }
+
         $this->getLogger()->log($level, $message);
     }
 }

@@ -7,11 +7,11 @@ $baseDir   = dirname($vendorDir);
 
 return array(
 	'1adb4ff695388b04d573ca23d2979f89' => array(
-		'version' => '2.0.0.0',
+		'version' => '2.3.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/dependencies/compatibility.php'
 	),
 	'2b43a392f433dca4ade51933d5c0e521' => array(
-		'version' => 'dev-main',
+		'version' => 'dev-develop',
 		'path'    => $baseDir . '/compatibility.php'
 	),
 );

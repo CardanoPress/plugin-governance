@@ -10,7 +10,7 @@ namespace CardanoPress\Traits;
 trait HasPageTemplates
 {
     protected string $pageTitlePrefix = '';
-    protected array $pageTemplates = array();
+    protected array $pageTemplates = [];
 
     protected function setPageTitlePrefix(string $pageTitlePrefix): void
     {
@@ -64,7 +64,7 @@ trait HasPageTemplates
     protected function getLoaderFile(): string
     {
         if (is_page_template()) {
-            return get_page_template();
+            return get_page_template_slug();
         }
 
         return '';

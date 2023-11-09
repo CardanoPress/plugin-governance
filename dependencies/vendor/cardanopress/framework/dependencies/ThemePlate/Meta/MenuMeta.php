@@ -3,15 +3,15 @@
 /**
  * Setup post meta boxes
  *
- * @package ThemePlate
+ * @package CardanoPress\Dependencies\ThemePlate
  * @since 0.1.0
  */
 
-namespace CardanoPress\Governance\Dependencies\ThemePlate\Meta;
+namespace CardanoPress\Dependencies\ThemePlate\Meta;
 
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\BoxHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\FormHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\MetaHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\BoxHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\FormHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\MetaHelper;
 
 class MenuMeta extends BaseMeta {
 
@@ -42,7 +42,7 @@ class MenuMeta extends BaseMeta {
 		add_action( 'save_post_nav_menu_item', array( $this, 'save_data' ) );
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
-		$this->register_meta();
+		$this->register();
 
 	}
 

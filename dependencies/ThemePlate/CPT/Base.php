@@ -22,6 +22,13 @@ abstract class Base implements CommonInterface {
 	);
 
 
+	public function defaults(): array {
+
+		return $this->defaults;
+
+	}
+
+
 	protected function initialize( string $type, array $args ): void {
 
 		$names = $this->parse( $type );
@@ -29,6 +36,10 @@ abstract class Base implements CommonInterface {
 		$this->defaults['rewrite']['slug'] = $names['slug'];
 
 		$this->args = array_replace_recursive( $this->defaults, $args );
+
+		if ( isset( $args['public'] ) && ! $args['public'] ) {
+			$this->args['rewrite'] = false;
+		}
 
 		$this->labels( $names['singular'], $names['plural'] );
 
@@ -72,6 +83,17 @@ abstract class Base implements CommonInterface {
 	protected function slugify( string $name ): string {
 
 		return strtolower( str_replace( array( ' ', '_' ), '-', $name ) );
+
+	}
+
+
+	protected function apply( array $labels, string $plural ): void {
+
+		$this->args['labels'] = array_merge( $this->args['labels'], $labels );
+
+		if ( false !== $this->args['rewrite'] && $this->defaults['rewrite']['slug'] === $this->args['rewrite']['slug'] ) {
+			$this->args['rewrite']['slug'] = $this->slugify( $plural );
+		}
 
 	}
 

@@ -3,14 +3,14 @@
 /**
  * Setup meta boxes
  *
- * @package ThemePlate
+ * @package CardanoPress\Dependencies\ThemePlate
  * @since 0.1.0
  */
 
-namespace CardanoPress\Governance\Dependencies\ThemePlate\Meta;
+namespace CardanoPress\Dependencies\ThemePlate\Meta;
 
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Handler;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Field;
+use CardanoPress\Dependencies\ThemePlate\Core\Handler;
+use CardanoPress\Dependencies\ThemePlate\Core\Field;
 
 class MetaHandler extends Handler {
 

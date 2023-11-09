@@ -3,16 +3,16 @@
 /**
  * Setup post meta boxes
  *
- * @package ThemePlate
+ * @package CardanoPress\Dependencies\ThemePlate
  * @since 0.1.0
  */
 
-namespace CardanoPress\Governance\Dependencies\ThemePlate\Meta;
+namespace CardanoPress\Dependencies\ThemePlate\Meta;
 
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\BoxHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\FormHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Core\Helper\MetaHelper;
-use CardanoPress\Governance\Dependencies\ThemePlate\Meta\Traits\HasLocation;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\BoxHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\FormHelper;
+use CardanoPress\Dependencies\ThemePlate\Core\Helper\MetaHelper;
+use CardanoPress\Dependencies\ThemePlate\Meta\Traits\HasLocation;
 use WP_Term;
 
 class TermMeta extends BaseMeta {
@@ -39,7 +39,7 @@ class TermMeta extends BaseMeta {
 
 		add_action( 'admin_footer', array( $this, 'maybe_wanted_page' ) );
 
-		$this->register_meta();
+		$this->register();
 
 	}
 
