@@ -1,3 +1,8 @@
+export const cardanoPressGovernanceMessages = window.cardanoPressGovernanceMessages || {
+    voting: '',
+    invalid: '',
+}
+
 const transformToAda = (proposalId, optionValue) => {
     proposalId = parseFloat(proposalId) * 100
     optionValue = parseFloat(optionValue)
@@ -12,7 +17,7 @@ export const handleVote = async (proposalId, optionValue) => {
     if ('0' === proposalId) {
         return {
             success: false,
-            data: 'Invalid proposal ID',
+            data: cardanoPressGovernanceMessages.invalid,
         }
     }
 

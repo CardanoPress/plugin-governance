@@ -14,6 +14,7 @@ class Actions implements HookInterface
     public function setupHooks(): void
     {
         add_action('wp_ajax_cp-governance_proposal_vote', [$this, 'saveProposalVote']);
+        add_action('wp_enqueue_scripts', [$this, 'localizeMessages'], 20);
     }
 
     public function getAjaxMessage(string $type): string
@@ -30,6 +31,17 @@ class Actions implements HookInterface
         $messages = apply_filters('cp-governance-ajax_messages', $messages);
 
         return $messages[$type] ?? '';
+    }
+
+    public function localizeMessages()
+    {
+        $messages = [
+            'voting' => __('Processing...', 'cardanopress-governance'),
+            'invalid' => __('Invalid proposal ID', 'cardanopress-governance'),
+        ];
+        $messages = apply_filters('cp-governance-script_messages', $messages);
+
+        wp_localize_script(Manifest::HANDLE_PREFIX . 'script', 'cardanoPressGovernanceMessages', $messages);
     }
 
     public function saveProposalVote(): void

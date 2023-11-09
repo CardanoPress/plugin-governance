@@ -1,4 +1,4 @@
-import { handleVote } from './actions'
+import { cardanoPressGovernanceMessages, handleVote } from './actions'
 
 window.addEventListener('alpine:init', () => {
     const Alpine = window.Alpine || {}
@@ -54,7 +54,7 @@ window.addEventListener('alpine:init', () => {
             cardanoPress.api.addNotice({
                 id: 'proposalVote',
                 type: 'info',
-                text: 'Processing...',
+                text: cardanoPressGovernanceMessages.voting,
             })
 
             this.isProcessing = true
