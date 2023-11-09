@@ -11,13 +11,8 @@
 
 $proposalId = get_the_ID();
 $proposal = cpGovernance()->getProposalInstance($proposalId);
-$proposalDates = $proposal->getDates();
 $discussionLink = $proposal->getDiscussionLink();
-
 $currentStatus = get_post_status();
-$statusText = $proposal->getStatusText();
-$dateLabel = $proposal->getDateLabel();
-$dateText = $proposal->getDateText();
 
 get_header();
 
@@ -38,9 +33,9 @@ get_header();
                 </nav>
 
                 <h1 class="pb-3"><?php the_title(); ?></h1>
-                <p><b>Status: <?php echo esc_html($statusText); ?></b>
-                <p><b><?php echo esc_html($dateLabel); ?>: <?php echo esc_html($dateText); ?></b></p>
-                <p><b>Snapshot: <?php echo esc_html($proposalDates['snapshot']); ?></b></p>
+                <p><b>Status: <?php echo esc_html($proposal->getStatusText()); ?></b></p>
+                <p><b><?php echo esc_html($proposal->getDateLabel() . ': ' . $proposal->getDateText()); ?></b></p>
+                <p><b>Snapshot: <?php echo esc_html($proposal->getDate('snapshot')); ?></b></p>
 
                 <?php the_content(); ?>
 

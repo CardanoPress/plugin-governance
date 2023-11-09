@@ -13,14 +13,13 @@ if (empty($proposal)) {
     $proposal = cpGovernance()->getProposalInstance(get_the_ID());
 }
 
-$options = $proposal->getOptions();
 $voted = $votedOption ?? '';
 $currentStatus ??= 'publish';
 
 ?>
 
 <fieldset<?php echo esc_html($proposal->isReady() ? '' : ' disabled="true"'); ?>>
-    <?php foreach ($options as $option) : ?>
+    <?php foreach ($proposal->getOptions() as $option) : ?>
         <div
             x-id="['vote-option']"
             class="form-check py-1"

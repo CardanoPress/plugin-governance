@@ -8,21 +8,17 @@
  */
 
 $proposal = cpGovernance()->getProposalInstance(get_the_ID());
-$proposalDates = $proposal->getDates();
-
 $type ??= 'current';
 
-$linkText = 'Vote';
-$voteText = 'Voting ends';
-$voteDate = $proposalDates['end'];
+$linkText = __('Vote', 'cardanopress-governance');
+$voteText = __('Voting ends', 'cardanopress-governance');
 
 if ('upcoming' === $type) {
-    $linkText = 'View Proposal';
-    $voteText = 'Voting starts';
-    $voteDate = $proposalDates['start'];
+    $linkText = __('View Proposal', 'cardanopress-governance');
+    $voteText = __('Voting starts', 'cardanopress-governance');
 } elseif ('past' === $type) {
-    $linkText = 'View Results';
-    $voteText = 'Voting ended';
+    $linkText = __('View Results', 'cardanopress-governance');
+    $voteText = __('Voting ended', 'cardanopress-governance');
 }
 
 ?>
@@ -31,7 +27,7 @@ if ('upcoming' === $type) {
     <div class="col py-2">
         <h2><?php the_title(); ?></h2>
         <p><?php the_excerpt(); ?></p>
-        <p><b><?php echo esc_html($voteText); ?>: <?php echo esc_html($voteDate); ?></b></p>
+        <p><b><?php echo esc_html($voteText); ?>: <?php echo esc_html($proposal->getDateText()); ?></b></p>
     </div>
 
     <div class="col-auto py-2">

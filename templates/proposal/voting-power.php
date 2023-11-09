@@ -13,8 +13,6 @@ if (empty($proposal)) {
     $proposal = cpGovernance()->getProposalInstance(get_the_ID());
 }
 
-$userProfile = cpGovernance()->userProfile();
-
 ?>
 
 <template x-if='!isConnected'>
@@ -29,7 +27,7 @@ $userProfile = cpGovernance()->userProfile();
 
 <template x-if='isConnected'>
     <div>
-        <h3><?php echo esc_html($proposal->getVotingPower($userProfile)); ?>&curren;</h3>
+        <h3><?php echo esc_html($proposal->getVotingPower(cpGovernance()->userProfile())); ?>&curren;</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt
             voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad
             distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>

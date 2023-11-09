@@ -223,7 +223,6 @@ class Proposal
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
         $end = $snapshot = '&mdash;';
 
-
         if ($expiration) {
             $end = $this->formatDate(strtotime($expiration));
         }
@@ -236,6 +235,13 @@ class Proposal
         }
 
         return compact('start', 'end', 'snapshot');
+    }
+
+    public function getDate(string $type): string
+    {
+        $dates = $this->getDates();
+
+        return $dates[$type] ?? '';
     }
 
     public function updateData(string $option, int $value, bool $increase = true): bool
