@@ -15,17 +15,9 @@ $proposalDates = $proposal->getDates();
 $discussionLink = $proposal->getDiscussionLink();
 
 $currentStatus = get_post_status();
-$statusText = 'Open for Voting';
-$dateLabel = 'Closing Date';
-$dateText = $proposalDates['end'];
-
-if ('future' === $currentStatus) {
-    $statusText = 'Upcoming';
-    $dateLabel = 'Starting Date';
-    $dateText = $proposalDates['start'];
-} elseif ('archive' === $currentStatus) {
-    $statusText = 'Complete';
-}
+$statusText = $proposal->getStatusText();
+$dateLabel = $proposal->getDateLabel();
+$dateText = $proposal->getDateText();
 
 get_header();
 

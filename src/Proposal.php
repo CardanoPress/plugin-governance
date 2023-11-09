@@ -15,10 +15,12 @@ class Proposal
     public int $postId;
 
     protected ?bool $useGlobalConfig = null;
+    protected ?string $currentStatus = null;
 
     public function __construct(int $postId)
     {
         $this->postId = $postId;
+		$this->currentStatus = get_post_status($this->postId) ?? null;
     }
 
     public function toArray(): array
@@ -54,7 +56,7 @@ class Proposal
             return false;
         }
 
-        if ('publish' !== get_post_status($this->postId)) {
+        if ('publish' !== $this->currentStatus) {
             return false;
         }
 
@@ -63,7 +65,7 @@ class Proposal
 
     public function isComplete(): bool
     {
-        if ('archive' !== get_post_status($this->postId)) {
+        if ('archive' !== $this->currentStatus) {
             return false;
         }
 
@@ -74,6 +76,53 @@ class Proposal
         }
 
         return true;
+    }
+
+    public function getStatusText(): string
+    {
+        $statusText = __('Open for Voting', 'cardanopress-governance');
+
+        if ('future' === $this->currentStatus) {
+            $statusText = __('Upcoming', 'cardanopress-governance');
+        } elseif ('archive' === $this->currentStatus) {
+            $statusText = __('Complete', 'cardanopress-governance');
+        }
+
+        return $statusText;
+    }
+
+    public function getDateLabel(): string
+    {
+        $dateLabel = __('Closing Date', 'cardanopress-governance');
+
+        if ('future' === $this->currentStatus) {
+            $dateLabel = __('Starting Date', 'cardanopress-governance');
+        }
+
+        return $dateLabel;
+    }
+
+    public function getDateText(): string
+    {
+        $dateTexts = $this->getDates();
+        $dateText = $dateTexts['end'];
+
+        if ('future' === $this->currentStatus) {
+            $dateText = $dateTexts['start'];
+        }
+
+        return $dateText;
+    }
+
+    public function getVoteText(): string
+    {
+        $voteText = __('Vote', 'cardanopress');
+
+        if ('archive' === $this->currentStatus) {
+            $voteText = __('Voting Result', 'cardanopress-governance');
+        }
+
+        return $voteText;
     }
 
     public function getID(): int

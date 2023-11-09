@@ -17,11 +17,7 @@ $userProfile = cpGovernance()->userProfile();
 $votedOption = $userProfile->hasVoted($proposal->getID());
 $proposalData = $proposal->getData();
 $currentStatus ??= 'publish';
-$voteText = 'Vote';
-
-if ('archive' === $currentStatus) {
-    $voteText = 'Voting Result';
-}
+$voteText = $proposal->getVoteText();
 
 ?>
 
