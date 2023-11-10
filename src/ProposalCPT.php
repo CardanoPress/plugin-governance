@@ -95,7 +95,7 @@ class ProposalCPT implements HookInterface
 
     public function scheduleSnapshot(int $postId, WP_Post $post): void
     {
-        if ('proposal' !== $post->post_type) {
+        if ('proposal' !== $post->post_type || !in_array($post->post_status, self::STATUSES, true)) {
             return;
         }
 
