@@ -2,9 +2,9 @@
 Contributors: pbwebdev
 Donate link: https://www.paypal.com/donate/?hosted_button_id=T8MR6AMVWWGK8
 Tags: cardano, blockchain, web3, metamask, nami, eternl, ada
-Requires at least: 4.9
-Tested up to: 6.1.1
-Stable tag: 1.0.0
+Requires at least: 4.8
+Tested up to: 6.4
+Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/licenses.html
@@ -116,6 +116,19 @@ This plugin does not collect or process any personal user data unless you expres
 == Changelog ==
 
 You can follow our [GitHub release](https://github.com/CardanoPress/plugin-governance/releases) for full details on updates to the plugins.
+
+= 1.2.0 =
+Localize script messages
+Translatable strings
+Simplify templates
+Minor code fixes
+
+= 1.1.0 =
+An updated framework with prefixed dependencies
+Handle recommended and required plugins with TGMPA
+
+= 1.0.0 =
+First stable release (exact same version as 0.14.0)
 
 = v0.14.0 =
 Check and clean URLs
