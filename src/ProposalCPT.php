@@ -100,8 +100,9 @@ class ProposalCPT implements HookInterface
         }
 
         $snapshot = get_post_meta($postId, 'proposal_snapshot', true);
+        $snapshot = array_filter((array)$snapshot);
 
-        if (! $snapshot || Snapshot::isScheduled($postId) || Snapshot::wasScheduled($postId)) {
+        if (empty($snapshot) || Snapshot::isScheduled($postId) || Snapshot::wasScheduled($postId)) {
             return;
         }
 
