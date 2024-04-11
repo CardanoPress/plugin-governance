@@ -8,6 +8,7 @@ Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/licenses.html
+Requires Plugins: cardanopress
 
 Allows users to be able to submit, participate and vote on governance proposals. Voting is done on-chain by submitting
 transactions with metadata. Voting power is based on the amount of Non-Fungible Tokens or Fungible Tokens in a users
