@@ -1,12 +1,12 @@
 {
-  "new_version"    : "1.2.0",
+  "new_version"    : "1.2.1",
   "homepage"       : "https://wordpress.org/plugins/cardanopress-governance/",
   "download_link"  : "https://downloads.wordpress.org/plugin/cardanopress-governance.zip",
-  "last_updated"   : "2023-11-10",
+  "last_updated"   : "2024-04-04",
   "author"         : "Gene Alyson Fortunado Torcende",
   "author_profile" : "https://cardanopress.io",
   "requires"       : "5.9.0",
-  "tested"         : "6.4",
+  "tested"         : "6.5.99",
   "requires_php"   : "7.4",
   "upgrade_notice" : "Please do the update now to seamlessly use the official WordPress Plugin Directory version",
   "sections"       : {
