@@ -1,10 +1,10 @@
 === CardanoPress - Governance for Cardano ===
-Contributors: pbwebdev
+Contributors: pbwebdev, gaft
 Donate link: https://www.paypal.com/donate/?hosted_button_id=T8MR6AMVWWGK8
-Tags: cardano, blockchain, web3, metamask, nami, eternl, ada
+Tags: cardano, blockchain, web3, ada, token-gating
 Requires at least: 5.9
 Tested up to: 6.5.99
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/licenses.html
@@ -13,6 +13,7 @@ Requires Plugins: cardanopress
 Allows users to be able to submit, participate and vote on governance proposals. Voting is done on-chain by submitting
 transactions with metadata. Voting power is based on the amount of Non-Fungible Tokens or Fungible Tokens in a users
 connected wallet. Requires parent plugin CardanoPress.
+
 
 == Description ==
 
@@ -52,6 +53,7 @@ Follow us on [Twitter](https://twitter.com/cardanopress)
 View all of our repos on [GitHub](https://github.com/CardanoPress/)
 View all of our documentation and resources on our [website](https://cardanopress.io)
 
+
 == Installation ==
 
 The Governance Plugin requires the parent plugin [CardanoPress](https://wordpress.org/plugins/cardanopress/). The
@@ -85,6 +87,7 @@ archive layout from your main menus.
 
 For more detailed documentation and tutorials on how to use the plugin, please visit the [CardanoPress documentation website](https://cardanopress.io).
 
+
 == Get Support ==
 
 We have community support available on our website under the [CardanoPress forums](https://cardanopress.io/community/). We also have an online chat support via our [Discord server](https://discord.gg/CEX4aSfkXF). We encourage you to use the forums first though as it will help others that read through the forums for support.
@@ -110,13 +113,22 @@ Yes, we've built the plugin and sub plugins with hooks and template layouts that
 
 We've also taking into account page builders and created short codes for all the template parts of the theme. This will allow builders such as Divi, Elementor, WPBakery to be used with CardanoPress.
 
+
 == Privacy ==
 
 This plugin does not collect or process any personal user data unless you expressively opt-in.
 
+
 == Changelog ==
 
 You can follow our [GitHub release](https://github.com/CardanoPress/plugin-governance/releases) for full details on updates to the plugins.
+
+= 1.3.0 =
+- Correctly render provided templates in block themes
+
+= 1.2.1 =
+- Corrected version requirements
+- Add new `requires` plugins header
 
 = 1.2.0 =
 Localize script messages

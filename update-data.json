@@ -1,8 +1,8 @@
 {
-  "new_version"    : "1.2.1",
+  "new_version"    : "1.3.0",
   "homepage"       : "https://wordpress.org/plugins/cardanopress-governance/",
   "download_link"  : "https://downloads.wordpress.org/plugin/cardanopress-governance.zip",
-  "last_updated"   : "2024-04-04",
+  "last_updated"   : "2024-05-17",
   "author"         : "Gene Alyson Fortunado Torcende",
   "author_profile" : "https://cardanopress.io",
   "requires"       : "5.9.0",
