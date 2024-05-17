@@ -14,7 +14,7 @@ $proposal = cpGovernance()->getProposalInstance($proposalId);
 $discussionLink = $proposal->getDiscussionLink();
 $currentStatus = get_post_status();
 
-get_header();
+cardanoPress()->compatibleHeader();
 
 ?>
 
@@ -73,4 +73,4 @@ get_header();
 
 <?php
 
-get_footer();
+cardanoPress()->compatibleFooter();
