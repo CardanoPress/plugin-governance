@@ -8,4 +8,4 @@
 composer.* export-ignore
 phpcs.xml export-ignore
 phpstan.neon export-ignore
-update-data.json
+update-data.json export-ignore
