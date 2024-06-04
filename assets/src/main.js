@@ -17,10 +17,12 @@ window.addEventListener('alpine:init', () => {
         options: [],
         selected: '',
         voted: '',
+        power: '',
         winner: '',
 
         async init() {
             this.voted = this.$root.dataset.voted
+            this.power = parseInt(this.$root.dataset.power)
             this.selected = this.voted
             this.options = JSON.parse(this.$root.dataset.options)
 
@@ -39,7 +41,13 @@ window.addEventListener('alpine:init', () => {
         },
 
         isDisabled(isSubmit = false) {
-            return !this.isConnected || this.isProcessing || (isSubmit ? !!!this.selected : false) || !!this.voted
+            return (
+                !this.isConnected ||
+                !this.power ||
+                this.isProcessing ||
+                (isSubmit ? !!!this.selected : false) ||
+                !!this.voted
+            )
         },
 
         isWinner(option) {

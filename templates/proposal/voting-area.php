@@ -27,6 +27,7 @@ $currentStatus ??= 'publish';
     data-options="<?php echo esc_attr(json_encode($proposal->getData())); ?>"
     data-voted="<?php echo esc_attr($votedOption); ?>"
     data-complete="<?php echo esc_attr($proposal->isComplete()); ?>"
+    data-power="<?php echo esc_attr($proposal->getVotingPower($userProfile)); ?>"
 >
     <div class="col col-md-7">
         <h2><?php echo esc_html($proposal->getVoteText()); ?></h2>
