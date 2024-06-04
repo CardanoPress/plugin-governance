@@ -13,7 +13,8 @@ class Actions implements HookInterface
 {
     public function setupHooks(): void
     {
-        add_action('wp_ajax_cp-governance_proposal_vote', [$this, 'saveProposalVote']);
+        add_action('wp_ajax_cp-governance_proposal_vote_verify', [$this, 'verifyProposalVote']);
+        add_action('wp_ajax_cp-governance_proposal_vote_complete', [$this, 'completeProposalVote']);
         add_action('wp_enqueue_scripts', [$this, 'localizeMessages'], 20);
     }
 
@@ -44,36 +45,24 @@ class Actions implements HookInterface
         wp_localize_script(Manifest::HANDLE_PREFIX . 'script', 'cardanoPressGovernanceMessages', $messages);
     }
 
-    public function saveProposalVote(): void
+    protected function validatedVote(): Vote
     {
         check_ajax_referer('cardanopress-actions');
 
-        if (empty($_POST['proposalId']) || empty($_POST['option']) || empty($_POST['transaction'])) {
+        if (empty($_POST['proposalId']) || empty($_POST['optionValue'])) {
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
         $proposalId = (int) sanitize_key($_POST['proposalId']);
 
-        if (1 > $proposalId || $proposalId > 9999) {
+        if (! is_numeric($proposalId) || 1 > $proposalId || $proposalId > 9999) {
             wp_send_json_error($this->getAjaxMessage('invalidIdentifier'));
         }
 
-        $option = sanitize_key($_POST['option']);
+        $optionValue = sanitize_key($_POST['optionValue']);
 
-        if (! is_numeric($option) || 1 > $option || $option > 99) {
+        if (! is_numeric($optionValue) || 1 > $optionValue || $optionValue > 99) {
             wp_send_json_error($this->getAjaxMessage('invalidOption'));
-        }
-
-        $transaction = sanitize_key($_POST['transaction']);
-
-        if (! ctype_xdigit($transaction) || 64 !== strlen($transaction)) {
-            wp_send_json_error($this->getAjaxMessage('invalidHash'));
-        }
-
-        $userProfile = Application::getInstance()->userProfile();
-
-        if ($userProfile->hasVoted($proposalId)) {
-            wp_send_json_error(self::getAjaxMessage('alreadyVoted'));
         }
 
         $postId = Proposal::getPostId($proposalId);
@@ -83,19 +72,53 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
+        return new Vote($proposal, $optionValue);
+    }
+
+    public function verifyProposalVote(): void
+    {
+        $vote = $this->validatedVote();
+        $proposal = $vote->getProposal();
+        $userProfile = Application::getInstance()->userProfile();
+
+        if ($userProfile->hasVoted($proposal->getID())) {
+            wp_send_json_error(self::getAjaxMessage('alreadyVoted'));
+        }
+
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {
             wp_send_json_error($this->getAjaxMessage('noVotingPower'));
         }
 
-        $success = $proposal->updateData($option, $votingPower);
+        wp_send_json_success($votingPower);
+    }
+
+    public function completeProposalVote(): void
+    {
+        $vote = $this->validatedVote();
+
+        if (empty($_POST['transaction'])) {
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
+        }
+
+        $transaction = sanitize_key($_POST['transaction']);
+
+        if (! ctype_xdigit($transaction) || 64 !== strlen($transaction)) {
+            wp_send_json_error($this->getAjaxMessage('invalidHash'));
+        }
+
+        $proposal = $vote->getProposal();
+        $optionValue = $vote->getOptionValue();
+        $userProfile = Application::getInstance()->userProfile();
+        $votingPower = $proposal->getVotingPower($userProfile);
+        $success = $proposal->updateData($optionValue, $votingPower);
 
         if (! $success) {
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
-        $userProfile->saveVote($proposalId, $option, $transaction, $votingPower);
+        $userProfile->saveVote($proposal->getID(), $optionValue, $transaction, $votingPower);
         $userProfile->saveTransaction($userProfile->connectedNetwork(), 'payment', $transaction);
 
         wp_send_json_success([

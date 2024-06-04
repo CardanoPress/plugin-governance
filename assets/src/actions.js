@@ -10,7 +10,7 @@ const transformToAda = (proposalId, optionValue) => {
     // ADA Amount = 1.xxxxyy
     // xxxx = proposalId
     // yy   = optionValue
-    return (1 + ((proposalId + optionValue) / 1000000)).toFixed(6)
+    return (1 + (proposalId + optionValue) / 1000000).toFixed(6)
 }
 
 export const handleVote = async (proposalId, optionValue) => {
@@ -21,6 +21,12 @@ export const handleVote = async (proposalId, optionValue) => {
         }
     }
 
+    const verification = await verifyVote(proposalId, optionValue)
+
+    if (!verification.success) {
+        return verification
+    }
+
     const result = await pushTransaction(proposalId, optionValue)
 
     if (result.success) {
@@ -28,6 +34,18 @@ export const handleVote = async (proposalId, optionValue) => {
     }
 
     return result
+}
+
+const verifyVote = async (proposalId, optionValue) => {
+    return await fetch(cardanoPress.ajaxUrl, {
+        method: 'POST',
+        body: new URLSearchParams({
+            _wpnonce: cardanoPress._nonce,
+            action: 'cp-governance_proposal_vote_verify',
+            proposalId,
+            optionValue,
+        }),
+    }).then((response) => response.json())
 }
 
 const pushTransaction = async (proposalId, optionValue) => {
@@ -47,14 +65,14 @@ const pushTransaction = async (proposalId, optionValue) => {
     }
 }
 
-const pushToDB = async (proposalId, option, transaction) => {
+const pushToDB = async (proposalId, optionValue, transaction) => {
     return await fetch(cardanoPress.ajaxUrl, {
         method: 'POST',
         body: new URLSearchParams({
             _wpnonce: cardanoPress._nonce,
-            action: 'cp-governance_proposal_vote',
+            action: 'cp-governance_proposal_vote_complete',
             proposalId,
-            option,
+            optionValue,
             transaction,
         }),
     }).then((response) => response.json())
