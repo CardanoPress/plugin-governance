@@ -52,7 +52,24 @@ class ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b
     );
 
     public static $classMap = array (
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Base' => __DIR__ . '/../..' . '/ThemePlate/CPT/Base.php',
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\CommonInterface' => __DIR__ . '/../..' . '/ThemePlate/CPT/CommonInterface.php',
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\PostType' => __DIR__ . '/../..' . '/ThemePlate/CPT/PostType.php',
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Taxonomy' => __DIR__ . '/../..' . '/ThemePlate/CPT/Taxonomy.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PBWebDev\\CardanoPress\\Governance\\Actions' => __DIR__ . '/../..' . '/../src/Actions.php',
+        'PBWebDev\\CardanoPress\\Governance\\Admin' => __DIR__ . '/../..' . '/../src/Admin.php',
+        'PBWebDev\\CardanoPress\\Governance\\Application' => __DIR__ . '/../..' . '/../src/Application.php',
+        'PBWebDev\\CardanoPress\\Governance\\Calculator' => __DIR__ . '/../..' . '/../src/Calculator.php',
+        'PBWebDev\\CardanoPress\\Governance\\Installer' => __DIR__ . '/../..' . '/../src/Installer.php',
+        'PBWebDev\\CardanoPress\\Governance\\Manifest' => __DIR__ . '/../..' . '/../src/Manifest.php',
+        'PBWebDev\\CardanoPress\\Governance\\Profile' => __DIR__ . '/../..' . '/../src/Profile.php',
+        'PBWebDev\\CardanoPress\\Governance\\Proposal' => __DIR__ . '/../..' . '/../src/Proposal.php',
+        'PBWebDev\\CardanoPress\\Governance\\ProposalCPT' => __DIR__ . '/../..' . '/../src/ProposalCPT.php',
+        'PBWebDev\\CardanoPress\\Governance\\ProposalFields' => __DIR__ . '/../..' . '/../src/ProposalFields.php',
+        'PBWebDev\\CardanoPress\\Governance\\Snapshot' => __DIR__ . '/../..' . '/../src/Snapshot.php',
+        'PBWebDev\\CardanoPress\\Governance\\Templates' => __DIR__ . '/../..' . '/../src/Templates.php',
+        'PBWebDev\\CardanoPress\\Governance\\Vote' => __DIR__ . '/../..' . '/../src/Vote.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
