@@ -45,7 +45,7 @@ $currentStatus ??= 'publish';
                 <?php echo do_shortcode('[cardanopress_template name="part/modal-trigger" if="!isConnected"]'); ?>
 
                 <template x-if='isConnected'>
-                    <button class="btn btn-primary" @click="handleVote" :disabled="isDisabled(true)">Submit</button>
+                    <button class="btn btn-primary" x-on:click="handleVote" :disabled="isDisabled(true)">Submit</button>
                 </template>
             <?php endif; ?>
         </div>

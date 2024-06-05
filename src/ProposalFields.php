@@ -54,23 +54,21 @@ class ProposalFields implements HookInterface
     {
         return [
             'type' => 'html',
-            'default' => $this->getProposalData(),
+            'options' => array($this, 'parseData'),
         ];
     }
 
-    protected function getProposalData()
+    public function parseData($data)
     {
         if (! $this->inEditPage()) {
             return '';
         }
 
-        $proposal = new Proposal($_REQUEST['post']);
-
         ob_start();
 
         ?>
         <table>
-            <?php foreach ($proposal->getData() as $key => $value) : ?>
+            <?php foreach ($data as $key => $value) : ?>
                 <tr>
                     <th><?php echo esc_html($key); ?></th>
                     <td><?php echo esc_html($value); ?></td>

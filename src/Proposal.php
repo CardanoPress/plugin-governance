@@ -20,7 +20,7 @@ class Proposal
     public function __construct(int $postId)
     {
         $this->postId = $postId;
-		$this->currentStatus = get_post_status($this->postId) ?? null;
+        $this->currentStatus = get_post_status($this->postId) ?? null;
     }
 
     public function toArray(): array
