@@ -123,6 +123,11 @@ This plugin does not collect or process any personal user data unless you expres
 
 You can follow our [GitHub release](https://github.com/CardanoPress/plugin-governance/releases) for full details on updates to the plugins.
 
+= 1.4.0 =
+- Disable fields if no powers
+- Revamp voting flow actions
+  - validate, verify then complete
+
 = 1.3.0 =
 - Correctly render provided templates in block themes
 
@@ -142,48 +147,6 @@ Handle recommended and required plugins with TGMPA
 
 = 1.0.0 =
 First stable release (exact same version as 0.14.0)
-
-= v0.14.0 =
-Check and clean URLs
-Update all dependencies
-
-= v0.13.0 =
-Escape template outputs / echoed variables
-Sanitize and validate proposal ajax data
-Include bootstrap assets locally
-
-= v0.12.0 =
-Calculate correct power for assets pre-snapshot
-Bump version for the GuzzleHTTP dependency
-
-= v0.11.1 =
-Handle cases where the user sets the Identifier and Option Value as strings under the Proposal Setting meta box
-Example: Prepending 0s like 001 0002 099
-
-= v0.11.0 =
-Cleaner templates codes; less scary to override; not directly handling classes
-Utilize the exposed application function as the central repository access
-
-= v0.10.1 =
-bumped version of Guzzle dependency to 7.4.4
-
-= v0.10.0 =
-Nag a notice for the additional required plugin
-Serve production built assets
-
-= v0.9.0 =
-Hook a little late to correctly populate from core plugin Policy IDs
-Customizable ajax messages cp-governance-ajax_messages
-Save the vote transaction to the core wallet logs
-Skip enqueueing bootstrap assets if using our theme
-
-= v0.8.0 =
-General code improvements
-
-= v0.7.0 =
-customizable date format
-correctly handle filtered dates with wanted timezone
-also provide filter for the date string to be used in templates
 
 
 == Upgrade Notice ==
