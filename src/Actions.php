@@ -85,13 +85,16 @@ class Actions implements HookInterface
             wp_send_json_error(self::getAjaxMessage('alreadyVoted'));
         }
 
+        $votingFee = $proposal->getFee();
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {
             wp_send_json_error($this->getAjaxMessage('noVotingPower'));
         }
 
-        wp_send_json_success($votingPower);
+        $votingFee['address'] = $votingFee['address'][$userProfile->connectedNetwork()];
+
+        wp_send_json_success(compact('votingFee', 'votingPower'));
     }
 
     public function completeProposalVote(): void

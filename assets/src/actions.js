@@ -27,7 +27,7 @@ export const handleVote = async (proposalId, optionValue) => {
         return verification
     }
 
-    const result = await pushTransaction(proposalId, optionValue)
+    const result = await pushTransaction(proposalId, optionValue, verification.data)
 
     if (result.success) {
         return await pushToDB(proposalId, optionValue, result.data.transaction)
@@ -48,7 +48,7 @@ const verifyVote = async (proposalId, optionValue) => {
     }).then((response) => response.json())
 }
 
-const pushTransaction = async (proposalId, optionValue) => {
+const pushTransaction = async (proposalId, optionValue, votingData) => {
     const adaAmount = transformToAda(proposalId, optionValue)
 
     try {
@@ -56,7 +56,9 @@ const pushTransaction = async (proposalId, optionValue) => {
         const Wallet = await cardanoPress.api.getConnectedWallet()
         const address = await Wallet.getChangeAddress()
 
-        return await cardanoPress.wallet.paymentTx(address, amount)
+        votingData.votingFee.amount = cardanoPress.api.adaToLovelace(votingData.votingFee.amount)
+
+        return await cardanoPress.wallet.multisendTx([{ address, amount }, votingData.votingFee])
     } catch (error) {
         return {
             success: false,
