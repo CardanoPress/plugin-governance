@@ -187,6 +187,58 @@ class ProposalFields implements HookInterface
         return $data;
     }
 
+    public function getFee(): array
+    {
+        $data = [
+            'title' => __('Voting Fee', 'cardanopress-governance'),
+            'type' => 'group',
+            'fields' => [
+                'amount' => [
+                    'title' => __('Amount in ADA', 'cardanopress-governance'),
+                    'type' => 'number',
+                    'default' => 0,
+                    'options' => [
+                        'min' => 0.1,
+                        'step' => 0.1,
+                    ],
+                ],
+                'address' => [
+                    'title' => __('Wallet Address', 'cardanopress-governance'),
+                    'type' => 'group',
+                    'default' => [
+                        'mainnet' => '',
+                        'testnet' => '',
+                    ],
+                    'fields' => [
+                        'mainnet' => [
+                            'title' => __('Mainnet', 'cardanopress-governance'),
+                            'type' => 'text',
+                        ],
+                        'testnet' => [
+                            'title' => __('Testnet', 'cardanopress-governance'),
+                            'description' => __('For networks preview and preprod', 'cardanopress-governance'),
+                            'type' => 'text',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        if ($this->inAddNewPage()) {
+            $global = $this->application->option('global_calculation');
+
+            if ($global) {
+                $data['default'] = array_values((array)$global);
+            }
+        }
+
+        if ($this->inAddNewPage() || $this->inEditPage()) {
+            $data['show_on'] = $this->showOnData();
+        }
+
+        return $data;
+    }
+
     public function getSchedule(): array
     {
         return [

@@ -31,6 +31,7 @@ class Proposal
             'discussion_link' => $this->getDiscussionLink(),
             'policy' => $this->getPolicy(),
             'calculation' => $this->getCalculation(),
+            'fee' => $this->getFee(),
             'options' => $this->getOptions(),
             'data' => $this->getData(),
             'dates' => $this->getDates(),
@@ -185,6 +186,13 @@ class Proposal
     public function getCalculation(): array
     {
         $status = $this->getConfigValue('calculation');
+
+        return (array)$status ?: [];
+    }
+
+    public function getFee(): array
+    {
+        $status = $this->getConfigValue('fee');
 
         return (array)$status ?: [];
     }

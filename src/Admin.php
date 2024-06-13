@@ -73,6 +73,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'discussion' => $this->proposalFields->getDiscussion(),
                 'policy' => $this->proposalFields->getPolicy(),
                 'calculation' => $this->proposalFields->getCalculation(),
+                'fee' => $this->proposalFields->getFee(),
             ],
         ]);
     }
@@ -113,6 +114,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
             'discussion' => $this->proposalFields->getDiscussion(),
             'policy' => $this->proposalFields->getPolicy(),
             'calculation' => $this->proposalFields->getCalculation(),
+            'fee' => $this->proposalFields->getFee(),
             'options' => [
                 'title' => __('Options', 'cardanopress-governance'),
                 'type' => 'group',
