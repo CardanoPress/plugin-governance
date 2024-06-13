@@ -28,8 +28,44 @@ class Installer extends AbstractInstaller
         add_action('admin_notices', [$this, 'noticeNeedingCorePlugin']);
         add_action('admin_notices', [$this, 'noticeNeedingAugmentTypes']);
         add_action('admin_notices', [$this, 'noticeNeedingGlobalPolicy']);
+        add_action('admin_notices', [$this, 'noticeNeedingUpdatedCore']);
         add_action(self::DATA_PREFIX . 'upgrading', [$this, 'doUpgrade'], 10, 2);
         add_filter('plugin_action_links_' . $this->pluginBaseName, [$this, 'mergeSettingsLink']);
+    }
+
+    public function noticeNeedingUpdatedCore(): void
+    {
+        $version = '1.13.0';
+
+        if (
+            ! $this->application->isReady() || version_compare(cardanoPress()->getData('Version'), $version, '>=')
+        ) {
+            return;
+        }
+
+        $plugin  = sprintf(
+            '<a href="%1$s" target="_blank">%2$s</a>',
+            'https://wordpress.org/plugins/cardanopress',
+            __('core plugin', 'cardanopress')
+        );
+        $message = sprintf(
+            __('%1$s requires the %2$s version %3$s for the voting fee feature.', 'cardanopress'),
+            '<strong>' . $this->application->getData('Name') . '</strong>',
+            $plugin,
+            '<strong>' . $version . '</strong>'
+        );
+
+        ?>
+        <div class="notice notice-info">
+            <p><?php echo wp_kses($message, [
+                'a' => [
+                    'href' => [],
+                    'target' => [],
+                ],
+                'strong' => [],
+            ]); ?></p>
+        </div>
+        <?php
     }
 
     public function noticeNeedingGlobalPolicy(): void
