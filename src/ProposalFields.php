@@ -191,6 +191,7 @@ class ProposalFields implements HookInterface
     {
         $data = [
             'title' => __('Voting Fee', 'cardanopress-governance'),
+            'description' => __('*Optional*<br><br>Leave wallet address field empty to disable.', 'cardanopress-governance'),
             'type' => 'group',
             'fields' => [
                 'amount' => [

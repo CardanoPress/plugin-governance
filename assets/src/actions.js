@@ -58,7 +58,9 @@ const pushTransaction = async (proposalId, optionValue, votingData) => {
 
         votingData.votingFee.amount = cardanoPress.api.adaToLovelace(votingData.votingFee.amount)
 
-        return await cardanoPress.wallet.multisendTx([{ address, amount }, votingData.votingFee])
+        return await cardanoPress.wallet.multisendTx(
+            [{ address, amount }, votingData.votingFee].filter((output) => output.amount && output.address)
+        )
     } catch (error) {
         return {
             success: false,
