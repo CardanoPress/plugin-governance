@@ -33,7 +33,7 @@ class ProposalCPT implements HookInterface
     {
         add_action('wp_insert_post', [$this, 'prepareData'], 10, 2);
         add_action('wp_insert_post', [$this, 'scheduleSnapshot'], 10, 2);
-        add_filter('pre_get_posts', [$this, 'customizeStatus']);
+        add_action('pre_get_posts', [$this, 'customizeStatus']);
         add_filter('use_block_editor_for_post_type', [$this, 'noBlocks'], 10, 2);
         add_action(Installer::DATA_PREFIX . 'activating', [$this, 'pluginActivating']);
         $this->register();
