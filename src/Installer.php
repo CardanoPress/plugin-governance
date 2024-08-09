@@ -158,7 +158,7 @@ class Installer extends AbstractInstaller
 
                 $proposalId = str_replace($userProfile->getMetaPrefix(), '', $key);
 
-                $userProfile->saveVote($proposalId, $value, '', 0);
+                $userProfile->saveVote((int) $proposalId, $value, '', 0);
                 $this->log('Updating vote ' . $key);
             }
         }

@@ -89,7 +89,7 @@ class Calculator
             return 0;
         }
 
-        return NumberHelper::lovelaceToAda($response['controlled_amount']);
+        return (int) round(NumberHelper::lovelaceToAda($response['controlled_amount']));
     }
 
     protected function getSnapshotPower(string $type): int
@@ -115,7 +115,7 @@ class Calculator
             return 0;
         }
 
-        return NumberHelper::lovelaceToAda($assets[$index]['quantity']);
+        return (int) round(NumberHelper::lovelaceToAda($assets[$index]['quantity']));
     }
 
     protected function getToken(array $assets): int
