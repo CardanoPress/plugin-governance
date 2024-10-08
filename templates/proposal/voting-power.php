@@ -17,19 +17,12 @@ if (empty($proposal)) {
 
 <template x-if='!isConnected'>
     <div>
-        <h3>Connect to see voting power</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi
-            corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non
-            nulla
-            pariatur rem sapiente similique voluptatem.</p>
+        <?php echo wp_kses_post(cpGovernance()->option('vpm_unconnected')); ?>
     </div>
 </template>
 
 <template x-if='isConnected'>
     <div>
-        <h3><span x-text="power"></span>&curren;</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt
-            voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad
-            distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>
+        <?php echo wp_kses_post(cpGovernance()->option('vpm_connected')); ?>
     </div>
 </template>

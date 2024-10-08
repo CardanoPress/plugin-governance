@@ -39,6 +39,7 @@ class Admin extends AbstractAdmin
         add_action('init', function () {
             $this->proposalArchiveFields();
             $this->proposalConfigFields();
+            $this->proposalMessagesFields();
             $this->proposalSettingsMetaBox();
             $this->proposalStatusMetaBox();
         }, 11);
@@ -74,6 +75,28 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'policy' => $this->proposalFields->getPolicy(),
                 'calculation' => $this->proposalFields->getCalculation(),
                 'fee' => $this->proposalFields->getFee(),
+            ],
+        ]);
+    }
+
+
+    private function proposalMessagesFields(): void
+    {
+        $this->optionFields(__('Voting Power Messages', 'cardanopress-governance'), [
+            'data_prefix' => 'vpm_',
+            'fields' => [
+                'connected' => [
+                    'title' => __('Connected', 'cardanopress-governance'),
+                    'type' => 'editor',
+                    'default' => '<h3><span x-text="power"></span>&curren;</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>'
+                ],
+                'unconnected' => [
+                    'title' => __('Un-connected', 'cardanopress-governance'),
+                    'type' => 'editor',
+                    'default' => '<h3>Connect to see voting power</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non nulla pariatur rem sapiente similique voluptatem.</p>'
+                ],
             ],
         ]);
     }
