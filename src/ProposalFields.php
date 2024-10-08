@@ -131,6 +131,10 @@ class ProposalFields implements HookInterface
 
         if ($this->inAddNewPage()) {
             $data['default'] = $this->application->option('global_discussion');
+
+            if (empty($data['default'])) {
+                unset($data['default']);
+            }
         }
 
         if ($this->inAddNewPage() || $this->inEditPage()) {
