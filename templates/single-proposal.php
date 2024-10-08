@@ -46,7 +46,7 @@ cardanoPress()->compatibleHeader();
                             href="<?php echo esc_url($discussionLink['url']); ?>"
                             target="<?php echo esc_attr($discussionLink['target']); ?>"
                         >
-                            <?php echo esc_html($discussionLink['text']); ?>
+                            <?php echo esc_html($discussionLink['text'] ?: $discussionLink['url']); ?>
                         </a>
                     </div>
                 <?php endif; ?>

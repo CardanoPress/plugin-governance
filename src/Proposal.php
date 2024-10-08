@@ -169,11 +169,15 @@ class Proposal
     {
         $status = $this->getConfigValue('discussion');
 
-        return $status ?: [
+        if (! is_array($status)) {
+            $status = $status ? ['url' => $status] : [];
+        }
+
+        return array_merge([
             'url' => '',
             'text' => '',
             'target' => '',
-        ];
+        ], $status);
     }
 
     public function getPolicy(): string
