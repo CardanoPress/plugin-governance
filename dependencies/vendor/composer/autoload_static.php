@@ -67,6 +67,7 @@ class ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b
         'PBWebDev\\CardanoPress\\Governance\\Proposal' => __DIR__ . '/../..' . '/../src/Proposal.php',
         'PBWebDev\\CardanoPress\\Governance\\ProposalCPT' => __DIR__ . '/../..' . '/../src/ProposalCPT.php',
         'PBWebDev\\CardanoPress\\Governance\\ProposalFields' => __DIR__ . '/../..' . '/../src/ProposalFields.php',
+        'PBWebDev\\CardanoPress\\Governance\\Shortcode' => __DIR__ . '/../..' . '/../src/Shortcode.php',
         'PBWebDev\\CardanoPress\\Governance\\Snapshot' => __DIR__ . '/../..' . '/../src/Snapshot.php',
         'PBWebDev\\CardanoPress\\Governance\\Templates' => __DIR__ . '/../..' . '/../src/Templates.php',
         'PBWebDev\\CardanoPress\\Governance\\Vote' => __DIR__ . '/../..' . '/../src/Vote.php',

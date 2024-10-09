@@ -21,6 +21,7 @@ return array(
     'PBWebDev\\CardanoPress\\Governance\\Proposal' => $baseDir . '/../src/Proposal.php',
     'PBWebDev\\CardanoPress\\Governance\\ProposalCPT' => $baseDir . '/../src/ProposalCPT.php',
     'PBWebDev\\CardanoPress\\Governance\\ProposalFields' => $baseDir . '/../src/ProposalFields.php',
+    'PBWebDev\\CardanoPress\\Governance\\Shortcode' => $baseDir . '/../src/Shortcode.php',
     'PBWebDev\\CardanoPress\\Governance\\Snapshot' => $baseDir . '/../src/Snapshot.php',
     'PBWebDev\\CardanoPress\\Governance\\Templates' => $baseDir . '/../src/Templates.php',
     'PBWebDev\\CardanoPress\\Governance\\Vote' => $baseDir . '/../src/Vote.php',

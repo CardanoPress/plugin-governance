@@ -1802,6 +1802,10 @@ return array(
 		'version' => 'dev-develop',
 		'path'    => $baseDir . '/../src/ProposalFields.php'
 	),
+	'PBWebDev\\CardanoPress\\Governance\\Shortcode' => array(
+		'version' => 'dev-develop',
+		'path'    => $baseDir . '/../src/Shortcode.php'
+	),
 	'PBWebDev\\CardanoPress\\Governance\\Snapshot' => array(
 		'version' => 'dev-develop',
 		'path'    => $baseDir . '/../src/Snapshot.php'

@@ -44,6 +44,7 @@ class Application extends AbstractApplication
     {
         (new Snapshot($this->logger('snapshot')))->setupHooks();
         (new Actions())->setupHooks();
+        (new Shortcode())->setupHooks();
     }
 
     public function isReady(): bool
