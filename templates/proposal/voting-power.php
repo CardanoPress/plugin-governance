@@ -17,12 +17,12 @@ if (empty($proposal)) {
 
 <template x-if='!isConnected'>
     <div>
-        <?php echo wp_kses_post(cpGovernance()->option('vpm_unconnected')); ?>
+        <?php echo do_shortcode(wp_kses_post(cpGovernance()->option('vpm_unconnected'))); ?>
     </div>
 </template>
 
 <template x-if='isConnected'>
     <div>
-        <?php echo wp_kses_post(cpGovernance()->option('vpm_connected')); ?>
+        <?php echo do_shortcode(wp_kses_post(cpGovernance()->option('vpm_connected'))); ?>
     </div>
 </template>

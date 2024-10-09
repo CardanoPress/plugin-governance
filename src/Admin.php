@@ -88,7 +88,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'connected' => [
                     'title' => __('Connected', 'cardanopress-governance'),
                     'type' => 'editor',
-                    'default' => '<h3><span x-text="power"></span>&curren;</h3>
+                    'default' => '<h3>[cp-governance_power]&curren;</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>'
                 ],
                 'unconnected' => [
