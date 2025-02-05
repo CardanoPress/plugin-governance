@@ -117,7 +117,7 @@ class Proposal
 
     public function getVoteText(): string
     {
-        $voteText = __('Vote', 'cardanopress');
+        $voteText = __('Vote', 'cardanopress-governance');
 
         if ('archive' === $this->currentStatus) {
             $voteText = __('Voting Result', 'cardanopress-governance');

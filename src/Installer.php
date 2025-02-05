@@ -46,10 +46,10 @@ class Installer extends AbstractInstaller
         $plugin  = sprintf(
             '<a href="%1$s" target="_blank">%2$s</a>',
             'https://wordpress.org/plugins/cardanopress',
-            __('core plugin', 'cardanopress')
+            __('core plugin', 'cardanopress-governance')
         );
         $message = sprintf(
-            __('%1$s requires the %2$s version %3$s for the voting fee feature.', 'cardanopress'),
+            __('%1$s requires the %2$s version %3$s for the voting fee feature.', 'cardanopress-governance'),
             '<strong>' . $this->application->getData('Name') . '</strong>',
             $plugin,
             '<strong>' . $version . '</strong>'
