@@ -47,8 +47,6 @@ class Actions implements HookInterface
 
     protected function validatedVote(): Vote
     {
-        check_ajax_referer('cardanopress-actions');
-
         if (empty($_POST['proposalId']) || empty($_POST['optionValue'])) {
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
@@ -59,7 +57,7 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('invalidIdentifier'));
         }
 
-        $optionValue = sanitize_key($_POST['optionValue']);
+        $optionValue = (int) sanitize_key($_POST['optionValue']);
 
         if (! is_numeric($optionValue) || 1 > $optionValue || $optionValue > 99) {
             wp_send_json_error($this->getAjaxMessage('invalidOption'));
@@ -77,6 +75,8 @@ class Actions implements HookInterface
 
     public function verifyProposalVote(): void
     {
+        check_ajax_referer('cardanopress-actions');
+
         $vote = $this->validatedVote();
         $proposal = $vote->getProposal();
         $userProfile = Application::getInstance()->userProfile();
@@ -99,7 +99,7 @@ class Actions implements HookInterface
 
     public function completeProposalVote(): void
     {
-        $vote = $this->validatedVote();
+        check_ajax_referer('cardanopress-actions');
 
         if (empty($_POST['transaction'])) {
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
@@ -111,6 +111,7 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('invalidHash'));
         }
 
+        $vote = $this->validatedVote();
         $proposal = $vote->getProposal();
         $optionValue = $vote->getOptionValue();
         $userProfile = Application::getInstance()->userProfile();

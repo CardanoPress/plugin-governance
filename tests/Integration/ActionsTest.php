@@ -22,7 +22,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
 
     public const REQUIRED_KEYS = [
         'proposalId',
-        'option',
+        'optionValue',
         'transaction',
     ];
 
@@ -42,12 +42,12 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         $_POST = array_merge($_POST, $data);
     }
 
-    protected function do_ajax()
+    protected function do_ajax(string $action)
     {
         try {
             $_POST['_wpnonce'] = wp_create_nonce('cardanopress-actions');
 
-            $this->_handleAjax('cp-governance_proposal_vote');
+            $this->_handleAjax($action);
         } catch (WPAjaxDieContinueException $exception) {
         } catch (WPAjaxDieStopException $exception) {
         }
@@ -66,9 +66,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
     /** @dataProvider for_with_incomplete_data */
     public function test_with_incomplete_data(string $missed): void
     {
-        $this->fill_post(array_fill(0, 3, 'test'));
-        unset($_POST[$missed]);
-        $this->do_ajax();
+        $this->do_ajax('cp-governance_proposal_vote_verify');
 
         $output = json_decode($this->_last_response, true);
 
@@ -89,13 +87,13 @@ class ActionsTest extends WP_Ajax_UnitTestCase
     public function test_with_invalid_identifier(int $identifier): void
     {
         $this->fill_post(array($identifier, 'test', 'test'));
-        $this->do_ajax();
+        $this->do_ajax('cp-governance_proposal_vote_verify');
 
         $output = json_decode($this->_last_response, true);
 
         $this->assertFalse($output['success']);
 
-        if ( 0 === $identifier) {
+        if (0 === $identifier) {
             $this->assertSame($this->actions->getAjaxMessage('somethingWrong'), $output['data']);
         } else {
             $this->assertSame($this->actions->getAjaxMessage('invalidIdentifier'), $output['data']);
@@ -116,7 +114,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
     public function test_with_invalid_vote(string $option): void
     {
         $this->fill_post(array(9999, $option, 'test'));
-        $this->do_ajax();
+        $this->do_ajax('cp-governance_proposal_vote_verify');
 
         $output = json_decode($this->_last_response, true);
 
@@ -142,7 +140,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
     public function test_with_invalid_transaction(string $hash): void
     {
         $this->fill_post(array(9999, 99, $hash));
-        $this->do_ajax();
+        $this->do_ajax('cp-governance_proposal_vote_complete');
 
         $output = json_decode($this->_last_response, true);
 
