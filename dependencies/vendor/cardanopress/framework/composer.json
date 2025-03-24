@@ -17,6 +17,9 @@
     }
   ],
   "config": {
+    "platform": {
+      "php": "7.4"
+    },
     "optimize-autoloader": true,
     "allow-plugins": {
       "automattic/jetpack-autoloader": true,
@@ -27,7 +30,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^7.4|^8.2",
     "ext-json": "*"
   },
   "require-dev": {
@@ -44,6 +47,7 @@
     }
   },
   "scripts": {
+    "index.php": "find . -type d -not \\( -path ./.git -prune \\) -not \\( -path ./vendor -prune \\) -exec cp -f ./index.php {} \\;",
     "analyse": "themeplate analyse",
     "lint": "themeplate lint",
     "fix": "themeplate fix"
