@@ -88,14 +88,14 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
                 'connected' => [
                     'title' => __('Connected', 'cardanopress-governance'),
                     'type' => 'editor',
-                    'default' => '<h3>[cp-governance_power]&curren;</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>'
+                    // phpcs:ignore Generic.Files.LineLength.TooLong
+                    'default' => '<h3>[cp-governance_power]&curren;</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nostrum sunt voluptas. Assumenda consectetur illo, incidunt labore quia sequi voluptas! Ad distinctio dolore fugiat iste iusto non officiis. Aut, repellat.</p>'
                 ],
                 'unconnected' => [
                     'title' => __('Un-connected', 'cardanopress-governance'),
                     'type' => 'editor',
-                    'default' => '<h3>Connect to see voting power</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non nulla pariatur rem sapiente similique voluptatem.</p>'
+                    // phpcs:ignore Generic.Files.LineLength.TooLong
+                    'default' => '<h3>Connect to see voting power</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet animi corporis, culpa doloribus ducimus eius eos, et fuga hic iure necessitatibus non nulla pariatur rem sapiente similique voluptatem.</p>'
                 ],
             ],
         ]);
