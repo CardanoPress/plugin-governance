@@ -44,7 +44,7 @@
       "../vendor/bin/mozart compose",
       "rm -rf ThemePlate/Core",
       "composer dump-autoload --classmap-authoritative",
-      "find . -type d -not \\( -path ./vendor -prune \\) -exec cp -f ./index.php {} \\;"
+      "composer -d .. run index.php"
     ],
     "post-install-cmd": "@action-prefix",
     "post-update-cmd": "@action-prefix"

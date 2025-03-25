@@ -74,12 +74,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CardanoPress/framework.git",
-                "reference": "9ef291d2100647766f09924a7ff7a424457c46bd"
+                "reference": "21c190cf93dfd28242090978f1ddf2af34dbad09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CardanoPress/framework/zipball/9ef291d2100647766f09924a7ff7a424457c46bd",
-                "reference": "9ef291d2100647766f09924a7ff7a424457c46bd",
+                "url": "https://api.github.com/repos/CardanoPress/framework/zipball/21c190cf93dfd28242090978f1ddf2af34dbad09",
+                "reference": "21c190cf93dfd28242090978f1ddf2af34dbad09",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
                 "issues": "https://github.com/CardanoPress/framework/issues",
                 "source": "https://github.com/CardanoPress/framework/tree/v2.11.0"
             },
-            "time": "2025-03-24T07:31:12+00:00"
+            "time": "2025-03-24T07:31:48+00:00"
         },
         {
             "name": "themeplate/cpt",

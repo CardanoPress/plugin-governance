@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '38227786afa7c2ecf84d1e610a7111f68148a189',
+        'reference' => '3757dce00ccba7882fc5b93fb0235d09738e59de',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '38227786afa7c2ecf84d1e610a7111f68148a189',
+            'reference' => '3757dce00ccba7882fc5b93fb0235d09738e59de',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -31,7 +31,7 @@
         'cardanopress/framework' => array(
             'pretty_version' => 'v2.11.0',
             'version' => '2.11.0.0',
-            'reference' => '9ef291d2100647766f09924a7ff7a424457c46bd',
+            'reference' => '21c190cf93dfd28242090978f1ddf2af34dbad09',
             'type' => 'library',
             'install_path' => __DIR__ . '/../cardanopress/framework',
             'aliases' => array(),
