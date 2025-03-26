@@ -7,10 +7,10 @@
 
 namespace PBWebDev\CardanoPress\Governance;
 
+use CardanoPress\Dependencies\Psr\Log\LoggerInterface;
 use CardanoPress\Interfaces\HookInterface;
 use CardanoPress\Traits\Loggable;
 use PBWebDev\CardanoPress\Blockfrost;
-use Psr\Log\LoggerInterface;
 
 class Snapshot implements HookInterface
 {
