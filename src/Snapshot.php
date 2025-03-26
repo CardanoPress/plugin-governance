@@ -16,7 +16,6 @@ class Snapshot implements HookInterface
 {
     use Loggable;
 
-    private static Snapshot $instance;
     private string $lockKey = '';
 
     public const LOCK = 'cpg_snapshot_lock_';

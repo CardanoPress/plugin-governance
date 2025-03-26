@@ -53,13 +53,13 @@ class Actions implements HookInterface
 
         $proposalId = (int) sanitize_key($_POST['proposalId']);
 
-        if (! is_numeric($proposalId) || 1 > $proposalId || $proposalId > 9999) {
+        if (1 > $proposalId || $proposalId > 9999) {
             wp_send_json_error($this->getAjaxMessage('invalidIdentifier'));
         }
 
         $optionValue = (int) sanitize_key($_POST['optionValue']);
 
-        if (! is_numeric($optionValue) || 1 > $optionValue || $optionValue > 99) {
+        if (1 > $optionValue || $optionValue > 99) {
             wp_send_json_error($this->getAjaxMessage('invalidOption'));
         }
 
@@ -70,7 +70,7 @@ class Actions implements HookInterface
             wp_send_json_error($this->getAjaxMessage('somethingWrong'));
         }
 
-        return new Vote($proposal, $optionValue);
+        return new Vote($proposal, (string) $optionValue);
     }
 
     public function verifyProposalVote(): void
