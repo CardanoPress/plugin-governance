@@ -6,7 +6,7 @@
  * Author:      CardanoPress
  * Author URI:  https://cardanopress.io
  * Description: A CardanoPress extension for governance
- * Version:     1.8.0
+ * Version:     1.9.0
  * License:     GPL-2.0-only
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *

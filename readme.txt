@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?hosted_button_id=T8MR6AMVWWGK8
 Tags: cardano, blockchain, web3, ada, token-gating
 Requires at least: 5.9
 Tested up to: 6.7.99
-Stable tag: 1.8.0
+Stable tag: 1.9.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/licenses.html
@@ -95,10 +95,6 @@ We have community support available on our website under the [CardanoPress forum
 
 == Frequently Asked Questions ==
 
-= Can I Run This on My WordPress.com Website? =
-
-No you can not. You need full access to your web server to be able to allow for the WASM file type to load. Without this access you will not be able to run the plugin.
-
 = Can I Get Paid Support? =
 
 Yes you can, we offer subscription to support for our plugins and consultation to help get your project started and to a professional level.
@@ -122,6 +118,12 @@ This plugin does not collect or process any personal user data unless you expres
 == Changelog ==
 
 You can follow our [GitHub release](https://github.com/CardanoPress/plugin-governance/releases) for full details on updates to the plugins.
+
+= 1.9.0 =
+- Minor code and exports cleanup
+- Add missing index.php files
+- Adjusted validation flow
+- Updated dependencies
 
 = 1.8.0 =
 - Corrected text-domain used in installer
