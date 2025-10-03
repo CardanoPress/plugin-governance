@@ -140,7 +140,7 @@ class Snapshot implements HookInterface
                 $page++;
             } while (100 === count($response));
 
-            update_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, array_filter($assets));
+            update_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, $assets);
             $this->log('User: ' . $userId . ' got scanned');
         } else {
             $this->log('User: ' . $userId . ' is not connected');
