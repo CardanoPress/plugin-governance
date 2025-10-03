@@ -163,9 +163,4 @@ class Snapshot implements HookInterface
     {
         delete_transient($this->lockKey);
     }
-
-    protected function log(string $message, string $level = 'info'): void
-    {
-        $this->logger->log($level, $message);
-    }
 }
