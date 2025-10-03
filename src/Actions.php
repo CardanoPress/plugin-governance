@@ -34,7 +34,7 @@ class Actions implements HookInterface
         return $messages[$type] ?? '';
     }
 
-    public function localizeMessages()
+    public function localizeMessages(): void
     {
         $messages = [
             'voting' => __('Processing...', 'cardanopress-governance'),

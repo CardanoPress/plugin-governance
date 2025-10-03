@@ -183,7 +183,7 @@ Submit a proposal for discussion or vote in current proposals in our ecosystem.'
         $this->storeConfig($postMeta->get_config());
     }
 
-    public function recommendPlugins()
+    public function recommendPlugins(): void
     {
         $plugins = [
             [

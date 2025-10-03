@@ -58,7 +58,7 @@ class ProposalFields implements HookInterface
         ];
     }
 
-    public function parseData($data)
+    public function parseData(array $data): string
     {
         if (! $this->inEditPage()) {
             return '';
@@ -77,7 +77,7 @@ class ProposalFields implements HookInterface
         </table>
         <?php
 
-        return ob_get_clean();
+        return (string) ob_get_clean();
     }
 
     protected function inEditPage(): bool

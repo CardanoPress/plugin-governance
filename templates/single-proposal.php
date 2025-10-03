@@ -9,7 +9,7 @@
  * @since   0.1.0
  */
 
-$proposalId = get_the_ID();
+$proposalId = (int) get_the_ID();
 $proposal = cpGovernance()->getProposalInstance($proposalId);
 $discussionLink = $proposal->getDiscussionLink();
 $currentStatus = get_post_status();
@@ -18,7 +18,7 @@ cardanoPress()->compatibleHeader();
 
 ?>
 
-<div id="proposal-<?php echo esc_attr($proposalId); ?>" class="py-5">
+<div id="proposal-<?php echo esc_attr((string) $proposalId); ?>" class="py-5">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-md-10">
@@ -26,7 +26,7 @@ cardanoPress()->compatibleHeader();
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
                         <li class="breadcrumb-item">
-                            <a href='<?php echo esc_url(get_post_type_archive_link('proposal')); ?>'>Governance</a>
+                            <a href='<?php echo esc_url((string) get_post_type_archive_link('proposal')); ?>'>Governance</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
                     </ol>

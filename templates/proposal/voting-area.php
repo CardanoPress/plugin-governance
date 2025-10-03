@@ -10,7 +10,7 @@
  */
 
 if (empty($proposal)) {
-    $proposal = cpGovernance()->getProposalInstance(get_the_ID());
+    $proposal = cpGovernance()->getProposalInstance((int) get_the_ID());
 }
 
 $userProfile = cpGovernance()->userProfile();
@@ -24,7 +24,7 @@ $currentStatus ??= 'publish';
     x-data="cardanoPressGovernance"
     id="proposal-<?php echo esc_attr($proposal->postId); ?>"
     data-proposal="<?php echo esc_attr($proposal->getID()); ?>"
-    data-options="<?php echo esc_attr(json_encode($proposal->getData())); ?>"
+    data-options="<?php echo esc_attr((string) json_encode($proposal->getData())); ?>"
     data-voted="<?php echo esc_attr($votedOption); ?>"
     data-complete="<?php echo esc_attr($proposal->isComplete()); ?>"
     data-power="<?php echo esc_attr($proposal->getVotingPower($userProfile)); ?>"

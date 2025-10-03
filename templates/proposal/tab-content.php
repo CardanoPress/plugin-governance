@@ -7,7 +7,7 @@
  * @since   0.1.0
  */
 
-$proposal = cpGovernance()->getProposalInstance(get_the_ID());
+$proposal = cpGovernance()->getProposalInstance((int) get_the_ID());
 $type ??= 'current';
 
 $linkText = __('Vote', 'cardanopress-governance');

@@ -10,7 +10,7 @@
  */
 
 if (empty($proposal)) {
-    $proposal = cpGovernance()->getProposalInstance(get_the_ID());
+    $proposal = cpGovernance()->getProposalInstance((int) get_the_ID());
 }
 
 $voted = $votedOption ?? '';

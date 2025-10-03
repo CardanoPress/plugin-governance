@@ -36,13 +36,13 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         $this->actions->setupHooks();
     }
 
-    protected function fill_post(array $values)
+    protected function fill_post(array $values): void
     {
         $data = array_combine(self::REQUIRED_KEYS, $values);
         $_POST = array_merge($_POST, $data);
     }
 
-    protected function do_ajax(string $action)
+    protected function do_ajax(string $action): void
     {
         try {
             $_POST['_wpnonce'] = wp_create_nonce('cardanopress-actions');

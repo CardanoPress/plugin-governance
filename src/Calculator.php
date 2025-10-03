@@ -41,6 +41,7 @@ class Calculator
         return true;
     }
 
+    /** @return mixed */
     protected function getSnapshotData()
     {
         return get_post_meta(
@@ -89,7 +90,7 @@ class Calculator
             return 0;
         }
 
-        return (int) round(NumberHelper::lovelaceToAda($response['controlled_amount']));
+        return (int) round(NumberHelper::lovelaceToAda((int) $response['controlled_amount']));
     }
 
     protected function getSnapshotPower(string $type): int

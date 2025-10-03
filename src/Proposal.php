@@ -150,6 +150,7 @@ class Proposal
         return (bool) $status;
     }
 
+    /** @return mixed */
     protected function getConfigValue(string $key)
     {
         if (null === $this->useGlobalConfig) {
@@ -264,7 +265,7 @@ class Proposal
             return false;
         }
 
-        $current = $data[$option];
+        $current = (int) $data[$option];
 
         if ($increase) {
             $data[$option] = $current + $value;
@@ -348,7 +349,7 @@ class Proposal
         $format = apply_filters('cp-governance-date_format', $format);
         $timezone = apply_filters('cp-governance-date_timezone', 'UTC');
         $timezone = new DateTimeZone($timezone);
-        $value = wp_date($format, $timestamp, $timezone);
+        $value = (string) wp_date($format, $timestamp, $timezone);
         $string = apply_filters('cp-governance-date_string', '%format% %timezone%');
 
         return str_replace(['%format%', '%timezone%'], [$value, $timezone->getName()], $string);
