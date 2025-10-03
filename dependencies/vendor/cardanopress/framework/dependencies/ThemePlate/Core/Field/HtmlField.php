@@ -28,6 +28,9 @@ class HtmlField extends Field {
 	}
 
 
+	/**
+	 * @param mixed $value
+	 */
 	private function handle( $value ): string {
 
 		if ( is_callable( $this->get_config( 'options' ) ) ) {
@@ -42,7 +45,7 @@ class HtmlField extends Field {
 			return (string) $value;
 		}
 
-		return wp_json_encode( $value );
+		return (string) wp_json_encode( $value );
 
 	}
 

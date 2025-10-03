@@ -34,7 +34,7 @@ class BlockfrostClient
     /**
      * Create a new BlockfrostClient instance
      */
-    public function __construct(string $project_id, HandlerStack $handler = null)
+    public function __construct(string $project_id, ?HandlerStack $handler = null)
     {
         $network = substr($project_id, 0, 7);
 
@@ -65,8 +65,8 @@ class BlockfrostClient
         return static function (
             $retries,
             Request $request,
-            Response $response = null,
-            RequestException $exception = null
+            ?Response $response = null,
+            ?RequestException $exception = null
         ) {
             if ($retries >= self::MAX_RETRIES) {
                 return false;
@@ -96,9 +96,13 @@ class BlockfrostClient
      * Make a GET request to the API endpoint
      *
      * @param  string  $endpoint
-     * @param  array   $query
+     * @param  mixed[] $query
      *
-     * @return array
+     * @return array{
+     *     status_code: int,
+     *     data: mixed[],
+     *     error?: string,
+     * }
      */
     public function request(string $endpoint, array $query = []): array
     {
@@ -122,22 +126,24 @@ class BlockfrostClient
         } catch (RequestException $error) {
             $response = $error->getResponse();
 
+            if (null === $response) {
+                $value['error'] = $error->getMessage();
+
+                return $value;
+            }
+
             try {
                 $value['status_code'] = $response->getStatusCode();
                 $value['error'] = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
             } catch (JsonException $e) {
                 $value['error'] = $e->getMessage();
-            } finally {
-                if (empty($value['error'])) {
-                    $value['error'] = $error->getMessage();
-                }
             }
         } catch (GuzzleException $e) {
             $value['error'] = $e->getMessage();
         } catch (JsonException $e) {
             $value['error'] = $e->getMessage();
-        } finally {
-            return $value;
         }
+
+        return $value;
     }
 }

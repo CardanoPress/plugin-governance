@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Base' => $baseDir . '/ThemePlate/CPT/Base.php',
     'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\CommonInterface' => $baseDir . '/ThemePlate/CPT/CommonInterface.php',
+    'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Interfaces\\PostTypeInterface' => $baseDir . '/ThemePlate/CPT/Interfaces/PostTypeInterface.php',
+    'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Interfaces\\TaxonomyInterface' => $baseDir . '/ThemePlate/CPT/Interfaces/TaxonomyInterface.php',
     'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\PostType' => $baseDir . '/ThemePlate/CPT/PostType.php',
     'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Taxonomy' => $baseDir . '/ThemePlate/CPT/Taxonomy.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

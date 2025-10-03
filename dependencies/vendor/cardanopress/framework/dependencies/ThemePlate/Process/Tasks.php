@@ -11,6 +11,14 @@ namespace CardanoPress\Dependencies\ThemePlate\Process;
 
 use Throwable;
 
+/**
+ * @phpstan-type Task array{
+ *   callback_func: callable,
+ *   callback_args: array<int, mixed>
+ * }
+ *
+ * @phpstan-type Data array<int, array{task: Task, output: mixed}>
+ */
 class Tasks {
 
 	private string $identifier;
@@ -21,10 +29,12 @@ class Tasks {
 	 */
 	private array $report_callback = array();
 
-	private int $start   = 0;
-	private int $end     = 0;
-	private int $limit   = 0;
-	private int $every   = 0;
+	private int $start = 0;
+	private int $end   = 0;
+	private int $limit = 0;
+	private int $every = 0;
+
+	/** @var array<int, Task> */
 	private array $tasks = array();
 
 
@@ -55,11 +65,11 @@ class Tasks {
 
 	private function set_defaults(): void {
 
-		if ( ! $this->limit && $this->every ) {
+		if ( 0 === $this->limit && 0 !== $this->every ) {
 			$this->limit = 1;
 		}
 
-		if ( ! $this->every && $this->limit ) {
+		if ( 0 === $this->every && 0 !== $this->limit ) {
 			$this->every = 60;
 		}
 
@@ -77,7 +87,7 @@ class Tasks {
 		$queued = $this->get_queued();
 		$total  = count( $queued['tasks'] );
 
-		if ( ! $total ) {
+		if ( 0 === $total ) {
 			$this->delete( $queued['key'] );
 			return;
 		}
@@ -89,7 +99,7 @@ class Tasks {
 		$done  = array();
 		$index = 0;
 
-		if ( ! $this->limit || $this->limit > $total ) {
+		if ( 0 === $this->limit || $this->limit > $total ) {
 			$this->limit = $total;
 		}
 
@@ -124,20 +134,20 @@ class Tasks {
 	}
 
 
-	public function execute(): bool {
+	public function execute(): void {
 
-		if ( empty( $this->tasks ) ) {
-			return false;
+		if ( array() === $this->tasks ) {
+			return;
 		}
 
 		$this->save( $this->tasks );
 		$this->clear();
-
-		return ! $this->async->dispatch();
+		$this->async->dispatch();
 
 	}
 
 
+	/** @param array<int, mixed> $callback_args */
 	public function add( callable $callback_func, array $callback_args = array() ): Tasks {
 
 		$this->tasks[] = compact( 'callback_func', 'callback_args' );
@@ -147,6 +157,7 @@ class Tasks {
 	}
 
 
+	/** @param array<int, mixed> $callback_args */
 	public function remove( callable $callback_func, array $callback_args = array() ): Tasks {
 
 		$index = array_search( compact( 'callback_func', 'callback_args' ), $this->tasks, true );
@@ -200,6 +211,14 @@ class Tasks {
 	}
 
 
+	/**
+	 * @return array{
+	 *   limit: int,
+	 *   every: int,
+	 *   tasks: array<int, Task>,
+	 *   report: callable[]
+	 * }
+	 */
 	public function dump(): array {
 
 		$this->set_defaults();
@@ -214,9 +233,14 @@ class Tasks {
 	}
 
 
-	public function maybe_schedule( $schedules ) {
+	/**
+	 * @param array<string, array{interval: int, display: string}> $schedules
+	 *
+	 * @return array<string, array{interval: int, display: string}>
+	 */
+	public function maybe_schedule( array $schedules ): array {
 
-		if ( $this->limit ) {
+		if ( 0 !== $this->limit ) {
 			$schedules[ $this->identifier . '_interval' ] = array(
 				'interval' => $this->every,
 				/* translators: %s: number of seconds */
@@ -231,14 +255,17 @@ class Tasks {
 
 	public function maybe_run(): void {
 
-		if ( $this->has_queued() && ! $this->next_scheduled() && ! $this->is_running() ) {
+		if ( $this->has_queued() && 0 === $this->next_scheduled() && ! $this->is_running() ) {
 			$this->runner( $this->identifier );
 		}
 
 	}
 
 
-	private function save( array $tasks, string $key = null ): void {
+	/**
+	 * @param array<int, Task> $tasks
+	 */
+	private function save( array $tasks, ?string $key = null ): void {
 
 		if ( null === $key ) {
 			$key = $this->generate_key();
@@ -256,9 +283,9 @@ class Tasks {
 	}
 
 
-	public function is_running() {
+	public function is_running(): int {
 
-		return get_transient( $this->identifier . '_lock' );
+		return (int) get_transient( $this->identifier . '_lock' );
 
 	}
 
@@ -267,7 +294,7 @@ class Tasks {
 
 		$this->start = time();
 
-		if ( $this->every ) {
+		if ( 0 !== $this->every ) {
 			$timeout = $this->every * 2;
 		} else {
 			$timeout = 2 * MINUTE_IN_SECONDS;
@@ -289,14 +316,14 @@ class Tasks {
 
 	public function next_scheduled(): int {
 
-		return wp_next_scheduled( $this->identifier . '_event', array( $this->identifier ) );
+		return (int) wp_next_scheduled( $this->identifier . '_event', array( $this->identifier ) );
 
 	}
 
 
 	private function schedule(): void {
 
-		if ( ! $this->next_scheduled() ) {
+		if ( 0 === $this->next_scheduled() ) {
 			wp_schedule_event(
 				$this->start + $this->every,
 				$this->identifier . '_interval',
@@ -312,18 +339,17 @@ class Tasks {
 
 		$timestamp = $this->next_scheduled();
 
-		if ( $timestamp ) {
+		if ( 0 !== $timestamp ) {
 			wp_unschedule_event( $timestamp, $this->identifier . '_event', array( $this->identifier ) );
 		}
 
 	}
 
 
+	/**
+	 * @param Data $done
+	 */
 	private function reporter( array $done ): void {
-
-		if ( empty( $this->report_callback ) ) {
-			return;
-		}
 
 		foreach ( $this->report_callback as $report_callback ) {
 			$report_callback( new Report( $done, $this->start, $this->end ) );
@@ -351,6 +377,9 @@ class Tasks {
 	}
 
 
+	/**
+	 * @return array{key: string, tasks: array<int, Task>}
+	 */
 	public function get_queued(): array {
 
 		global $wpdb;

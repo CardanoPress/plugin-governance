@@ -54,6 +54,8 @@ class ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b
     public static $classMap = array (
         'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Base' => __DIR__ . '/../..' . '/ThemePlate/CPT/Base.php',
         'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\CommonInterface' => __DIR__ . '/../..' . '/ThemePlate/CPT/CommonInterface.php',
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Interfaces\\PostTypeInterface' => __DIR__ . '/../..' . '/ThemePlate/CPT/Interfaces/PostTypeInterface.php',
+        'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Interfaces\\TaxonomyInterface' => __DIR__ . '/../..' . '/ThemePlate/CPT/Interfaces/TaxonomyInterface.php',
         'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\PostType' => __DIR__ . '/../..' . '/ThemePlate/CPT/PostType.php',
         'CardanoPress\\Governance\\Dependencies\\ThemePlate\\CPT\\Taxonomy' => __DIR__ . '/../..' . '/ThemePlate/CPT/Taxonomy.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

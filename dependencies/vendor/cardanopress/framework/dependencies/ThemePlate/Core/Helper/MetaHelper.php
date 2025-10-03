@@ -11,6 +11,9 @@ namespace CardanoPress\Dependencies\ThemePlate\Core\Helper;
 
 class MetaHelper {
 
+	/**
+	 * @param array<string, mixed> $meta_box
+	 */
 	public static function should_display( array $meta_box, string $current_id ): bool {
 
 		$check = true;
@@ -33,7 +36,7 @@ class MetaHelper {
 		$result = (bool) ( $callback( $current_id ) );
 
 		if ( 'hide' === $type ) {
-			$result = ! $result;
+			return ! $result;
 		}
 
 		return $result;
@@ -41,12 +44,15 @@ class MetaHelper {
 	}
 
 
+	/**
+	 * @param int[]|string[] $wanted_ids
+	 */
 	private static function id_check( string $type, string $current_id, array $wanted_ids ): bool {
 
 		$result = in_array( $current_id, array_map( 'strval', $wanted_ids ), true );
 
 		if ( 'hide' === $type ) {
-			$result = ! $result;
+			return ! $result;
 		}
 
 		return $result;
@@ -54,6 +60,10 @@ class MetaHelper {
 	}
 
 
+	/**
+	 * @param array<string, mixed> $container
+	 * @return array<string, mixed>
+	 */
 	public static function normalize_options( array $container ): array {
 
 		foreach ( array( 'show', 'hide' ) as $key ) {
@@ -67,6 +77,10 @@ class MetaHelper {
 	}
 
 
+	/**
+	 * @param array<string, mixed> $container
+	 * @return array<string, mixed>
+	 */
 	private static function option_check( string $type, array $container ): array {
 
 		$value = $container[ $type ];
@@ -84,6 +98,9 @@ class MetaHelper {
 				$container[ $type . '_id' ] = (array) $value[0]['value'];
 				unset( $container[ $type ] );
 			}
+		} elseif ( is_callable( $value ) ) {
+			$container[ $type . '_cb' ] = $value;
+			unset( $container[ $type ] );
 		}
 
 		return $container;
@@ -91,6 +108,9 @@ class MetaHelper {
 	}
 
 
+	/**
+	 * @param array<string, mixed> $container
+	 */
 	public static function render_options( array $container ): void {
 
 		if ( ! empty( $container['show_on'] ) || ! empty( $container['hide_on'] ) ) {
@@ -98,7 +118,7 @@ class MetaHelper {
 
 			foreach ( array( 'show', 'hide' ) as $key ) {
 				if ( ! empty( $container[ $key . '_on' ] ) ) {
-					$value = wp_json_encode( $container[ $key . '_on' ], JSON_NUMERIC_CHECK );
+					$value = (string) wp_json_encode( $container[ $key . '_on' ], JSON_NUMERIC_CHECK );
 					echo ' data-' . $key . '="' . esc_attr( $value ) . '"'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}

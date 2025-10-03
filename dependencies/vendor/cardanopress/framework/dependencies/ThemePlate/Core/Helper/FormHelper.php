@@ -57,7 +57,7 @@ class FormHelper {
 			return;
 		}
 
-		if ( function_exists( 'use_block_editor_for_post' ) && use_block_editor_for_post( get_the_ID() ) ) {
+		if ( function_exists( 'use_block_editor_for_post' ) && use_block_editor_for_post( (int) get_the_ID() ) ) {
 			wp_enqueue_script( 'themeplate-show-hide-gutenberg', AssetsHelper::get_url( 'show-hide-gutenberg.js' ), array(), $version, true );
 		} else {
 			wp_enqueue_script( 'themeplate-show-hide-classic', AssetsHelper::get_url( 'show-hide-classic.js' ), array(), $version, true );
@@ -66,16 +66,12 @@ class FormHelper {
 	}
 
 
+	/**
+	 * @return class-string<Field>
+	 */
 	public static function get_field_class( string $type ): string {
 
 		switch ( $type ) {
-			default:
-			case 'text':
-			case 'time':
-			case 'email':
-			case 'url':
-				return Field\InputField::class;
-
 			case 'textarea':
 				return Field\TextareaField::class;
 
@@ -122,11 +118,21 @@ class FormHelper {
 
 			case 'group':
 				return Field\GroupField::class;
+
+			case 'text':
+			case 'time':
+			case 'email':
+			case 'url':
+			default:
+				return Field\InputField::class;
 		}
 
 	}
 
 
+	/**
+	 * @param array<string, mixed> $config
+	 */
 	public static function make_field( string $data_key, array $config ): Field {
 
 		$type = self::get_field_class( $config['type'] ?? '' );

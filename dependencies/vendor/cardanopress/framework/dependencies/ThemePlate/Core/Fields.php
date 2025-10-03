@@ -20,6 +20,9 @@ class Fields {
 	protected array $collection;
 
 
+	/**
+	 * @param array<Field|mixed> $collection
+	 */
 	public function __construct( array $collection ) {
 
 		$this->collection = $this->filter( $collection );
@@ -28,6 +31,7 @@ class Fields {
 
 
 	/**
+	 * @param array<Field|mixed> $fields
 	 * @return Field[]
 	 */
 	protected function filter( array $fields ): array {
@@ -41,7 +45,11 @@ class Fields {
 				continue;
 			}
 
-			if ( ! is_array( $field ) || empty( $field ) ) {
+			if ( ! is_array( $field ) ) {
+				continue;
+			}
+
+			if ( array() === $field ) {
 				continue;
 			}
 
@@ -62,6 +70,9 @@ class Fields {
 	}
 
 
+	/**
+	 * @param mixed $value
+	 */
 	public function layout( Field $field, $value ): void {
 
 		$field->maybe_adjust( $value );
@@ -79,7 +90,7 @@ class Fields {
 				echo '</div>';
 			}
 
-			echo '<div class="field-input' . ( esc_attr( $field->get_config( 'repeatable' ) ) ? ' repeatable' : '' ) . '" data-min="' . esc_attr( $field->get_config( 'minimum' ) ) . '" data-max="' . esc_attr( $field->get_config( 'maximum' ) ) . '">';
+			echo '<div class="field-input' . ( esc_attr( $field->get_config( 'repeatable' ) ? ' repeatable' : '' ) ) . '" data-min="' . esc_attr( (string) $field->get_config( 'minimum' ) ) . '" data-max="' . esc_attr( (string) $field->get_config( 'maximum' ) ) . '">';
 				if ( ! $field->get_config( 'repeatable' ) ) {
 					$field->render( $value );
 				} else {
@@ -105,6 +116,9 @@ class Fields {
 	}
 
 
+	/**
+	 * @param mixed $value
+	 */
 	protected function cloner( Field $field, $value, bool $last = false ): void {
 
 		echo '<div class="themeplate-clone' . ( $last ? ' hidden' : '' ) . '">';

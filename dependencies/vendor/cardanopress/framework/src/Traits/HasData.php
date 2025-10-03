@@ -19,23 +19,24 @@ trait HasData
         $this->data = $data;
     }
 
-    protected function getData(): Repository
+    protected function getData(): ?Repository
     {
         return $this->data;
     }
 
     protected function storeConfig(Config $config): void
     {
-        if (null === $this->data) {
+        if (null === $this->getData()) {
             return;
         }
 
         $this->getData()->store($config);
     }
 
+    /** @return mixed */
     protected function retrieveValue(string $key, string $id)
     {
-        if (null === $this->data) {
+        if (null === $this->getData()) {
             return '';
         }
 

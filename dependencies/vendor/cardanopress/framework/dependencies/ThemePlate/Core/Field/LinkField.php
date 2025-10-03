@@ -23,23 +23,25 @@ class LinkField extends Field {
 
 	protected function initialize(): void {
 
-		$this->config['default'] = $this->values_structure( $this->config['default'] );
+		$default = $this->config['default'];
+
+		$this->config['default'] = MainHelper::is_sequential( $default ) ? array_map( array( $this, 'values_structure' ), $default ) : $this->values_structure( $default );
 
 	}
 
 
+	/**
+	 * @param array<string, string> $default_value
+	 * @return array<string, string>
+	 */
 	private function values_structure( array $default_value ): array {
-
-		if ( MainHelper::is_sequential( $default_value ) ) {
-			return array_map( array( $this, 'values_structure' ), $default_value );
-		}
 
 		return array_intersect_key(
 			MainHelper::fool_proof(
-				static::DEFAULT_VALUE,
+				self::DEFAULT_VALUE,
 				$default_value
 			),
-			static::DEFAULT_VALUE
+			self::DEFAULT_VALUE
 		);
 
 	}
@@ -49,7 +51,7 @@ class LinkField extends Field {
 
 		echo '<div id="' . esc_attr( $this->get_config( 'id' ) ) . '" class="themeplate-link">';
 		echo '<input type="button" class="button link-select" value="Select" />';
-		echo '<input type="button" class="button link-remove' . ( empty( array_filter( (array) $value ) ) ? ' hidden' : '' ) . '" value="Remove" />';
+		echo '<input type="button" class="button link-remove' . ( array() === array_filter( (array) $value ) ? ' hidden' : '' ) . '" value="Remove" />';
 
 		foreach ( array_keys( self::DEFAULT_VALUE ) as $attr_key ) {
 			$attr_value = $value[ $attr_key ] ?? '';
