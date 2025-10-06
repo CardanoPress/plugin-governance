@@ -10,6 +10,21 @@ namespace PBWebDev\CardanoPress\Governance;
 use CardanoPress\Helpers\WalletHelper;
 use DateTimeZone;
 
+/**
+ * @phpstan-type ProposalOptions array{value: string, label: string}[]
+ * @phpstan-type ProposalFee array{amount: int, address: array{mainnet: string, testnet: string}}
+ * @phpstan-type ProposalStructure array{
+ *     post_id: int,
+ *     identifier: int,
+ *     discussion_link: array<string, string>,
+ *     policy: string,
+ *     calculation: string[]|array{},
+ *     fee: ProposalFee|array{},
+ *     options: ProposalOptions|array{},
+ *     data: array<string, string>,
+ *     dates: array<string, string>,
+ * }
+ */
 class Proposal
 {
     public int $postId;
@@ -23,6 +38,7 @@ class Proposal
         $this->currentStatus = get_post_status($this->postId) ?: null;
     }
 
+    /** @return ProposalStructure */
     public function toArray(): array
     {
         return [
@@ -48,6 +64,7 @@ class Proposal
             'meta_value' => $id,
         ]);
 
+        /** @var int */
         return $result[0] ?? 0;
     }
 
@@ -133,6 +150,7 @@ class Proposal
         return $status ?: 0;
     }
 
+    /** @return array<string, string> */
     protected function getSnapshot(): array
     {
         $status = get_post_meta($this->postId, 'proposal_snapshot', true);
@@ -166,6 +184,7 @@ class Proposal
         return $status;
     }
 
+    /** @return array<string, string> */
     public function getDiscussionLink(): array
     {
         $status = $this->getConfigValue('discussion');
@@ -188,6 +207,7 @@ class Proposal
         return $status ?: '';
     }
 
+    /** @return string[]|array{} */
     public function getCalculation(): array
     {
         $status = $this->getConfigValue('calculation');
@@ -195,6 +215,7 @@ class Proposal
         return (array)$status ?: [];
     }
 
+    /** @return ProposalFee|array{} */
     public function getFee(): array
     {
         $status = $this->getConfigValue('fee');
@@ -202,6 +223,7 @@ class Proposal
         return (array)$status ?: [];
     }
 
+    /** @return ProposalOptions|array{} */
     public function getOptions(): array
     {
         $status = get_post_meta($this->postId, 'proposal_options', false);
@@ -222,6 +244,7 @@ class Proposal
         return $options[$index]['label'];
     }
 
+    /** @return array<string, string>|array{} */
     public function getData(): array
     {
         $status = get_post_meta($this->postId, '_proposal_data', true);
@@ -229,6 +252,7 @@ class Proposal
         return $status ?: [];
     }
 
+    /** @return array<string, string> */
     public function getDates(): array
     {
         $start = get_post_datetime($this->postId);
@@ -310,6 +334,7 @@ class Proposal
         return array_sum($powers);
     }
 
+    /** @return array<array<string, mixed>> */
     public function getCastedVotes(): array
     {
         global $wpdb;
@@ -328,6 +353,10 @@ class Proposal
         return $result;
     }
 
+    /**
+     * @param array<string, mixed> $data
+     * @return array<string, mixed>
+     */
     protected function formatVoteData(int $userId, array $data): array
     {
         $userProfile = new Profile(get_user_by('id', $userId));

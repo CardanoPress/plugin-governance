@@ -22,6 +22,7 @@ class Profile extends AbstractProfile
         return $this->prefix;
     }
 
+    /** @return mixed[] */
     public function getAllOwnedMeta(): array
     {
         $meta = array_filter($this->getMeta(''), function ($key) {
@@ -43,6 +44,7 @@ class Profile extends AbstractProfile
         );
     }
 
+    /** @return array<string, string> */
     public function getVote(int $proposalId): array
     {
         $saved = $this->getMeta($this->prefix . $proposalId, true);

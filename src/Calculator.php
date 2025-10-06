@@ -10,6 +10,7 @@ namespace PBWebDev\CardanoPress\Governance;
 use CardanoPress\Helpers\NumberHelper;
 use PBWebDev\CardanoPress\Blockfrost;
 
+/** @phpstan-type AssetsStructure array{unit: string, quantity: int} */
 class Calculator
 {
     private Proposal $proposal;
@@ -63,6 +64,7 @@ class Calculator
             return 0;
         }
 
+        /** @var AssetsStructure[] */
         $assets = array_map(function ($stored) {
             return array(
                 'unit' => $stored['asset'],
@@ -108,6 +110,7 @@ class Calculator
         return $this->getToken($status);
     }
 
+    /** @param AssetsStructure[] $assets */
     protected function getLovelace(array $assets): int
     {
         $index = array_search('lovelace', array_column($assets, 'unit'), true);
@@ -119,6 +122,7 @@ class Calculator
         return (int) round(NumberHelper::lovelaceToAda($assets[$index]['quantity']));
     }
 
+    /** @param AssetsStructure[] $assets */
     protected function getToken(array $assets): int
     {
         $result = 0;

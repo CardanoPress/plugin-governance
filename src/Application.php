@@ -59,6 +59,7 @@ class Application extends AbstractApplication
         return $function && $admin && $blockfrost;
     }
 
+    /** @return string[] */
     public function proposalTypes(): array
     {
         return array_keys(ProposalCPT::STATUSES);

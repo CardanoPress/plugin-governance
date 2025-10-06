@@ -12,6 +12,7 @@ use CardanoPress\Interfaces\HookInterface;
 class ProposalFields implements HookInterface
 {
     protected Application $application;
+    /** @var array<string, string> */
     protected array $policyIds = [];
 
     public function __construct()
@@ -50,6 +51,7 @@ class ProposalFields implements HookInterface
         return $metaValue;
     }
 
+    /** @return array<string, mixed> */
     public function getStatus(): array
     {
         return [
@@ -58,7 +60,8 @@ class ProposalFields implements HookInterface
         ];
     }
 
-    public function parseData(array $data): string
+    /** @param array<string, string> $data */
+    public function parseData($data): string
     {
         if (! $this->inEditPage()) {
             return '';
@@ -102,6 +105,7 @@ class ProposalFields implements HookInterface
         return 'post-new.php' === $pagenow && 'proposal' === $_REQUEST['post_type'];
     }
 
+    /** @return array<string, mixed> */
     protected function showOnData(): array
     {
         return [
@@ -110,6 +114,7 @@ class ProposalFields implements HookInterface
         ];
     }
 
+    /** @return array<string, mixed> */
     public function getConfig(): array
     {
         $installer = new Installer(cpGovernance());
@@ -122,6 +127,7 @@ class ProposalFields implements HookInterface
         ];
     }
 
+    /** @return array<string, mixed> */
     public function getDiscussion(): array
     {
         $data = [
@@ -144,6 +150,7 @@ class ProposalFields implements HookInterface
         return $data;
     }
 
+    /** @return array<string, mixed> */
     public function getPolicy(): array
     {
         $data = [
@@ -164,6 +171,7 @@ class ProposalFields implements HookInterface
         return $data;
     }
 
+    /** @return array<string, mixed> */
     public function getCalculation(): array
     {
         $data = [
@@ -191,6 +199,7 @@ class ProposalFields implements HookInterface
         return $data;
     }
 
+    /** @return array<string, mixed> */
     public function getFee(): array
     {
         $data = [
@@ -245,6 +254,7 @@ class ProposalFields implements HookInterface
         return $data;
     }
 
+    /** @return array<string, mixed> */
     public function getSchedule(): array
     {
         return [

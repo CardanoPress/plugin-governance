@@ -36,6 +36,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         $this->actions->setupHooks();
     }
 
+    /** @param array<int, mixed> $values */
     protected function fill_post(array $values): void
     {
         $data = array_combine(self::REQUIRED_KEYS, $values);
@@ -53,6 +54,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         }
     }
 
+    /** @return array<int, array<int, string>> */
     public function for_with_incomplete_data(): array
     {
         return array_map(
@@ -74,6 +76,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         $this->assertSame($this->actions->getAjaxMessage('somethingWrong'), $output['data']);
     }
 
+    /** @return array<int, array<int, int>> */
     public function for_with_invalid_identifier(): array
     {
         return [
@@ -100,6 +103,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         }
     }
 
+    /** @return array<int, array<int, string>> */
     public function for_with_invalid_vote(): array
     {
         return [
@@ -127,6 +131,7 @@ class ActionsTest extends WP_Ajax_UnitTestCase
         }
     }
 
+    /** @return array<int, array<int, string>> */
     public function for_with_invalid_transaction(): array
     {
         return [
