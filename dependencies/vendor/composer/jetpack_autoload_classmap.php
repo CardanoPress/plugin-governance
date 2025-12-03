@@ -331,90 +331,90 @@ return array(
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/classes/WP_CLI/System_Command.php'
 	),
 	'Autoloader' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader.php'
 	),
 	'Autoloader_Handler' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader-handler.php'
 	),
 	'Autoloader_Locator' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader-locator.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadFileWriter' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadFileWriter.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadGenerator' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadGenerator.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadProcessor' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadProcessor.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/CustomAutoloaderPlugin.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\ManifestGenerator' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/ManifestGenerator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Autoloader' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Autoloader' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Autoloader_Handler' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Autoloader_Handler' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Autoloader_Locator' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Autoloader_Locator' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-autoloader-locator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Container' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Container' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-container.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Hook_Manager' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Hook_Manager' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-hook-manager.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Latest_Autoloader_Guard' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Latest_Autoloader_Guard' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-latest-autoloader-guard.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Manifest_Reader' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Manifest_Reader' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-manifest-reader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\PHP_Autoloader' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\PHP_Autoloader' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-php-autoloader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Path_Processor' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Path_Processor' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-path-processor.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Plugin_Locator' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Plugin_Locator' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-plugin-locator.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Plugins_Handler' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Plugins_Handler' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-plugins-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Shutdown_Handler' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Shutdown_Handler' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-shutdown-handler.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Version_Loader' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Version_Loader' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-version-loader.php'
 	),
-	'Automattic\\Jetpack\\Autoloader\\jp0199295c9c9bc2809cd329bc582a0f4b\\al2_12_0\\Version_Selector' => array(
+	'Automattic\\Jetpack\\Autoloader\\jpad79bfe7c24c9f97bf145e7692b25527\\al5_0_13\\Version_Selector' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/jetpack-autoloader/class-version-selector.php'
 	),
@@ -1818,7 +1818,7 @@ return array(
 		'version' => '2.15.1.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/Traits/Templatable.php'
 	),
-	'ComposerAutoloaderInit0199295c9c9bc2809cd329bc582a0f4b' => array(
+	'ComposerAutoloaderInitad79bfe7c24c9f97bf145e7692b25527' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/composer/autoload_real.php'
 	),
@@ -1826,7 +1826,7 @@ return array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/composer/ClassLoader.php'
 	),
-	'Composer\\Autoload\\ComposerStaticInit0199295c9c9bc2809cd329bc582a0f4b' => array(
+	'Composer\\Autoload\\ComposerStaticInitad79bfe7c24c9f97bf145e7692b25527' => array(
 		'version' => 'dev-develop',
 		'path'    => $vendorDir . '/composer/autoload_static.php'
 	),
@@ -1835,7 +1835,7 @@ return array(
 		'path'    => $vendorDir . '/composer/InstalledVersions.php'
 	),
 	'Container' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-container.php'
 	),
 	'CronExpression' => array(
@@ -1879,15 +1879,15 @@ return array(
 		'path'    => $vendorDir . '/woocommerce/action-scheduler/lib/cron-expression/CronExpression_YearField.php'
 	),
 	'Hook_Manager' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-hook-manager.php'
 	),
 	'Latest_Autoloader_Guard' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-latest-autoloader-guard.php'
 	),
 	'Manifest_Reader' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-manifest-reader.php'
 	),
 	'PBWebDev\\CardanoPress\\Governance\\Actions' => array(
@@ -1947,31 +1947,31 @@ return array(
 		'path'    => $baseDir . '/../src/Vote.php'
 	),
 	'PHP_Autoloader' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-php-autoloader.php'
 	),
 	'Path_Processor' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-path-processor.php'
 	),
 	'Plugin_Locator' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-plugin-locator.php'
 	),
 	'Plugins_Handler' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-plugins-handler.php'
 	),
 	'Shutdown_Handler' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-shutdown-handler.php'
 	),
 	'Version_Loader' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-version-loader.php'
 	),
 	'Version_Selector' => array(
-		'version' => '2.12.0',
+		'version' => '5.0.13',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-version-selector.php'
 	),
 	'WP_Async_Request' => array(
