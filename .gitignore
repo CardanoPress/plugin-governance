@@ -1,7 +1,8 @@
 .idea/
 .vscode/
 logs/
-node_modules/
 .cache/
 vendor/
 .DS_Store
+.aagh/**/index.php
+.github/**/index.php
