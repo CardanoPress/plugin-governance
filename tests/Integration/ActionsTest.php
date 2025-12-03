@@ -7,8 +7,6 @@
 namespace Tests\Integration;
 
 use PBWebDev\CardanoPress\Governance\Actions;
-use PBWebDev\CardanoPress\Governance\Application;
-use PBWebDev\CardanoPress\Governance\Profile;
 use Tests\LoadDependencies;
 use WP_Ajax_UnitTestCase;
 use WPAjaxDieContinueException;
@@ -40,6 +38,11 @@ class ActionsTest extends WP_Ajax_UnitTestCase
     protected function fill_post(array $values): void
     {
         $data = array_combine(self::REQUIRED_KEYS, $values);
+
+        if (!is_array($data)) {
+            return;
+        }
+
         $_POST = array_merge($_POST, $data);
     }
 

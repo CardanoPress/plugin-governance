@@ -86,6 +86,12 @@ class Actions implements HookInterface
         }
 
         $votingFee = $proposal->getFee();
+
+        if (empty($votingFee)) {
+            wp_send_json_error($this->getAjaxMessage('somethingWrong'));
+            return;
+        }
+
         $votingPower = $proposal->getVotingPower($userProfile);
 
         if (0 === $votingPower) {

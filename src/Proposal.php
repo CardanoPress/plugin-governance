@@ -256,6 +256,15 @@ class Proposal
     public function getDates(): array
     {
         $start = get_post_datetime($this->postId);
+
+        if (! $start) {
+            return [
+                'start' => '',
+                'end' => '',
+                'snapshot' => '',
+            ];
+        }
+
         $start = $this->formatDate($start->getTimestamp());
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
         $end = $snapshot = '&mdash;';
