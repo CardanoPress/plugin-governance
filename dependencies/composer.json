@@ -1,5 +1,10 @@
 {
   "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true,
     "allow-plugins": {
       "automattic/jetpack-autoloader": true
     }
@@ -7,7 +12,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^7.4|^8.2",
     "ext-json": "*",
     "ext-ctype": "*",
     "automattic/jetpack-autoloader": "^2.11",
