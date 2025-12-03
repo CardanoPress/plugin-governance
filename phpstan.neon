@@ -1,13 +1,18 @@
 parameters:
   level: 5
   excludePaths:
-    - vendor
+    analyse:
+      - dependencies
+    analyseAndScan:
+      - vendor
+      - class-tgm-plugin-activation.php
   scanFiles:
     - cardanopress-governance.php
+    - class-tgm-plugin-activation.php
   scanDirectories:
-    - %currentWorkingDirectory%/.cache/wordpress
-    - %currentWorkingDirectory%/.cache/wordpress-tests-lib
-    - %currentWorkingDirectory%/dependencies
-    - %currentWorkingDirectory%/../cardanopress
+    - .cache/wordpress
+    - .cache/wordpress-tests-lib
+    - dependencies
+    - ../cardanopress
   dynamicConstantNames:
     - CP_GOVERNANCE_FILE
