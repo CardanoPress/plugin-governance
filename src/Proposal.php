@@ -359,7 +359,13 @@ class Proposal
      */
     protected function formatVoteData(int $userId, array $data): array
     {
-        $userProfile = new Profile(get_user_by('id', $userId));
+        $user = get_user_by('id', $userId);
+
+        if (! $user) {
+            return $data;
+        }
+
+        $userProfile = new Profile($user);
         $network = $userProfile->connectedNetwork() ?: 'mainnet';
 
         $data['option'] = $this->getOptionLabel($data['option']);

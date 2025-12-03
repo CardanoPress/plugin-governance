@@ -109,9 +109,16 @@ class Snapshot implements HookInterface
             return;
         }
 
+        $user = get_user_by('id', $userId);
+
+        if (! $user) {
+            $this->log('User: ' . $userId . ' not found');
+
+            return;
+        }
+
         $this->lock();
 
-        $user = get_user_by('id', $userId);
         $userProfile = new Profile($user);
 
         if (Application::getInstance()->isReady() && $userProfile->isConnected()) {
