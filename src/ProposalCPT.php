@@ -24,9 +24,11 @@ class ProposalCPT implements HookInterface
         'past' => 'archive',
     ];
 
-    public function __construct(LoggerInterface $logger)
+    public function __construct(?LoggerInterface $logger)
     {
-        $this->setLogger($logger);
+        if (null !== $logger) {
+            $this->setLogger($logger);
+        }
     }
 
     public function setupHooks(): void
