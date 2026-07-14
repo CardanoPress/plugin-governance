@@ -3,17 +3,14 @@ export const cardanoPressGovernanceMessages = window.cardanoPressGovernanceMessa
     invalid: '',
 }
 
-const transformToAda = (proposalId, optionValue) => {
-    proposalId = parseFloat(proposalId) * 100
-    optionValue = parseFloat(optionValue)
-
+const transformToAda = (proposalId: string, optionValue: string) => {
     // ADA Amount = 1.xxxxyy
     // xxxx = proposalId
     // yy   = optionValue
-    return (1 + (proposalId + optionValue) / 1000000).toFixed(6)
+    return (1 + ((parseFloat(proposalId) * 100) + parseFloat(optionValue)) / 1000000).toFixed(6)
 }
 
-export const handleVote = async (proposalId, optionValue) => {
+export const handleVote = async (proposalId: string, optionValue: string) => {
     if ('0' === proposalId) {
         return {
             success: false,
@@ -36,11 +33,11 @@ export const handleVote = async (proposalId, optionValue) => {
     return result
 }
 
-const verifyVote = async (proposalId, optionValue) => {
-    return await fetch(cardanoPress.ajaxUrl, {
+const verifyVote = async (proposalId: string, optionValue: string) => {
+    return await fetch(window.cardanoPress.ajaxUrl, {
         method: 'POST',
         body: new URLSearchParams({
-            _wpnonce: cardanoPress._nonce,
+            _wpnonce: window.cardanoPress._nonce,
             action: 'cp-governance_proposal_vote_verify',
             proposalId,
             optionValue,
@@ -48,17 +45,27 @@ const verifyVote = async (proposalId, optionValue) => {
     }).then((response) => response.json())
 }
 
-const pushTransaction = async (proposalId, optionValue, votingData) => {
+type VotingData = {
+    votingFee: {
+        amount: string
+        address: {
+            mainnet: string
+            testnet: string
+        }
+    }
+}
+
+const pushTransaction = async (proposalId: string, optionValue: string, votingData: VotingData) => {
     const adaAmount = transformToAda(proposalId, optionValue)
 
     try {
-        const amount = cardanoPress.api.adaToLovelace(adaAmount)
-        const Wallet = await cardanoPress.api.getConnectedWallet()
+        const amount = window.cardanoPress.api.adaToLovelace(adaAmount)
+        const Wallet = await window.cardanoPress.api.getConnectedWallet()
         const address = await Wallet.getChangeAddress()
 
-        votingData.votingFee.amount = cardanoPress.api.adaToLovelace(votingData.votingFee.amount)
+        votingData.votingFee.amount = window.cardanoPress.api.adaToLovelace(votingData.votingFee.amount)
 
-        return await cardanoPress.wallet.multisendTx(
+        return await window.cardanoPress.wallet.multisendTx(
             [{ address, amount }, votingData.votingFee].filter((output) => output.amount && output.address)
         )
     } catch (error) {
@@ -69,11 +76,11 @@ const pushTransaction = async (proposalId, optionValue, votingData) => {
     }
 }
 
-const pushToDB = async (proposalId, optionValue, transaction) => {
-    return await fetch(cardanoPress.ajaxUrl, {
+const pushToDB = async (proposalId: string, optionValue: string, transaction: string) => {
+    return await fetch(window.cardanoPress.ajaxUrl, {
         method: 'POST',
         body: new URLSearchParams({
-            _wpnonce: cardanoPress._nonce,
+            _wpnonce: window.cardanoPress._nonce,
             action: 'cp-governance_proposal_vote_complete',
             proposalId,
             optionValue,

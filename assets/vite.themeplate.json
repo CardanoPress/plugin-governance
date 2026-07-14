@@ -1,0 +1,17 @@
+{
+  "baseUrl": "/",
+  "outDir": "dist",
+  "isBuild": true,
+  "urls": {
+    "local": [],
+    "network": []
+  },
+  "entryNames": {
+    "script": "src/main.ts",
+    "style": "src/main.css"
+  },
+  "entries": [
+    "src/main.ts",
+    "src/main.css"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "src/main.css": {
+    "file": "style-Yyoia-E6.css",
+    "src": "src/main.css",
+    "isEntry": true,
+    "name": "style",
+    "names": [
+      "style.css"
+    ]
+  },
+  "src/main.ts": {
+    "file": "script-Bgofv39M.js",
+    "name": "script",
+    "src": "src/main.ts",
+    "isEntry": true
+  }
+}
