@@ -26,7 +26,9 @@ cardanoPress()->compatibleHeader();
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
                         <li class="breadcrumb-item">
-                            <a href='<?php echo esc_url((string) get_post_type_archive_link('proposal')); ?>'>Governance</a>
+                            <a href='<?php echo esc_url((string) get_post_type_archive_link('proposal')); ?>'>
+                                Governance
+                            </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
                     </ol>

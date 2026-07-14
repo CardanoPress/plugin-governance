@@ -70,7 +70,7 @@ class Installer extends AbstractInstaller
 
     public function noticeNeedingGlobalPolicy(): void
     {
-        if ($this->application->option('global_policy')) {
+        if (! method_exists($this->application, 'option') || $this->application->option('global_policy')) {
             return;
         }
 
