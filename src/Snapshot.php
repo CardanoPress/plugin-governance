@@ -135,17 +135,19 @@ class Snapshot implements HookInterface
                 'quantity' => $details['controlled_amount'] ?? '0',
             ];
 
-            do {
-                $response = $blockfrost->associatedAssets($stakeAddress, $page);
+            if ('' !== $policyId) {
+                do {
+                    $response = $blockfrost->associatedAssets($stakeAddress, $page);
 
-                foreach ($response as $asset) {
-                    if (0 === strpos($asset['unit'], $policyId)) {
-                        $assets[] = $asset;
+                    foreach ($response as $asset) {
+                        if (0 === strpos($asset['unit'], $policyId)) {
+                            $assets[] = $asset;
+                        }
                     }
-                }
 
-                $page++;
-            } while (100 === count($response));
+                    $page++;
+                } while (100 === count($response));
+            }
 
             update_post_meta($proposalPostId, '_proposal_snapshot_' . $userId, $assets);
             $this->log('User: ' . $userId . ' got scanned');

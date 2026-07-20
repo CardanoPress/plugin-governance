@@ -128,6 +128,10 @@ class Calculator
         $result = 0;
         $policy = $this->proposal->getPolicy();
 
+        if ('' === $policy) {
+            return 0;
+        }
+
         foreach ($assets as $asset) {
             if (0 === strpos($asset['unit'], $policy)) {
                 $result += $asset['quantity'];
