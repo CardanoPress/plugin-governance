@@ -6,7 +6,7 @@ window.addEventListener('alpine:init', () => {
     }
 
     const sumArray = (array: Record<string, string | any>) => {
-        return Object.values(array).reduce((a, b) => a + b)
+        return Object.values(array).reduce((total, value) => total + Number(value), 0)
     }
 
     window.Alpine.data('cardanoPressGovernance', () => ({
@@ -64,21 +64,23 @@ window.addEventListener('alpine:init', () => {
             })
 
             this.isProcessing = true
-            const proposalId = this.$root.dataset.proposal || '0'
-            const response = await handleVote(proposalId, this.selected)
+            try {
+                const proposalId = this.$root.dataset.proposal || '0'
+                const response = await handleVote(proposalId, this.selected)
 
-            window.cardanoPress.api.removeNotice('proposalVote')
+                if (response.success) {
+                    this.options = response.data.data
+                    this.voted = this.selected
 
-            if (response.success) {
-                this.options = response.data.data
-                this.voted = this.selected
-
-                window.cardanoPress.api.addNotice({ type: 'info', text: response.data.message })
-            } else {
-                window.cardanoPress.api.addNotice({ type: 'warning', text: response.data })
+                    window.cardanoPress.api.addNotice({ type: 'info', text: response.data.message })
+                } else {
+                    window.cardanoPress.api.addNotice({ type: 'warning', text: response.data })
+                }
+            } catch {
+            } finally {
+                window.cardanoPress.api.removeNotice('proposalVote')
+                this.isProcessing = false
             }
-
-            this.isProcessing = false
         },
     }))
 })
