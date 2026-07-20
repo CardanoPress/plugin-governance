@@ -11,7 +11,7 @@ use CardanoPress\Helpers\WalletHelper;
 use DateTimeZone;
 
 /**
- * @phpstan-type ProposalOptions array{value: string, label: string}[]
+ * @phpstan-type ProposalOptions array{value: int, label: string}[]
  * @phpstan-type ProposalFee array{amount: int, address: array{mainnet: string, testnet: string}}
  * @phpstan-type ProposalStructure array{
  *     post_id: int,
@@ -212,7 +212,7 @@ class Proposal
     {
         $status = $this->getConfigValue('calculation');
 
-        return (array)$status ?: [];
+        return $status ? (array)$status : [];
     }
 
     /** @return ProposalFee|array{} */
@@ -220,7 +220,7 @@ class Proposal
     {
         $status = $this->getConfigValue('fee');
 
-        return (array)$status ?: [];
+        return $status ? (array)$status : [];
     }
 
     /** @return ProposalOptions|array{} */
@@ -235,7 +235,7 @@ class Proposal
     {
         $options = $this->getOptions();
 
-        $index = array_search($value, array_column($this->getOptions(), 'value'), true);
+        $index = array_search((int)$value, array_column($this->getOptions(), 'value'), true);
 
         if (false === $index) {
             return '';
@@ -267,7 +267,7 @@ class Proposal
 
         $start = $this->formatDate($start->getTimestamp());
         $expiration = get_post_meta($this->postId, 'at-expiration', true);
-        $end = $snapshot = '&mdash;';
+        $end = $snapshot = '--';
 
         if ($expiration) {
             $end = $this->formatDate(strtotime($expiration));
